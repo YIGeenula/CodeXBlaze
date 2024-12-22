@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Controls -->
+    <div class="lg:hidden fixed top-0 w-full z-50">
+        <div class="bg-[#0C1521] w-full py-3 px-4 shadow-lg">
+            <div class="flex justify-between items-center">
+                <button id="mobile-menu-btn" class="text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <button id="mobile-theme-toggle" class="text-white hover:text-orange-500 transition-colors">
+                    <i class="fas fa-sun text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Panel -->
+    <nav id="nav-menu" class="fixed left-0 top-0 h-full w-80 bg-[#0a0a0a] text-white p-4 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40 flex flex-col">
+    <!-- Update the nav element -->
+        <!-- Navigation Items Container - Now includes logo -->
+        <div class="space-y-6 flex flex-col items-center flex-1 justify-center -mt-20">
+            <!-- Logo moved inside -->
+            <div class="mb-8">
+                <h1 class="text-4xl font-bold nav-logo">
+                    <img src="images/Navbar-Logo-02.png" alt="Navbar-logo">  
+                </h1>
+            </div>
+
+            <a href="#home" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-home w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">Home</span>
+            </a>
+            
+            <a href="#about" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-user w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">About</span>
+            </a>
+            
+            <a href="#services" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-cogs w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">Services</span>
+            </a>
+            
+            <a href="#portfolio" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-briefcase w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">Portfolio</span>
+            </a>
+            
+            <a href="#contact" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+                <i class="fas fa-envelope w-8 text-xl text-center"></i>
+                <span class="nav-text text-lg flex-1">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Desktop theme toggle -->
+    <div class="fixed top-4 right-4 space-x-4 z-50 hidden lg:block">
+        <button id="theme-toggle" class="text-white hover:text-orange-500 transition-colors">
+            <i class="fas fa-sun text-xl"></i>
+        </button>
+    </div>
+    
+    
+    <script src="script.js"></script>
+
+    <div id="home" class="lg:ml-64 p-8 pt-20 lg:pt-8 main-content min-h-screen flex items-center justify-center">
+        <!-- Content Container -->
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between max-w-6xl relative">
+            <!-- Introduction Section -->
+            <div class="space-y-6 max-w-2xl text-center lg:text-left px-4 mt-24 lg:mt-0">
+                <h1 class="text-3xl lg:text-5xl font-bold leading-tight">
+                    <div class="text-[var(--text-primary)]">Hello, my name is</div>
+                    <div>
+                        <span class="font-roboto text-[#04d9ff] text-4xl lg:text-6xl font-bold tracking-wide block mt-2">
+                            Yasiru Isum Geenula
+                        </span>
+                    </div>
+                </h1>
+                
+                <div class="text-2xl lg:text-3xl font-bold typed-container">
+                    I'm a <span id="typed-text" class="text-[#04d9ff]"></span>
+                </div>
+                
+                <p class="text-lg lg:text-xl">
+                    I'm a passionate self-taught Web Developer who loves to create modern and responsive websites. Through continuous learning and hands-on projects, I've developed expertise in frontend technologies and UI/UX design.
+                </p>
+
+                <button onclick="scrollToAbout()" class="bg-[#04d9ff] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full hover:bg-[#03c3e6] transition-all duration-300 text-lg">
+                    More About Me
+                </button>
+            </div>
+
+            <!-- Profile Image - Visible on all devices -->
+            <div class="relative mt-8 lg:mt-0 profile-image-container">
+                <img src="images/ProPic.jpg" alt="Profile" class="w-96 h-[28rem] object-cover rounded-lg" loading="lazy">
+                <div class="border-corner border-corner-top absolute -top-4 -right-4 w-24 h-24 border-t-4 border-r-4 border-[#04d9ff]"></div>
+                <div class="border-corner border-corner-bottom absolute -bottom-4 -left-4 w-24 h-24 border-b-4 border-l-4 border-[#04d9ff]"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

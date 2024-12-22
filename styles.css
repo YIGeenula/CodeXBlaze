@@ -1,0 +1,263 @@
+/* Navigation styles */
+.nav-item:hover .nav-text {
+    color: #04d9ff ;
+    transform: scale(1.05);
+}
+
+.nav-item:hover i {
+    color: #04d9ff ;
+    transform: scale(1.05);
+}
+
+.nav-item {
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.nav-item:hover {
+    border: none;
+    background-color: #0C1521;
+}
+
+/* Base font */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    transition: all 0.3s ease;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Ensure all text elements use Poppins */
+h1, h2, h3, h4, h5, h6,
+p, span, button, a, div {
+    font-family: var(--font-primary);
+}
+
+/* Update the typed text font */
+.txt, #typed-text {
+    font-family: var(--font-primary);
+}
+
+/* Update navigation items font */
+.nav-text {
+    font-family: var(--font-primary);
+}
+
+/* Theme styles */
+:root {
+    --bg-primary: #111111;
+    --bg-secondary: #0a0a0a;
+    --bg-hover: #181818;
+    --text-primary: #ffffff;
+    --text-secondary: #d1d1d1;
+    --icon-color: #ffffff;
+    --border-color: #2a2a2a;
+}
+
+/* Light mode styles */
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --bg-hover: #e5e7eb;
+    --text-primary: #111111;
+    --text-secondary: #000000;
+    --icon-color: #111111;
+    --border-color: #e5e5e5;
+}
+
+/* Navigation specific styles */
+#nav-menu {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: var(--bg-hover);
+}
+
+/* Theme toggle styles */
+#theme-toggle, #mobile-theme-toggle {
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+}
+
+#theme-toggle:hover, #mobile-theme-toggle:hover {
+    transform: rotate(45deg);
+}
+
+[data-theme="light"] #theme-toggle i,
+[data-theme="light"] #mobile-theme-toggle i {
+    transition: all 0.3s ease;
+    transform: rotate(180deg);
+}
+
+/* Mobile menu styles */
+@media (max-width: 1024px) {
+    #nav-menu.active {
+        transform: translateX(0);
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: left;
+    }
+} 
+
+/* Add this to your existing CSS */
+.nav-logo img {
+    transition: all 0.3s ease;
+}
+
+[data-theme="light"] .nav-logo img {
+    filter: brightness(0); /* This will make the logo black in light mode */
+} 
+
+/* Update the Mobile Controls styles */
+.lg\:hidden .bg-\[\#0C1521\] {
+    background-color: var(--bg-secondary);
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu button styles */
+#mobile-menu-btn {
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+/* Update mobile theme toggle styles */
+[data-theme="light"] #mobile-theme-toggle {
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .lg\:hidden .bg-\[\#0C1521\] {
+    background-color: var(--bg-secondary);
+} 
+
+/* Add typing effect styles */
+.txt {
+    border-right: 0.2rem solid #04d9ff;
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #04d9ff }
+}
+
+/* Add smooth transitions for text elements */
+#home h1, 
+#home .typed-container, 
+#home p, 
+#home button,
+#home .profile-image-container {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger the animations */
+#home h1 { animation-delay: 0.2s; }
+#home .typed-container { animation-delay: 0.4s; }
+#home p { animation-delay: 0.6s; }
+#home button { animation-delay: 0.8s; }
+#home .profile-image-container { animation-delay: 1s; }
+
+/* Add Oswald font class */
+.font-oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Update the stagger animations */
+#home h1 > div:nth-child(1) { animation-delay: 0.2s; }
+#home h1 > div:nth-child(2) { animation-delay: 0.4s; } 
+
+/* Update the description text color */
+#home p {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+/* Update light mode styles */
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --bg-hover: #e5e7eb;
+    --text-primary: #111111;
+    --text-secondary: #000000;
+    --icon-color: #111111;
+    --border-color: #e5e5e5;
+}
+
+/* Update hover colors in navigation */
+#mobile-theme-toggle, #theme-toggle {
+    color: var(--text-primary);
+}
+
+#mobile-theme-toggle:hover, #theme-toggle:hover {
+    color: #04d9ff;
+}
+
+/* Update any other orange color references */
+.nav-item:hover .nav-text,
+.nav-item:hover i {
+    color: #04d9ff;
+}
+
+/* Update hover state for button */
+.hover\:bg-\[#03c3e6\]:hover {
+    background-color: #03c3e6;
+}
+
+/* Add Roboto font class */
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Add these animations for the decorative bars */
+@keyframes borderPulse {
+    0% {
+        width: 6rem;
+        height: 6rem;
+        opacity: 1;
+    }
+    50% {
+        width: 7rem;
+        height: 7rem;
+        opacity: 0.8;
+    }
+    100% {
+        width: 6rem;
+        height: 6rem;
+        opacity: 1;
+    }
+}
+
+/* Update the border corner styles */
+.profile-image-container .border-corner {
+    animation: borderPulse 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+/* Add different delays for top and bottom corners */
+.border-corner-top {
+    animation-delay: 0s;
+}
+
+.border-corner-bottom {
+    animation-delay: 1.5s;
+}
