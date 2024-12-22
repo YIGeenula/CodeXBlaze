@@ -74,6 +74,7 @@ p, span, button, a, div {
     background-color: var(--bg-secondary);
     color: var(--text-primary);
     transition: all 0.3s ease;
+    width: 320px; /* Default width for larger screens */
 }
 
 .nav-item:hover {
@@ -261,3 +262,288 @@ p, span, button, a, div {
 .border-corner-bottom {
     animation-delay: 1.5s;
 }
+
+/* Navigation responsive styles */
+#nav-menu {
+    width: 320px; /* Default width for larger screens */
+}
+
+@media (max-width: 1024px) {
+    #nav-menu {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    #nav-menu {
+        width: 260px;
+    }
+    
+    .nav-item {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 640px) {
+    #nav-menu {
+        width: 240px;
+    }
+    
+    .nav-logo img {
+        width: 160px; /* Smaller logo for mobile */
+    }
+    
+    .nav-item {
+        padding: 0.75rem;
+    }
+    
+    .nav-text {
+        font-size: 1rem;
+    }
+}
+
+/* Hero section responsive styles */
+@media (max-width: 1280px) {
+    #home .container {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    #home {
+        padding-top: 5rem;
+    }
+    
+    #home .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .profile-image-container {
+        margin-top: 3rem;
+    }
+    
+    #home h1 {
+        font-size: 2.5rem;
+    }
+    
+    #home .text-4xl {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2rem;
+    }
+    
+    #home .text-4xl {
+        font-size: 2.5rem;
+    }
+    
+    .profile-image-container img {
+        width: 280px;
+        height: 360px;
+    }
+    
+    .border-corner {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media (max-width: 640px) {
+    #home {
+        padding: 4rem 1rem;
+    }
+    
+    #home h1 {
+        font-size: 1.75rem;
+    }
+    
+    #home .text-4xl {
+        font-size: 2.25rem;
+    }
+    
+    #home p {
+        font-size: 1rem;
+    }
+    
+    .profile-image-container img {
+        width: 240px;
+        height: 320px;
+    }
+    
+    .border-corner {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+/* About section styles */
+#about {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* About section responsive styles */
+@media (max-width: 1024px) {
+    #about .container {
+        padding: 2rem;
+    }
+    
+    .about-image-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #about h2 {
+        font-size: 2.5rem;
+    }
+    
+    .about-image-container img {
+        height: 400px;
+    }
+    
+    #about .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    #about h2 {
+        font-size: 2rem;
+    }
+    
+    .about-image-container img {
+        height: 300px;
+    }
+    
+    #about .personal-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Skill bar animations */
+@keyframes skillFill {
+    from { width: 0; }
+    to { width: var(--skill-percentage); }
+}
+
+.skill-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #04d9ff;
+    animation: skillFill 1.5s ease forwards;
+    width: 0;
+}
+
+/* Add hover effects for the about image container */
+.about-image-container {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.about-image-container:hover {
+    transform: translateY(-5px);
+}
+
+.about-image-container img {
+    transition: all 0.3s ease;
+}
+
+.about-image-container:hover img {
+    box-shadow: 0 10px 30px rgba(4, 217, 255, 0.2);
+}
+
+/* Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* About section theme styles */
+.about-section {
+    background-color: #211f1f;
+    transition: background-color 0.3s ease;
+}
+
+[data-theme="light"] .about-section {
+    background-color: #F8F9FA;
+}
+
+/* Update text colors for light mode */
+[data-theme="light"] #about h2,
+[data-theme="light"] #about h3,
+[data-theme="light"] #about p,
+[data-theme="light"] #about span {
+    color: #211f1f;
+}
+
+/* Modern About section styles */
+.about-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(4, 217, 255, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Skill progress animation */
+.skill-progress {
+    transform: scaleX(0);
+    animation: skillProgress 1.5s ease forwards;
+}
+
+@keyframes skillProgress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+/* Card hover effects */
+.skill-item {
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateX(10px);
+}
+
+/* Light mode adjustments */
+[data-theme="light"] .about-section::before {
+    background: radial-gradient(circle at center, rgba(4, 217, 255, 0.05) 0%, transparent 70%);
+}
+
+[data-theme="light"] .bg-black\/20 {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-section::before {
+        width: 150%;
+        height: 150%;
+    }
+}
+

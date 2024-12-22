@@ -76,38 +76,166 @@
     
     <script src="script.js"></script>
 
-    <div id="home" class="lg:ml-64 p-8 pt-20 lg:pt-8 main-content min-h-screen flex items-center justify-center">
+    <!-- Update the hero section container -->
+    <div id="home" class="lg:ml-80 p-4 sm:p-6 md:p-8 pt-20 lg:pt-8 main-content min-h-screen flex items-center justify-center">
         <!-- Content Container -->
-        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between max-w-6xl relative">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between max-w-6xl relative px-4 sm:px-6">
             <!-- Introduction Section -->
-            <div class="space-y-6 max-w-2xl text-center lg:text-left px-4 mt-24 lg:mt-0">
-                <h1 class="text-3xl lg:text-5xl font-bold leading-tight">
+            <div class="space-y-4 sm:space-y-6 max-w-2xl text-center lg:text-left mt-16 lg:mt-0">
+                <h1 class="text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight">
                     <div class="text-[var(--text-primary)]">Hello, my name is</div>
                     <div>
-                        <span class="font-roboto text-[#04d9ff] text-4xl lg:text-6xl font-bold tracking-wide block mt-2">
+                        <span class="font-roboto text-[#04d9ff] text-3xl sm:text-4xl lg:text-6xl font-bold tracking-wide block mt-2">
                             Yasiru Isum Geenula
                         </span>
                     </div>
                 </h1>
                 
-                <div class="text-2xl lg:text-3xl font-bold typed-container">
+                <div class="text-xl sm:text-2xl lg:text-3xl font-bold typed-container">
                     I'm a <span id="typed-text" class="text-[#04d9ff]"></span>
                 </div>
                 
-                <p class="text-lg lg:text-xl">
-                    I'm a passionate self-taught Web Developer who loves to create modern and responsive websites. Through continuous learning and hands-on projects, I've developed expertise in frontend technologies and UI/UX design.
+                <p class="text-base sm:text-lg lg:text-xl">
+                    I'm a skilled frontend web developer with over 2 years of experience. My expertise includes designing and developing responsive, user-centric websites and many more.
                 </p>
 
-                <button onclick="scrollToAbout()" class="bg-[#04d9ff] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full hover:bg-[#03c3e6] transition-all duration-300 text-lg">
+                <button onclick="scrollToAbout()" class="bg-[#04d9ff] text-white px-5 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-full hover:bg-[#03c3e6] transition-all duration-300 text-base sm:text-lg">
                     More About Me
                 </button>
             </div>
 
-            <!-- Profile Image - Visible on all devices -->
+            <!-- Profile Image -->
             <div class="relative mt-8 lg:mt-0 profile-image-container">
-                <img src="images/ProPic.jpg" alt="Profile" class="w-96 h-[28rem] object-cover rounded-lg" loading="lazy">
-                <div class="border-corner border-corner-top absolute -top-4 -right-4 w-24 h-24 border-t-4 border-r-4 border-[#04d9ff]"></div>
-                <div class="border-corner border-corner-bottom absolute -bottom-4 -left-4 w-24 h-24 border-b-4 border-l-4 border-[#04d9ff]"></div>
+                <img src="images/ProPic.jpg" alt="Profile" class="w-60 sm:w-80 lg:w-96 h-80 sm:h-96 lg:h-[28rem] object-cover rounded-lg" loading="lazy">
+                <div class="border-corner border-corner-top absolute -top-4 -right-4 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 border-t-4 border-r-4 border-[#04d9ff]"></div>
+                <div class="border-corner border-corner-bottom absolute -bottom-4 -left-4 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 border-b-4 border-l-4 border-[#04d9ff]"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="lg:ml-80 p-4 sm:p-6 md:p-8 min-h-screen flex items-center justify-center about-section">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <div class="inline-block">
+                    <span class="text-[#04d9ff] text-base sm:text-lg font-semibold tracking-wider uppercase mb-3 block">About Me</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold relative">
+                        Know Me <span class="text-[#04d9ff]">Better</span>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- About Content -->
+            <div class="max-w-5xl mx-auto">
+                <!-- Introduction -->
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 inline-block relative">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#04d9ff] to-[#03c3e6]">
+                            Frontend Developer & UI/UX Designer
+                        </span>
+                        <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-[#04d9ff] to-transparent"></div>
+                    </h3>
+                    
+                    <p class="text-[var(--text-secondary)] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+                        I'm a skilled frontend web developer with over 2 years of experience. My expertise includes designing and developing responsive, user-centric optimizing functionality, and delivering seamless digital solutions tailored to meet client needs.
+                    </p>
+                </div>
+
+                <!-- Skills & Info Grid -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Skills Section -->
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-[#04d9ff]/10">
+                        <h4 class="text-xl font-semibold mb-6 text-[#04d9ff]">Technical Skills</h4>
+                        <div class="space-y-6">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-sm font-semibold">HTML/CSS</span>
+                                    <span class="text-[#04d9ff] text-sm font-semibold">95%</span>
+                                </div>
+                                <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
+                                    <div class="h-full w-[95%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full 
+                                        transform origin-left transition-transform duration-1000 skill-progress"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-sm font-semibold">JavaScript</span>
+                                    <span class="text-[#04d9ff] text-sm font-semibold">85%</span>
+                                </div>
+                                <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
+                                    <div class="h-full w-[85%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full 
+                                        transform origin-left transition-transform duration-1000 skill-progress"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-sm font-semibold">React</span>
+                                    <span class="text-[#04d9ff] text-sm font-semibold">80%</span>
+                                </div>
+                                <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
+                                    <div class="h-full w-[80%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full 
+                                        transform origin-left transition-transform duration-1000 skill-progress"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-sm font-semibold">UI/UX Design</span>
+                                    <span class="text-[#04d9ff] text-sm font-semibold">90%</span>
+                                </div>
+                                <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
+                                    <div class="h-full w-[90%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full 
+                                        transform origin-left transition-transform duration-1000 skill-progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Info -->
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-[#04d9ff]/10">
+                        <h4 class="text-xl font-semibold mb-6 text-[#04d9ff]">Personal Details</h4>
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="text-[#04d9ff] text-sm font-semibold">Name</p>
+                                        <p class="font-medium">Yasiru Isum</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[#04d9ff] text-sm font-semibold">Age</p>
+                                        <p class="font-medium">24</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[#04d9ff] text-sm font-semibold">Location</p>
+                                        <p class="font-medium">Sri Lanka</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="text-[#04d9ff] text-sm font-semibold">Experience</p>
+                                        <p class="font-medium">2+ Years</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[#04d9ff] text-sm font-semibold">Freelance</p>
+                                        <p class="font-medium">Available</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[#04d9ff] text-sm font-semibold">Languages</p>
+                                        <p class="font-medium">English, Sinhala</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="w-full mt-6 py-3 px-6 rounded-xl bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] 
+                                text-white font-semibold hover:shadow-lg hover:shadow-[#04d9ff]/20 transition-all duration-300 
+                                transform hover:-translate-y-1">
+                                Download CV
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

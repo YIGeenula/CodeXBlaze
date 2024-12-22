@@ -145,6 +145,22 @@ function init() {
     new TypeWriter(txtElement, words, wait);
 }
 
+// Add this function for smooth scrolling to about section
+function scrollToAbout() {
+    const aboutSection = document.getElementById('about');
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+    
+    // Close mobile menu if open
+    if (window.innerWidth < 1024) {
+        const navMenu = document.getElementById('nav-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        navMenu.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+    }
+}
+
 
 
 
