@@ -21,45 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.classList.remove('fa-times');
         }
     });
-
-    // Theme toggling functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-    const htmlElement = document.documentElement;
-
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        htmlElement.setAttribute('data-theme', savedTheme);
-        updateIcons(savedTheme === 'light');
-    }
-
-    // Desktop theme toggle
-    themeToggle.addEventListener('click', toggleTheme);
-    // Mobile theme toggle
-    mobileThemeToggle.addEventListener('click', toggleTheme);
-
-    function toggleTheme() {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateIcons(newTheme === 'light');
-    }
-
-    function updateIcons(isLight) {
-        // Update both desktop and mobile icons
-        const icons = [
-            themeToggle.querySelector('i'),
-            mobileThemeToggle.querySelector('i')
-        ];
-        
-        icons.forEach(icon => {
-            icon.classList.remove('fa-sun', 'fa-moon');
-            icon.classList.add(isLight ? 'fa-moon' : 'fa-sun');
-        });
-    }
 });
 
 // Add this function for home scrolling
@@ -160,6 +121,85 @@ function scrollToAbout() {
         icon.classList.remove('fa-times');
     }
 }
+
+// Add this to your existing script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to check if element is in viewport with buffer
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        return (
+            (rect.top <= windowHeight * 0.85 && rect.bottom >= 0) || // Element is visible from top
+            (rect.bottom >= 0 && rect.top <= windowHeight) // Element is visible from bottom
+        );
+    }
+
+    // Keep track of animated elements
+    const animatedElements = new Set();
+
+    // Function to handle scroll animation
+    function handleScrollAnimation() {
+        // Handle all fade animations
+        const fadeElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
+        fadeElements.forEach(element => {
+            if (!animatedElements.has(element) && isInViewport(element)) {
+                element.classList.add('visible');
+                animatedElements.add(element);
+            }
+        });
+
+        // Handle loading bar animations separately
+        const loadingBars = document.querySelectorAll('.loading-bar');
+        loadingBars.forEach((bar) => {
+            if (!animatedElements.has(bar) && isInViewport(bar)) {
+                const delay = bar.closest('.skill-item') 
+                    ? parseInt(bar.closest('.skill-item').dataset.index) * 200
+                    : 400;
+                
+                setTimeout(() => {
+                    bar.classList.add('animate');
+                    animatedElements.add(bar);
+                }, delay);
+            }
+        });
+    }
+
+    // Initial check for elements in viewport
+    handleScrollAnimation();
+
+    // Add debounced scroll listener
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        if (scrollTimeout) {
+            window.cancelAnimationFrame(scrollTimeout);
+        }
+        scrollTimeout = window.requestAnimationFrame(() => {
+            handleScrollAnimation();
+        });
+    });
+});
+
+// Add this function to handle availability status
+function updateAvailabilityStatus() {
+    const statusElement = document.querySelector('.availability-status');
+    const statusText = statusElement.childNodes[0].textContent.trim();
+    const dots = statusElement.querySelectorAll('.status-dot, .status-dot-ping');
+    
+    if (statusText === 'Unavailable') {
+        dots.forEach(dot => {
+            dot.style.backgroundColor = 'rgb(239 68 68)'; // red-500
+        });
+    } else {
+        dots.forEach(dot => {
+            dot.style.backgroundColor = 'rgb(34 197 94)'; // green-500
+        });
+    }
+}
+
+// Call this when the DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+    updateAvailabilityStatus();
+});
 
 
 

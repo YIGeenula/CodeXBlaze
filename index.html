@@ -66,14 +66,6 @@
         </div>
     </nav>
 
-    <!-- Desktop theme toggle -->
-    <div class="fixed top-4 right-4 space-x-4 z-50 hidden lg:block">
-        <button id="theme-toggle" class="text-white hover:text-orange-500 transition-colors">
-            <i class="fas fa-sun text-xl"></i>
-        </button>
-    </div>
-    
-    
     <script src="script.js"></script>
 
     <!-- Update the hero section container -->
@@ -117,96 +109,90 @@
     <div id="about" class="lg:ml-80 p-4 sm:p-6 md:p-8 min-h-screen flex items-center justify-center about-section">
         <div class="container mx-auto max-w-6xl px-4 sm:px-6">
             <!-- Section Title -->
-            <div class="text-center mb-16">
-                <div class="inline-block">
-                    <span class="text-[#04d9ff] text-base sm:text-lg font-semibold tracking-wider uppercase mb-3 block">About Me</span>
-                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold relative">
-                        Know Me <span class="text-[#04d9ff]">Better</span>
-                    </h2>
-                </div>
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold">
+                    <span class="text-white">About</span>
+                    <span class="text-[#04d9ff]">Me</span>
+                </h2>
+                <div class="w-32 h-1 bg-[#04d9ff] mx-auto mt-4 loading-bar"></div>
             </div>
 
             <!-- About Content -->
             <div class="max-w-5xl mx-auto">
                 <!-- Introduction -->
-                <div class="text-center mb-16">
-                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 inline-block relative">
-                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#04d9ff] to-[#03c3e6]">
-                            Frontend Developer & UI/UX Designer
-                        </span>
-                        <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-[#04d9ff] to-transparent"></div>
+                <div class="text-center mb-16 fade-in-up delay-1">
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">
+                        <span class="text-white">Frontend Developer</span> & 
+                        <span class="text-[#04d9ff]">UI/UX Designer</span>
                     </h3>
                     
                     <p class="text-[var(--text-secondary)] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-                        I'm a skilled frontend web developer with over 2 years of experience. My expertise includes designing and developing responsive, user-centric optimizing functionality, and delivering seamless digital solutions tailored to meet client needs.
+                        I'm a passionate frontend developer with over 2 years of experience crafting beautiful and functional web experiences. My approach combines clean code with creative design solutions to build engaging user interfaces.
                     </p>
                 </div>
 
                 <!-- Skills & Info Grid -->
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Skills Section -->
-                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-[#04d9ff]/10">
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-[#04d9ff]/10 fade-in-left delay-2">
                         <h4 class="text-xl font-semibold mb-6 text-[#04d9ff]">Technical Skills</h4>
                         <div class="space-y-6">
-                            <div class="skill-item">
+                            <div class="skill-item" data-index="0">
                                 <div class="flex justify-between mb-2">
                                     <span class="font-medium text-sm font-semibold">HTML/CSS</span>
                                     <span class="text-[#04d9ff] text-sm font-semibold">95%</span>
                                 </div>
                                 <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
-                                    <div class="h-full w-[95%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full 
-                                        transform origin-left transition-transform duration-1000 skill-progress"></div>
+                                    <div class="h-full w-[95%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full loading-bar"></div>
                                 </div>
                             </div>
 
-                            <div class="skill-item">
+                            <div class="skill-item" data-index="1">
                                 <div class="flex justify-between mb-2">
                                     <span class="font-medium text-sm font-semibold">JavaScript</span>
-                                    <span class="text-[#04d9ff] text-sm font-semibold">85%</span>
+                                    <span class="text-[#04d9ff] text-sm font-semibold">90%</span>
                                 </div>
                                 <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
-                                    <div class="h-full w-[85%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full 
-                                        transform origin-left transition-transform duration-1000 skill-progress"></div>
+                                    <div class="h-full w-[90%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full loading-bar"></div>
                                 </div>
                             </div>
 
-                            <div class="skill-item">
+                            <div class="skill-item" data-index="2">
                                 <div class="flex justify-between mb-2">
-                                    <span class="font-medium text-sm font-semibold">React</span>
-                                    <span class="text-[#04d9ff] text-sm font-semibold">80%</span>
+                                    <span class="font-medium text-sm font-semibold">WordPress</span>
+                                    <span class="text-[#04d9ff] text-sm font-semibold">95%</span>
                                 </div>
                                 <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
-                                    <div class="h-full w-[80%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full 
-                                        transform origin-left transition-transform duration-1000 skill-progress"></div>
+                                    <div class="h-full w-[95%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full loading-bar"></div>
                                 </div>
                             </div>
 
-                            <div class="skill-item">
+                            <div class="skill-item" data-index="3">
                                 <div class="flex justify-between mb-2">
                                     <span class="font-medium text-sm font-semibold">UI/UX Design</span>
                                     <span class="text-[#04d9ff] text-sm font-semibold">90%</span>
                                 </div>
                                 <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
-                                    <div class="h-full w-[90%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full 
-                                        transform origin-left transition-transform duration-1000 skill-progress"></div>
+                                    <div class="h-full w-[90%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full loading-bar"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Personal Info -->
-                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-[#04d9ff]/10">
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-[#04d9ff]/10 fade-in-right delay-3">
                         <h4 class="text-xl font-semibold mb-6 text-[#04d9ff]">Personal Details</h4>
                         <div class="space-y-4">
+                            <!-- Personal details grid -->
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="space-y-4">
                                     <div>
                                         <p class="text-[#04d9ff] text-sm font-semibold">Name</p>
-                                        <p class="font-medium">Yasiru Isum</p>
+                                        <p class="font-medium">YI Geenula</p>
                                     </div>
                                     <div>
                                         <p class="text-[#04d9ff] text-sm font-semibold">Age</p>
-                                        <p class="font-medium">24</p>
+                                        <p class="font-medium">22</p>
                                     </div>
                                     <div>
                                         <p class="text-[#04d9ff] text-sm font-semibold">Location</p>
@@ -220,7 +206,13 @@
                                     </div>
                                     <div>
                                         <p class="text-[#04d9ff] text-sm font-semibold">Freelance</p>
-                                        <p class="font-medium">Available</p>
+                                        <p class="font-medium flex items-center availability-status">
+                                            Available
+                                            <span class="ml-2 inline-flex relative">
+                                                <span class="w-2 h-2 rounded-full status-dot"></span>
+                                                <span class="w-2 h-2 rounded-full absolute inset-0 status-dot-ping"></span>
+                                            </span>
+                                        </p>
                                     </div>
                                     <div>
                                         <p class="text-[#04d9ff] text-sm font-semibold">Languages</p>
@@ -228,11 +220,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="w-full mt-6 py-3 px-6 rounded-xl bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] 
-                                text-white font-semibold hover:shadow-lg hover:shadow-[#04d9ff]/20 transition-all duration-300 
-                                transform hover:-translate-y-1">
-                                Download CV
-                            </button>
+                            <!-- Button container with responsive classes -->
+                            <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                                <button class="w-full sm:flex-1 py-3 px-6 rounded-xl bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] 
+                                    text-white font-semibold hover:shadow-lg hover:shadow-[#04d9ff]/20 transition-all duration-300 
+                                    transform hover:-translate-y-1">
+                                    Download CV
+                                </button>
+                                <button class="w-full sm:flex-1 py-3 px-6 rounded-xl border-2 border-[#04d9ff] text-[#04d9ff]
+                                    font-semibold hover:bg-[#04d9ff] hover:text-white transition-all duration-300 
+                                    transform hover:-translate-y-1">
+                                    Hire Me
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
