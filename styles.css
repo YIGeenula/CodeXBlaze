@@ -1,3 +1,22 @@
+/* Base font */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --bg-primary: #111111;
+    --bg-secondary: #0a0a0a;
+    --bg-hover: #181818;
+    --text-primary: #ffffff;
+    --text-secondary: #d1d1d1;
+    --icon-color: #ffffff;
+    --border-color: #2a2a2a;
+}
+
+body {
+    font-family: var(--font-primary);
+    transition: all 0.3s ease;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
 /* Navigation styles */
 .nav-item:hover .nav-text {
     color: #04d9ff ;
@@ -19,25 +38,6 @@
     background-color: #0C1521;
 }
 
-/* Base font */
-:root {
-    --font-primary: 'Poppins', sans-serif;
-    --bg-primary: #111111;
-    --bg-secondary: #0a0a0a;
-    --bg-hover: #181818;
-    --text-primary: #ffffff;
-    --text-secondary: #d1d1d1;
-    --icon-color: #ffffff;
-    --border-color: #2a2a2a;
-}
-
-body {
-    font-family: var(--font-primary);
-    transition: all 0.3s ease;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-}
-
 /* Ensure all text elements use Poppins */
 h1, h2, h3, h4, h5, h6,
 p, span, button, a, div {
@@ -54,45 +54,6 @@ p, span, button, a, div {
     font-family: var(--font-primary);
 }
 
-/* Theme styles */
-:root {
-    --bg-primary: #111111;
-    --bg-secondary: #0a0a0a;
-    --bg-hover: #181818;
-    --text-primary: #ffffff;
-    --text-secondary: #d1d1d1;
-    --icon-color: #ffffff;
-    --border-color: #2a2a2a;
-}
-
-/* Navigation specific styles */
-#nav-menu {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    transition: all 0.3s ease;
-    width: 320px; /* Default width for larger screens */
-}
-
-.nav-item:hover {
-    background-color: var(--bg-hover);
-}
-
-/* Theme toggle styles */
-#theme-toggle, #mobile-theme-toggle {
-    transition: all 0.3s ease;
-    color: var(--text-primary);
-}
-
-#theme-toggle:hover, #mobile-theme-toggle:hover {
-    transform: rotate(45deg);
-}
-
-[data-theme="light"] #theme-toggle i,
-[data-theme="light"] #mobile-theme-toggle i {
-    transition: all 0.3s ease;
-    transform: rotate(180deg);
-}
-
 /* Mobile menu styles */
 @media (max-width: 1024px) {
     #nav-menu.active {
@@ -105,35 +66,11 @@ p, span, button, a, div {
     }
 } 
 
-/* Add this to your existing CSS */
-.nav-logo img {
-    transition: all 0.3s ease;
-}
-
-[data-theme="light"] .nav-logo img {
-    filter: brightness(0); /* This will make the logo black in light mode */
-} 
-
 /* Update the Mobile Controls styles */
 .lg\:hidden .bg-\[\#0C1521\] {
     background-color: var(--bg-secondary);
     transition: all 0.3s ease;
 }
-
-/* Mobile menu button styles */
-#mobile-menu-btn {
-    color: var(--text-primary);
-    transition: all 0.3s ease;
-}
-
-/* Update mobile theme toggle styles */
-[data-theme="light"] #mobile-theme-toggle {
-    color: var(--text-primary);
-}
-
-[data-theme="light"] .lg\:hidden .bg-\[\#0C1521\] {
-    background-color: var(--bg-secondary);
-} 
 
 /* Add typing effect styles */
 .txt {
@@ -187,26 +124,6 @@ p, span, button, a, div {
 #home p {
     color: var(--text-secondary);
     transition: color 0.3s ease;
-}
-
-/* Update hover colors in navigation */
-#mobile-theme-toggle, #theme-toggle {
-    color: var(--text-primary);
-}
-
-#mobile-theme-toggle:hover, #theme-toggle:hover {
-    color: #04d9ff;
-}
-
-/* Update any other orange color references */
-.nav-item:hover .nav-text,
-.nav-item:hover i {
-    color: #04d9ff;
-}
-
-/* Update hover state for button */
-.hover\:bg-\[#03c3e6\]:hover {
-    background-color: #03c3e6;
 }
 
 /* Add Roboto font class */
@@ -367,13 +284,6 @@ p, span, button, a, div {
     }
 }
 
-/* About section styles */
-#about {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.8s ease forwards;
-}
-
 /* About section responsive styles */
 @media (max-width: 1024px) {
     #about .container {
@@ -414,46 +324,6 @@ p, span, button, a, div {
     }
 }
 
-/* Skill bar animations */
-@keyframes skillFill {
-    from { width: 0; }
-    to { width: var(--skill-percentage); }
-}
-
-.skill-bar {
-    position: relative;
-    overflow: hidden;
-}
-
-.skill-bar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background-color: #04d9ff;
-    animation: skillFill 1.5s ease forwards;
-    width: 0;
-}
-
-/* Add hover effects for the about image container */
-.about-image-container {
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.about-image-container:hover {
-    transform: translateY(-5px);
-}
-
-.about-image-container img {
-    transition: all 0.3s ease;
-}
-
-.about-image-container:hover img {
-    box-shadow: 0 10px 30px rgba(4, 217, 255, 0.2);
-}
-
 /* Add smooth scroll behavior */
 html {
     scroll-behavior: smooth;
@@ -462,14 +332,6 @@ html {
 /* About section theme styles */
 .about-section {
     background-color: #141313;
-}
-
-/* Update text colors for light mode */
-[data-theme="light"] #about h2,
-[data-theme="light"] #about h3,
-[data-theme="light"] #about p,
-[data-theme="light"] #about span {
-    color: #5e5b5b;
 }
 
 /* Modern About section styles */
@@ -490,40 +352,12 @@ html {
     pointer-events: none;
 }
 
-/* Skill progress animation */
-.skill-progress {
-    transform: none;
-    animation: none;
-}
-
-/* Card hover effects */
-.skill-item {
-    /* Keep transition only for the progress bar animation */
-    transition: transform 0.3s ease;
-}
-
-
-
-/* Light mode adjustments */
-[data-theme="light"] .about-section::before {
-    background: radial-gradient(circle at center, rgba(4, 217, 255, 0.05) 0%, transparent 70%);
-}
-
-[data-theme="light"] .bg-black\/20 {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .about-section::before {
         width: 150%;
         height: 150%;
     }
-}
-
-/* Keep the dark mode specific styles for cards */
-.bg-black\/20 {
-    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Add these fade-in animation classes */
@@ -626,11 +460,11 @@ html {
 /* Services section styles */
 #services .grid > div {
     transform: translateY(0);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
-
 #services .grid > div:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(4, 217, 255, 0.1);
 }
 
 /* Services section styles */
@@ -663,6 +497,14 @@ html {
 
 .service-card:nth-child(3).visible {
     animation-delay: 0.6s;
+}
+
+#services .service-icon {
+    transition: transform 0.5s ease;
+}
+
+#services .grid > div:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .service-card::before {
@@ -699,25 +541,6 @@ html {
 
 .service-card:hover .service-icon::after {
     transform: scaleX(1);
-}
-
-/* Update existing service hover effects */
-#services .grid > div {
-    transform: translateY(0);
-    transition: all 0.5s ease;
-}
-
-#services .grid > div:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(4, 217, 255, 0.1);
-}
-
-#services .service-icon {
-    transition: transform 0.5s ease;
-}
-
-#services .grid > div:hover .service-icon {
-    transform: scale(1.1) rotate(5deg);
 }
 
 /* Add responsive padding for services section title */
@@ -761,20 +584,6 @@ html {
 .nav-item.active .nav-text,
 .nav-item.active i {
     color: #04d9ff;
-}
-
-/* Update hover styles to match active state */
-.nav-item:hover,
-.nav-item.active {
-    background-color: #181818;
-}
-
-.nav-item:hover .nav-text,
-.nav-item:hover i,
-.nav-item.active .nav-text,
-.nav-item.active i {
-    color: #04d9ff;
-    transform: scale(1.05);
 }
 
 /* Profile Popup Styles */

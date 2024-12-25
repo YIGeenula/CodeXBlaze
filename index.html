@@ -248,6 +248,68 @@
         </div>
     </div>
 
+    <!-- Profile Card Popup -->
+    <div id="profilePopup" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50">
+        <!-- Background with gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#04d9ff]/20 to-[#0C1521]/40 backdrop-blur-md"></div>
+        
+        <!-- Card Container -->
+        <div class="relative bg-[#0a0a0a] rounded-3xl p-8 max-w-md w-full mx-4 fade-in-up shadow-2xl border border-[#04d9ff]/30 z-10 hover:border-[#04d9ff] transition-all duration-500 animate-border">
+            <!-- White Card Content -->
+            <div class="relative -mt-20">
+                <!-- Close Button -->
+                <button onclick="closeProfilePopup()" class="absolute top-24 right-4 text-[#04d9ff] hover:text-white transition-colors z-20">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                
+                <!-- Profile Content -->
+                <div class="text-center">
+                    <!-- Profile Image -->
+                    <div class="mb-6">
+                        <img src="images/Pcard-img.png" alt="Profile" 
+                            class="w-48 h-48 object-cover rounded-full mx-auto shadow-xl 
+                            border-4 border-[#04d9ff]/50 hover:border-[#04d9ff] transition-colors">
+                    </div>
+                    
+                    <!-- Name -->
+                    <h3 class="text-3xl font-bold mb-2 text-[#04d9ff]">Yasiru Isum Geenula</h3>
+                    
+                    <!-- Description -->
+                    <p class="text-white/90 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
+                        "Hi, I'm Geenula, a passionate web developer specializing in frontend development and UI/UX design. I create visually stunning and user-friendly websites that blend creativity with functionality!".
+                        You can contact me by clicking the social links below.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex justify-center gap-4 mb-8">
+                        <a href="https://wa.me/94712696251" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
+                            <img src="images/Whatsapp-Logo.png"  alt="Whatsapp" class="w-8 h-8">
+                        </a>
+                        <a href="https://www.facebook.com/geenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
+                            <img src="images/Facebook-Logo.png" alt="Facebook" class="w-8 h-8">
+                        </a>
+                        <a href="https://www.fiverr.com/yigeenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
+                            <img src="images/Fiverr-Logo.png" alt="Fiverr" class="w-8 h-8">
+                        </a>
+                        <a href="https://www.behance.net/yigeenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
+                            <img src="images/Behance-Logo.png" alt="Behance" class="w-8 h-8">
+                        </a>
+                    </div>
+                    
+                    <!-- Contact Me Button -->
+                    <button onclick="window.location.href='mailto:yigeenuuss425@gmail.com'" 
+                        class="px-8 py-3 rounded-xl bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] 
+                        text-white font-semibold hover:shadow-lg hover:shadow-[#04d9ff]/20 
+                        transition-all duration-300 transform hover:-translate-y-1 
+                        flex items-center justify-center gap-2 mx-auto">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Services Section -->
     <div id="services" class="lg:ml-80 p-4 sm:p-6 md:p-8 min-h-screen flex items-center justify-center">
         <div class="container mx-auto max-w-6xl px-4 sm:px-6">
@@ -347,68 +409,6 @@
                             <span>Speed Optimization</span>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Profile Card Popup -->
-    <div id="profilePopup" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50">
-        <!-- Background with gradient -->
-        <div class="absolute inset-0 bg-gradient-to-br from-[#04d9ff]/20 to-[#0C1521]/40 backdrop-blur-md"></div>
-        
-        <!-- Card Container -->
-        <div class="relative bg-[#0a0a0a] rounded-3xl p-8 max-w-md w-full mx-4 fade-in-up shadow-2xl border border-[#04d9ff]/30 z-10 hover:border-[#04d9ff] transition-all duration-500 animate-border">
-            <!-- White Card Content -->
-            <div class="relative -mt-20">
-                <!-- Close Button -->
-                <button onclick="closeProfilePopup()" class="absolute top-24 right-4 text-[#04d9ff] hover:text-white transition-colors z-20">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-                
-                <!-- Profile Content -->
-                <div class="text-center">
-                    <!-- Profile Image -->
-                    <div class="mb-6">
-                        <img src="images/Pcard-img.png" alt="Profile" 
-                            class="w-48 h-48 object-cover rounded-full mx-auto shadow-xl 
-                            border-4 border-[#04d9ff]/50 hover:border-[#04d9ff] transition-colors">
-                    </div>
-                    
-                    <!-- Name -->
-                    <h3 class="text-3xl font-bold mb-2 text-[#04d9ff]">Yasiru Isum Geenula</h3>
-                    
-                    <!-- Description -->
-                    <p class="text-white/90 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
-                        "Hi, I'm Geenula, a passionate web developer specializing in frontend development and UI/UX design. I create visually stunning and user-friendly websites that blend creativity with functionality!".
-                        You can contact me by clicking the social links below.
-                    </p>
-                    
-                    <!-- Social Links -->
-                    <div class="flex justify-center gap-4 mb-8">
-                        <a href="https://wa.me/94712696251" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
-                            <img src="images/Whatsapp-Logo.png"  alt="Whatsapp" class="w-8 h-8">
-                        </a>
-                        <a href="https://www.facebook.com/geenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
-                            <img src="images/Facebook-Logo.png" alt="Facebook" class="w-8 h-8">
-                        </a>
-                        <a href="https://www.fiverr.com/yigeenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
-                            <img src="images/Fiverr-Logo.png" alt="Fiverr" class="w-8 h-8">
-                        </a>
-                        <a href="https://www.behance.net/yigeenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
-                            <img src="images/Behance-Logo.png" alt="Behance" class="w-8 h-8">
-                        </a>
-                    </div>
-                    
-                    <!-- Contact Me Button -->
-                    <button onclick="window.location.href='mailto:yigeenuuss425@gmail.com'" 
-                        class="px-8 py-3 rounded-xl bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] 
-                        text-white font-semibold hover:shadow-lg hover:shadow-[#04d9ff]/20 
-                        transition-all duration-300 transform hover:-translate-y-1 
-                        flex items-center justify-center gap-2 mx-auto">
-                        <i class="fas fa-envelope"></i>
-                        Contact Me
-                    </button>
                 </div>
             </div>
         </div>

@@ -246,6 +246,39 @@ document.addEventListener('DOMContentLoaded', function() {
     updateAvailabilityStatus();
 });
 
+// Add these functions for the profile popup
+function openProfilePopup() {
+    const popup = document.getElementById('profilePopup');
+    document.body.style.overflow = 'hidden';
+    popup.style.display = 'flex';
+    // Trigger reflow
+    popup.offsetHeight;
+    popup.classList.add('show');
+}
+
+function closeProfilePopup() {
+    const popup = document.getElementById('profilePopup');
+    popup.classList.add('closing');
+    popup.classList.remove('show');
+    
+    // Wait for animation to complete before hiding
+    setTimeout(() => {
+        popup.classList.remove('closing');
+        popup.style.display = 'none';
+        document.body.style.overflow = '';
+    }, 300);
+}
+
+// Close popup when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('profilePopup');
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            closeProfilePopup();
+        }
+    });
+});
+
 // Add this function to handle active navigation
 document.addEventListener('DOMContentLoaded', function() {
     // Get all sections that have an ID defined
@@ -300,38 +333,6 @@ document.addEventListener('DOMContentLoaded', function() {
     makeNavActive();
 });
 
-// Add these functions for the profile popup
-function openProfilePopup() {
-    const popup = document.getElementById('profilePopup');
-    document.body.style.overflow = 'hidden';
-    popup.style.display = 'flex';
-    // Trigger reflow
-    popup.offsetHeight;
-    popup.classList.add('show');
-}
-
-function closeProfilePopup() {
-    const popup = document.getElementById('profilePopup');
-    popup.classList.add('closing');
-    popup.classList.remove('show');
-    
-    // Wait for animation to complete before hiding
-    setTimeout(() => {
-        popup.classList.remove('closing');
-        popup.style.display = 'none';
-        document.body.style.overflow = '';
-    }, 300);
-}
-
-// Close popup when clicking outside
-document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById('profilePopup');
-    popup.addEventListener('click', function(e) {
-        if (e.target === popup) {
-            closeProfilePopup();
-        }
-    });
-});
 
 
 
