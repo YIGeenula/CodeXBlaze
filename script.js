@@ -109,7 +109,43 @@ function init() {
 // Add this function for smooth scrolling to about section
 function scrollToAbout() {
     const aboutSection = document.getElementById('about');
-    aboutSection.scrollIntoView({ behavior: 'smooth' });
+    const mobileHeader = document.querySelector('.lg\\:hidden');
+    const mobileHeaderHeight = mobileHeader ? mobileHeader.offsetHeight : 0;
+    
+    // Calculate scroll position with offset for mobile header
+    const scrollPosition = aboutSection.offsetTop - mobileHeaderHeight;
+    
+    // Smooth scroll to position
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+    
+    // Close mobile menu if open
+    if (window.innerWidth < 1024) {
+        const navMenu = document.getElementById('nav-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        navMenu.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+    }
+}
+
+// Add this function for all navigation links
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const mobileHeader = document.querySelector('.lg\\:hidden');
+    const mobileHeaderHeight = mobileHeader ? mobileHeader.offsetHeight : 0;
+    
+    // Calculate scroll position with offset for mobile header
+    const scrollPosition = section.offsetTop - mobileHeaderHeight;
+    
+    // Smooth scroll to position
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
     
     // Close mobile menu if open
     if (window.innerWidth < 1024) {
@@ -199,6 +235,83 @@ function updateAvailabilityStatus() {
 // Call this when the DOM loads
 document.addEventListener('DOMContentLoaded', function() {
     updateAvailabilityStatus();
+});
+
+// Add this function to handle active navigation
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all sections that have an ID defined
+    const sections = document.querySelectorAll("section[id], div[id]");
+    
+    // Get all nav items
+    const navItems = document.querySelectorAll(".nav-item");
+    
+    // Add active class to nav items
+    function makeNavActive() {
+        let current = '';
+        
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 100; // Add offset for better trigger point
+            const sectionHeight = section.clientHeight;
+            const scrollPosition = window.scrollY;
+            
+            // Check if the section is currently in view
+            if (scrollPosition >= sectionTop && 
+                scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        // Remove active class from all items first
+        navItems.forEach((item) => {
+            item.classList.remove('active');
+        });
+
+        // Add active class to current section's nav item
+        if (current) {
+            const activeItem = document.querySelector(`.nav-item[href="#${current}"]`);
+            if (activeItem) {
+                activeItem.classList.add('active');
+            }
+        }
+    }
+
+    // Add scroll event listener with throttling
+    let isScrolling;
+    window.addEventListener('scroll', () => {
+        // Clear the timeout throughout the scroll
+        window.clearTimeout(isScrolling);
+
+        // Set a timeout to run after scrolling ends
+        isScrolling = setTimeout(() => {
+            makeNavActive();
+        }, 50);
+    });
+    
+    // Call once on load
+    makeNavActive();
+});
+
+// Add these functions for the profile popup
+function openProfilePopup() {
+    const popup = document.getElementById('profilePopup');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    popup.classList.add('show');
+}
+
+function closeProfilePopup() {
+    const popup = document.getElementById('profilePopup');
+    document.body.style.overflow = ''; // Restore scrolling
+    popup.classList.remove('show');
+}
+
+// Close popup when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('profilePopup');
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            closeProfilePopup();
+        }
+    });
 });
 
 

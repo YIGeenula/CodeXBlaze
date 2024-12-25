@@ -19,10 +19,6 @@
                 <button id="mobile-menu-btn" class="text-white">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
-                
-                <button id="mobile-theme-toggle" class="text-white hover:text-orange-500 transition-colors">
-                    <i class="fas fa-sun text-2xl"></i>
-                </button>
             </div>
         </div>
     </div>
@@ -39,12 +35,12 @@
                 </h1>
             </div>
 
-            <a href="#home" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+            <a href="#home" onclick="scrollToSection('home'); return false;" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
                 <i class="fas fa-home w-8 text-xl text-center"></i>
                 <span class="nav-text text-lg flex-1">Home</span>
             </a>
             
-            <a href="#about" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+            <a href="#about" onclick="scrollToSection('about'); return false;" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
                 <i class="fas fa-user w-8 text-xl text-center"></i>
                 <span class="nav-text text-lg flex-1">About</span>
             </a>
@@ -139,7 +135,10 @@
                         <div class="space-y-6">
                             <div class="skill-item" data-index="0">
                                 <div class="flex justify-between mb-2">
-                                    <span class="font-medium text-sm font-semibold">HTML/CSS</span>
+                                    <span class="font-medium text-sm font-semibold flex items-center gap-2">
+                                        <i class="fab fa-html5 text-[#04d9ff]"></i>
+                                        HTML/CSS
+                                    </span>
                                     <span class="text-[#04d9ff] text-sm font-semibold">95%</span>
                                 </div>
                                 <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
@@ -149,7 +148,10 @@
 
                             <div class="skill-item" data-index="1">
                                 <div class="flex justify-between mb-2">
-                                    <span class="font-medium text-sm font-semibold">JavaScript</span>
+                                    <span class="font-medium text-sm font-semibold flex items-center gap-2">
+                                        <i class="fab fa-js text-[#04d9ff]"></i>
+                                        JavaScript
+                                    </span>
                                     <span class="text-[#04d9ff] text-sm font-semibold">90%</span>
                                 </div>
                                 <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
@@ -159,7 +161,10 @@
 
                             <div class="skill-item" data-index="2">
                                 <div class="flex justify-between mb-2">
-                                    <span class="font-medium text-sm font-semibold">WordPress</span>
+                                    <span class="font-medium text-sm font-semibold flex items-center gap-2">
+                                        <i class="fab fa-wordpress text-[#04d9ff]"></i>
+                                        WordPress
+                                    </span>
                                     <span class="text-[#04d9ff] text-sm font-semibold">95%</span>
                                 </div>
                                 <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
@@ -169,7 +174,10 @@
 
                             <div class="skill-item" data-index="3">
                                 <div class="flex justify-between mb-2">
-                                    <span class="font-medium text-sm font-semibold">UI/UX Design</span>
+                                    <span class="font-medium text-sm font-semibold flex items-center gap-2">
+                                        <i class="fas fa-pencil-ruler text-[#04d9ff]"></i>
+                                        UI/UX Design
+                                    </span>
                                     <span class="text-[#04d9ff] text-sm font-semibold">90%</span>
                                 </div>
                                 <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
@@ -227,7 +235,7 @@
                                     transform hover:-translate-y-1">
                                     Download CV
                                 </button>
-                                <button class="w-full sm:flex-1 py-3 px-6 rounded-xl border-2 border-[#04d9ff] text-[#04d9ff]
+                                <button onclick="openProfilePopup()" class="w-full sm:flex-1 py-3 px-6 rounded-xl border-2 border-[#04d9ff] text-[#04d9ff]
                                     font-semibold hover:bg-[#04d9ff] hover:text-white transition-all duration-300 
                                     transform hover:-translate-y-1">
                                     Hire Me
@@ -235,6 +243,172 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services" class="lg:ml-80 p-4 sm:p-6 md:p-8 min-h-screen flex items-center justify-center">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6">
+            <!-- Section Title -->
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold">
+                    <span class="text-white">My</span>
+                    <span class="text-[#04d9ff]">Services</span>
+                </h2>
+                <div class="w-32 h-1 bg-[#04d9ff] mx-auto mt-4 loading-bar"></div>
+                <p class="text-[var(--text-secondary)] mt-6 text-lg max-w-2xl mx-auto">
+                    Providing high-quality projects tailored to your needs
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- UI/UX Design -->
+                <div class="service-card bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-[#04d9ff]/10 
+                    group hover:border-[#04d9ff]/30 transition-all duration-300 fade-in-up delay-1
+                    relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#04d9ff]/5 rounded-bl-full -z-10"></div>
+                    <div class="text-[#04d9ff] mb-6 text-4xl service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 group-hover:text-[#04d9ff] transition-colors">UI/UX Design</h3>
+                    <p class="text-[var(--text-secondary)] mb-6">
+                        Creating intuitive and visually appealing user interfaces with a focus on user experience and modern design principles.
+                    </p>
+                    <ul class="text-[var(--text-secondary)] space-y-3">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#04d9ff]"></i>
+                            <span>User-Centered Design</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#04d9ff]"></i>
+                            <span>Interactive Prototypes</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#04d9ff]"></i>
+                            <span>Design Systems</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Frontend Development -->
+                <div class="service-card bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-[#04d9ff]/10 
+                    group hover:border-[#04d9ff]/30 transition-all duration-300 fade-in-up delay-2
+                    relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#04d9ff]/5 rounded-bl-full -z-10"></div>
+                    <div class="text-[#04d9ff] mb-6 text-4xl service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 group-hover:text-[#04d9ff] transition-colors">Frontend Development</h3>
+                    <p class="text-[var(--text-secondary)] mb-6">
+                        Creating engaging user interfaces with modern frameworks and libraries for optimal user experience.
+                    </p>
+                    <ul class="text-[var(--text-secondary)] space-y-3">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#04d9ff]"></i>
+                            <span>Modern Frameworks</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#04d9ff]"></i>
+                            <span>Interactive UI/UX</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#04d9ff]"></i>
+                            <span>Animation Effects</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- WordPress Development -->
+                <div class="service-card bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-[#04d9ff]/10 
+                    group hover:border-[#04d9ff]/30 transition-all duration-300 fade-in-up delay-3
+                    relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#04d9ff]/5 rounded-bl-full -z-10"></div>
+                    <div class="text-[#04d9ff] mb-6 text-4xl service-icon">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 group-hover:text-[#04d9ff] transition-colors">WordPress Development</h3>
+                    <p class="text-[var(--text-secondary)] mb-6">
+                        Custom WordPress solutions including theme development, plugin customization, and site optimization.
+                    </p>
+                    <ul class="text-[var(--text-secondary)] space-y-3">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#04d9ff]"></i>
+                            <span>Custom Themes</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#04d9ff]"></i>
+                            <span>E-commerce Integration</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#04d9ff]"></i>
+                            <span>Speed Optimization</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Card Popup -->
+    <div id="profilePopup" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50">
+        <!-- Background with gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#04d9ff]/20 to-[#0C1521]/40 backdrop-blur-md"></div>
+        
+        <!-- Card Container -->
+        <div class="relative bg-[#0a0a0a] rounded-3xl p-8 max-w-md w-full mx-4 fade-in-up shadow-2xl border border-[#04d9ff]/30 z-10 hover:border-[#04d9ff] transition-all duration-500 animate-border">
+            <!-- White Card Content -->
+            <div class="relative -mt-20">
+                <!-- Close Button -->
+                <button onclick="closeProfilePopup()" class="absolute top-24 right-4 text-[#04d9ff] hover:text-white transition-colors z-20">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                
+                <!-- Profile Content -->
+                <div class="text-center">
+                    <!-- Profile Image -->
+                    <div class="mb-6">
+                        <img src="images/Pcard-img.png" alt="Profile" 
+                            class="w-48 h-48 object-cover rounded-full mx-auto shadow-xl 
+                            border-4 border-[#04d9ff]/50 hover:border-[#04d9ff] transition-colors">
+                    </div>
+                    
+                    <!-- Name -->
+                    <h3 class="text-3xl font-bold mb-2 text-[#04d9ff]">Yasiru Isum Geenula</h3>
+                    
+                    <!-- Description -->
+                    <p class="text-white/90 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
+                        "Hi, I'm Geenula, a passionate web developer specializing in frontend development and UI/UX design. I create visually stunning and user-friendly websites that blend creativity with functionality!".
+                        You can contact me by clicking the social links below.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex justify-center gap-4 mb-8">
+                        <a href="https://wa.me/94712696251" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
+                            <img src="images/Whatsapp-Logo.png"  alt="Whatsapp" class="w-8 h-8">
+                        </a>
+                        <a href="https://www.facebook.com/geenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
+                            <img src="images/Facebook-Logo.png" alt="Facebook" class="w-8 h-8">
+                        </a>
+                        <a href="https://www.fiverr.com/yigeenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
+                            <img src="images/Fiverr-Logo.png" alt="Fiverr" class="w-8 h-8">
+                        </a>
+                        <a href="https://www.behance.net/yigeenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
+                            <img src="images/Behance-Logo.png" alt="Behance" class="w-8 h-8">
+                        </a>
+                    </div>
+                    
+                    <!-- Contact Me Button -->
+                    <button onclick="window.location.href='mailto:yigeenuuss425@gmail.com'" 
+                        class="px-8 py-3 rounded-xl bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] 
+                        text-white font-semibold hover:shadow-lg hover:shadow-[#04d9ff]/20 
+                        transition-all duration-300 transform hover:-translate-y-1 
+                        flex items-center justify-center gap-2 mx-auto">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </button>
                 </div>
             </div>
         </div>

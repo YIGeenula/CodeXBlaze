@@ -461,7 +461,7 @@ html {
 
 /* About section theme styles */
 .about-section {
-    background-color: #211f1f;
+    background-color: #141313;
 }
 
 /* Update text colors for light mode */
@@ -469,7 +469,7 @@ html {
 [data-theme="light"] #about h3,
 [data-theme="light"] #about p,
 [data-theme="light"] #about span {
-    color: #211f1f;
+    color: #5e5b5b;
 }
 
 /* Modern About section styles */
@@ -622,4 +622,175 @@ html {
     opacity: 1;
     transform: translateX(0);
 }
+
+/* Services section styles */
+#services .grid > div {
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+#services .grid > div:hover {
+    transform: translateY(-10px);
+}
+
+/* Services section styles */
+.service-card {
+    position: relative;
+    z-index: 1;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(4, 217, 255, 0.03) 0%, transparent 70%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.service-icon::after {
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2px;
+    background: #04d9ff;
+    bottom: -1rem;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon::after {
+    transform: scaleX(1);
+}
+
+/* Update existing service hover effects */
+#services .grid > div {
+    transform: translateY(0);
+    transition: all 0.5s ease;
+}
+
+#services .grid > div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(4, 217, 255, 0.1);
+}
+
+#services .service-icon {
+    transition: transform 0.5s ease;
+}
+
+#services .grid > div:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Add responsive padding for services section title */
+@media (max-width: 768px) {
+    #services .container {
+        padding-top: 4rem;
+    }
+    
+    #services .text-center.mb-16 {
+        margin-top: 2rem;
+    }
+    
+    #services h2,
+    #about h2 {
+        font-size: 2.5rem;
+    }
+    
+    #services .text-lg {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 640px) {
+    #services .container {
+        padding-top: 5rem;
+    }
+    
+    #services h2,
+    #about h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Active navigation styles */
+.nav-item.active {
+    background-color: var(--bg-hover);
+}
+
+.nav-item.active .nav-text,
+.nav-item.active i {
+    color: #04d9ff;
+}
+
+/* Update hover styles to match active state */
+.nav-item:hover,
+.nav-item.active {
+    background-color: #181818;
+}
+
+.nav-item:hover .nav-text,
+.nav-item:hover i,
+.nav-item.active .nav-text,
+.nav-item.active i {
+    color: #04d9ff;
+    transform: scale(1.05);
+}
+
+/* Profile Popup Styles */
+#profilePopup {
+    transition: opacity 0.3s ease;
+}
+
+#profilePopup.show {
+    display: flex;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+#profilePopup .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: profilePopupIn 0.5s ease forwards;
+}
+
+/* Update popup animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes profilePopupIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add card hover effect */
+#profilePopup .relative.bg-white {
+    transition: transform 0.3s ease;
+}
+
+#profilePopup .relative.bg-white:hover {
+    transform: translateY(-5px);
+}
+
 
