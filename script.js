@@ -198,6 +198,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, delay);
             }
         });
+
+        // Handle service card animations
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            if (!animatedElements.has(card) && isInViewport(card)) {
+                card.classList.add('visible');
+                animatedElements.add(card);
+            }
+        });
     }
 
     // Initial check for elements in viewport
@@ -294,14 +303,24 @@ document.addEventListener('DOMContentLoaded', function() {
 // Add these functions for the profile popup
 function openProfilePopup() {
     const popup = document.getElementById('profilePopup');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    document.body.style.overflow = 'hidden';
+    popup.style.display = 'flex';
+    // Trigger reflow
+    popup.offsetHeight;
     popup.classList.add('show');
 }
 
 function closeProfilePopup() {
     const popup = document.getElementById('profilePopup');
-    document.body.style.overflow = ''; // Restore scrolling
+    popup.classList.add('closing');
     popup.classList.remove('show');
+    
+    // Wait for animation to complete before hiding
+    setTimeout(() => {
+        popup.classList.remove('closing');
+        popup.style.display = 'none';
+        document.body.style.overflow = '';
+    }, 300);
 }
 
 // Close popup when clicking outside
