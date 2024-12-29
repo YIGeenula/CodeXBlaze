@@ -289,6 +289,9 @@ p, span, button, a, div {
     #about .container {
         padding: 2rem;
     }
+    #about .container {
+        padding-top: 2rem; /* Even more padding for mobile */
+    }
     
     .about-image-container {
         max-width: 600px;
@@ -543,7 +546,7 @@ html {
     transform: scaleX(1);
 }
 
-/* Add responsive padding for services section title */
+/* Add responsive padding for services section title */  
 @media (max-width: 768px) {
     #services .container {
         padding-top: 4rem;
@@ -564,10 +567,16 @@ html {
     }
 }
 
+@media (max-width: 1024px) {
+    #services .container {
+        padding-top: 4rem;
+    }
+}
+
 /* Additional adjustments for smaller screens */
 @media (max-width: 640px) {
     #services .container {
-        padding-top: 5rem;
+        padding-top: 2rem;
     }
     
     #services h2,
@@ -620,4 +629,66 @@ html {
     opacity: 0;
 }
 
+/* Project Cards Animation */
+.project-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                opacity 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Add different delays for each project card */
+.project-card:nth-child(1) {
+    transition-delay: 0.3s;
+}
+
+.project-card:nth-child(2) {
+    transition-delay: 0.6s;
+}
+
+.project-card:nth-child(3) {
+    transition-delay: 0.9s;
+}
+
+
+/* Project image hover effect */
+.project-card img {
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Add responsive padding for projects section title */
+@media (max-width: 768px) {
+    #projects .container .h2 {
+        padding-top: 6rem; /* Increased top padding */
+    }
+    
+    #projects .text-center.mb-16 {
+        margin-top: 2rem;
+    }
+    #projects h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 640px) {
+    #projects .container {
+        padding-top: 2rem; /* Even more padding for mobile */
+    }
+}
+
+@media (max-width: 1024px) {
+    #projects .container {
+        padding-top: 4rem; /* Even more padding for mobile */
+    }
+}
 

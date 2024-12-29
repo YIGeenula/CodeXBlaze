@@ -207,6 +207,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 animatedElements.add(card);
             }
         });
+
+        // Handle project card animations
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            if (!animatedElements.has(card) && isInViewport(card)) {
+                card.classList.add('visible');
+                animatedElements.add(card);
+            }
+        });
     }
 
     // Initial check for elements in viewport
