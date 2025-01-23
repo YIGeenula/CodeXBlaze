@@ -1,5 +1,7 @@
-/* Base font */
-:root {
+/* =========================
+   Base Styles & Variables
+   ========================= */
+   :root {
     --font-primary: 'Poppins', sans-serif;
     --bg-primary: #111111;
     --bg-secondary: #0a0a0a;
@@ -17,17 +19,13 @@ body {
     color: var(--text-primary);
 }
 
-/* Navigation styles */
-.nav-item:hover .nav-text {
-    color: #04d9ff ;
-    transform: scale(1.05);
+html {
+    scroll-behavior: smooth;
 }
 
-.nav-item:hover i {
-    color: #04d9ff ;
-    transform: scale(1.05);
-}
-
+/* =========================
+   Navigation Panel Styles
+   ========================= */
 .nav-item {
     transition: all 0.3s ease;
     border: none;
@@ -38,41 +36,69 @@ body {
     background-color: #0C1521;
 }
 
-/* Ensure all text elements use Poppins */
-h1, h2, h3, h4, h5, h6,
-p, span, button, a, div {
-    font-family: var(--font-primary);
+.nav-item:hover .nav-text,
+.nav-item:hover i {
+    color: #04d9ff;
+    transform: scale(1.05);
 }
 
-/* Update the typed text font */
-.txt, #typed-text {
-    font-family: var(--font-primary);
-}
-
-/* Update navigation items font */
 .nav-text {
     font-family: var(--font-primary);
 }
 
-/* Mobile menu styles */
+/* Navigation Active State */
+.nav-item.active {
+    background-color: var(--bg-hover);
+}
+
+.nav-item.active .nav-text,
+.nav-item.active i {
+    color: #04d9ff;
+}
+
+/* Navigation Media Queries */
 @media (max-width: 1024px) {
+    #nav-menu {
+        width: 280px;
+    }
     #nav-menu.active {
         transform: translateX(0);
     }
-
     .nav-item {
         width: 100%;
         text-align: left;
     }
-} 
-
-/* Update the Mobile Controls styles */
-.lg\:hidden .bg-\[\#0C1521\] {
-    background-color: var(--bg-secondary);
-    transition: all 0.3s ease;
 }
 
-/* Add typing effect styles */
+@media (max-width: 768px) {
+    #nav-menu {
+        width: 260px;
+    }
+    .nav-item {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 640px) {
+    #nav-menu {
+        width: 240px;
+    }
+    .nav-logo img {
+        width: 160px;
+    }
+    .nav-item {
+        padding: 0.75rem;
+    }
+    .nav-text {
+        font-size: 1rem;
+    }
+}
+
+/* =========================
+   Home Section Styles
+   ========================= */
+/* Typing Effect */
 .txt {
     border-right: 0.2rem solid #04d9ff;
     animation: blink 0.75s step-end infinite;
@@ -83,7 +109,6 @@ p, span, button, a, div {
     50% { border-color: #04d9ff }
 }
 
-/* Add smooth transitions for text elements */
 #home h1, 
 #home .typed-container, 
 #home p, 
@@ -284,61 +309,11 @@ p, span, button, a, div {
     }
 }
 
-/* About section responsive styles */
-@media (max-width: 1024px) {
-    #about .container {
-        padding: 2rem;
-    }
-    #about .container {
-        padding-top: 2rem; /* Even more padding for mobile */
-    }
-    
-    .about-image-container {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    #about h2 {
-        font-size: 2.5rem;
-    }
-    
-    .about-image-container img {
-        height: 400px;
-    }
-    
-    #about .grid-cols-2 {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 640px) {
-    #about h2 {
-        font-size: 2rem;
-    }
-    
-    .about-image-container img {
-        height: 300px;
-    }
-    
-    #about .personal-info {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Add smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
-}
-
-/* About section theme styles */
+/* =========================
+   About Section Styles
+   ========================= */
 .about-section {
     background-color: #141313;
-}
-
-/* Modern About section styles */
-.about-section {
     position: relative;
     overflow: hidden;
 }
@@ -355,7 +330,7 @@ html {
     pointer-events: none;
 }
 
-/* Responsive adjustments */
+/* About Section Media Queries */
 @media (max-width: 768px) {
     .about-section::before {
         width: 150%;
@@ -460,22 +435,17 @@ html {
     transform: translateX(0);
 }
 
-/* Services section styles */
-#services .grid > div {
-    transform: translateY(0);
-    transition: all 0.5s ease;
-}
-#services .grid > div:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(4, 217, 255, 0.1);
-}
-
-/* Services section styles */
+/* =========================
+   Services Section Styles
+   ========================= */
+/* Service Cards */
 .service-card {
     position: relative;
     z-index: 1;
     opacity: 0;
     transform: translateY(30px);
+    width: 100%;
+    max-width: 24rem;
 }
 
 .service-card.visible {
@@ -489,18 +459,8 @@ html {
     }
 }
 
-/* Add different delays for each card */
-.service-card:nth-child(1).visible {
-    animation-delay: 0.2s;
-}
-
-.service-card:nth-child(2).visible {
-    animation-delay: 0.4s;
-}
-
-.service-card:nth-child(3).visible {
-    animation-delay: 0.6s;
-}
+.service-card:nth-child(1).visible { animation-delay: 0.2s; }
+.service-card:nth-child(2).visible { animation-delay: 0.4s; }
 
 #services .service-icon {
     transition: transform 0.5s ease;
@@ -546,56 +506,221 @@ html {
     transform: scaleX(1);
 }
 
-/* Add responsive padding for services section title */  
-@media (max-width: 768px) {
-    #services .container {
-        padding-top: 4rem;
-    }
-    
-    #services .text-center.mb-16 {
-        margin-top: 2rem;
-    }
-    
-    #services h2,
-    #about h2 {
-        font-size: 2.5rem;
-    }
-    
-    #services .text-lg {
-        font-size: 1rem;
-        margin-top: 1rem;
-    }
+/* Services Animations and Hover Effects */
+#services .grid > div {
+    transform: translateY(0);
+    transition: all 0.5s ease;
 }
 
+#services .grid > div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(4, 217, 255, 0.1);
+}
+
+/* Services Media Queries */
 @media (max-width: 1024px) {
     #services .container {
         padding-top: 4rem;
     }
+    #services .grid {
+        max-width: 42rem;
+    }
 }
 
-/* Additional adjustments for smaller screens */
+@media (max-width: 768px) {
+    #services .container {
+        padding-top: 4rem;
+    }
+    #services .text-center.mb-16 {
+        margin-top: 2rem;
+    }
+    #services h2,
+    #about h2 {
+        font-size: 2.5rem;
+    }
+    #services .text-lg {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+    #services .grid {
+        max-width: 24rem;
+    }
+    .service-card {
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 640px) {
     #services .container {
         padding-top: 2rem;
     }
-    
     #services h2,
     #about h2 {
         font-size: 2rem;
     }
 }
 
-/* Active navigation styles */
-.nav-item.active {
-    background-color: var(--bg-hover);
+/* =========================
+   Projects Section Styles
+   ========================= */
+/* Project Cards */
+.project-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                opacity 1s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.nav-item.active .nav-text,
-.nav-item.active i {
-    color: #04d9ff;
+/* Project Card Animations */
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
-/* Profile Popup Styles */
+/* Project image hover effect */
+.project-card img {
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Projects Media Queries */
+@media (max-width: 768px) {
+    #projects .container .h2 {
+        padding-top: 6rem;
+    }
+}
+
+/* =========================
+   Contact Section Styles
+   ========================= */
+/* Contact Form Styles */
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    box-shadow: 0 0 0 2px rgba(4, 217, 255, 0.1);
+}
+
+#contact .fade-in-left,
+#contact .fade-in-right {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+#contact .fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#contact .fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Contact Card Layout */
+#contact .grid {
+    display: grid;
+    align-items: stretch;
+}
+
+#contact .fade-in-left,
+#contact .fade-in-right {
+    height: 100%;
+}
+
+#contact .fade-in-left > div,
+#contact .fade-in-right > form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contact Info Card */
+#contact .fade-in-left .space-y-6 {
+    flex: 1;
+}
+
+/* Social Links Section */
+#contact .fade-in-left .mt-8 {
+    margin-top: auto;
+    padding-top: 2rem;
+}
+
+/* Contact Form Layout */
+#contact .fade-in-right form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact .fade-in-right form > :last-child {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+/* Contact Media Queries */
+@media (max-width: 1024px) {
+    #contact .grid {
+        gap: 2rem;
+    }
+    #contact h2 {
+        font-size: 3.5rem; /* Slightly smaller for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    #contact h2 {
+        font-size: 2.5rem; /* Smaller for medium devices */
+    }
+    #contact .text-lg {
+        font-size: 1rem;
+    }
+    #contact .container {
+        padding-top: 4rem;
+    }
+}
+
+@media (max-width: 640px) {
+    #contact h2 {
+        font-size: 2rem; /* Even smaller for mobile */
+    }
+    #contact .container {
+        padding-top: 2rem;
+    }
+    #contact .text-lg {
+        font-size: 0.875rem;
+    }
+}
+
+/* =========================
+   Common Animation Classes
+   ========================= */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* =========================
+   Profile Popup Styles
+   ========================= */
 #profilePopup {
     opacity: 0;
     visibility: hidden;
@@ -629,48 +754,130 @@ html {
     opacity: 0;
 }
 
-/* Project Cards Animation */
-.project-card {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-    transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                opacity 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+/* Additional adjustments for smaller screens */
+@media (max-width: 640px) {
+    #projects .container {
+        padding-top: 2rem; /* Even more padding for mobile */
+    }
 }
 
-.project-card.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+@media (max-width: 1024px) {
+    #projects .container {
+        padding-top: 4rem; /* Even more padding for mobile */
+    }
 }
 
-/* Add different delays for each project card */
-.project-card:nth-child(1) {
-    transition-delay: 0.3s;
+/* Contact card hover effects */
+#contact .fade-in-left > div,
+#contact .fade-in-right > form {
+    transform: translateY(0);
+    transition: all 0.5s ease;
 }
 
-.project-card:nth-child(2) {
-    transition-delay: 0.6s;
+#contact .fade-in-left > div:hover,
+#contact .fade-in-right > form:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(4, 217, 255, 0.1);
+    border-color: rgba(4, 217, 255, 0.3);
 }
 
-.project-card:nth-child(3) {
-    transition-delay: 0.9s;
+/* Contact info icons hover effect */
+#contact .w-12.h-12 {
+    transition: all 0.3s ease;
 }
 
-
-/* Project image hover effect */
-.project-card img {
-    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.project-card:hover img {
+#contact .flex:hover .w-12.h-12 {
+    background-color: rgba(4, 217, 255, 0.2);
     transform: scale(1.1);
+}
+
+/* Input fields hover and focus effects */
+#contact input,
+#contact textarea {
+    transition: all 0.3s ease;
+}
+
+#contact input:hover,
+#contact textarea:hover {
+    border-color: rgba(4, 217, 255, 0.4);
+    background-color: rgba(24, 24, 24, 0.8);
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #04d9ff;
+    background-color: rgba(24, 24, 24, 0.9);
+    box-shadow: 0 0 0 3px rgba(4, 217, 255, 0.1);
+}
+
+/* Social links hover animation */
+#contact .social-links a {
+    transition: all 0.3s ease;
+}
+
+#contact .social-links a:hover {
+    transform: translateY(-5px);
+}
+
+/* Update contact section background */
+#contact {
+    background-color: var(--bg-primary); /* This matches the services section */
+}
+
+/* Modern About section styles */
+.about-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-section::before {
+        width: 150%;
+        height: 150%;
+    }
+}
+
+/* Update the typed text font */
+.txt, #typed-text {
+    font-family: var(--font-primary);
+}
+
+/* Update navigation items font */
+.nav-text {
+    font-family: var(--font-primary);
+}
+
+/* Mobile menu styles */
+@media (max-width: 1024px) {
+    #nav-menu.active {
+        transform: translateX(0);
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: left;
+    }
+} 
+
+/* Update the Mobile Controls styles */
+.lg\:hidden .bg-\[\#0C1521\] {
+    background-color: var(--bg-secondary);
+    transition: all 0.3s ease;
+}
+
+/* Update the stagger animations */
+#home h1 > div:nth-child(1) { animation-delay: 0.2s; }
+#home h1 > div:nth-child(2) { animation-delay: 0.4s; } 
+
+/* Update the description text color */
+#home p {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
 }
 
 /* Add responsive padding for projects section title */
 @media (max-width: 768px) {
-    #projects .container .h2 {
-        padding-top: 6rem; /* Increased top padding */
-    }
-    
     #projects .text-center.mb-16 {
         margin-top: 2rem;
     }
@@ -686,9 +893,171 @@ html {
     }
 }
 
-@media (max-width: 1024px) {
-    #projects .container {
-        padding-top: 4rem; /* Even more padding for mobile */
+/* =========================
+   Contact Form Animation
+   ========================= */
+.mail-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.mail-container {
+    position: relative;
+    width: 60px;
+    height: 40px;
+}
+
+.mail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: bounce 1s forwards;
+}
+
+.mail-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: #04d9ff;
+    border-radius: 5px;
+}
+
+.mail-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background: #04d9ff;
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+    animation: openMail 0.5s forwards;
+    transform-origin: top;
+}
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+}
+
+.checkmark svg {
+    width: 40px;
+    height: 40px;
+}
+
+.checkmark-path {
+    fill: none;
+    stroke: #04d9ff;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: drawCheck 0.5s 1s forwards;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(100px);
+        opacity: 0;
     }
 }
+
+@keyframes openMail {
+    100% {
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes drawCheck {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.success-message.visible .checkmark {
+    animation: showCheck 0.5s 0.5s forwards;
+}
+
+@keyframes showCheck {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   Footer Section Styles
+   ========================= */
+   footer {
+    position: relative;
+    z-index: 10;
+}
+
+footer a {
+    display: inline-block;
+}
+
+footer .fab {
+    font-size: 1.25rem;
+}
+
+footer ul li a,
+footer ul li span {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* Center all footer content */
+footer .grid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer ul {
+    width: 100%;
+}
+
+footer ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer Media Queries */
+@media (max-width: 768px) {
+    footer .grid {
+        gap: 2rem;
+    }
+    
+    footer h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 640px) {
+    footer {
+        text-align: center;
+    }
+    
+    footer .flex {
+        justify-content: center;
+    }
+    
+    footer ul li {
+        justify-content: center;
+    }
+}
+
 

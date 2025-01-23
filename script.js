@@ -1,4 +1,6 @@
-// Navigation functionality
+// =========================
+// Navigation & Mobile Menu
+// =========================
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navMenu = document.getElementById('nav-menu');
@@ -23,6 +25,132 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// =========================
+// Home Section - Typing Effect
+// =========================
+class TypeWriter {
+    constructor(txtElement, words, wait = 3000) {
+        this.txtElement = txtElement;
+        this.words = words;
+        this.txt = '';
+        this.wordIndex = 0;
+        this.wait = parseInt(wait, 10);
+        this.type();
+        this.isDeleting = false;
+    }
+
+    type() {
+        const current = this.wordIndex % this.words.length;
+        const fullTxt = this.words[current];
+
+        if(this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+        let typeSpeed = 100;
+
+        if(this.isDeleting) {
+            typeSpeed /= 2;
+        }
+
+        if(!this.isDeleting && this.txt === fullTxt) {
+            typeSpeed = this.wait;
+            this.isDeleting = true;
+        } else if(this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.wordIndex++;
+            typeSpeed = 500;
+        }
+
+        setTimeout(() => this.type(), typeSpeed);
+    }
+}
+
+// Init TypeWriter
+function init() {
+    const txtElement = document.getElementById('typed-text');
+    const words = ['Web Developer', 'Frontend Developer'];
+    const wait = 3000;
+    new TypeWriter(txtElement, words, wait);
+}
+
+// =========================
+// Smooth Scrolling Functions
+// =========================
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const mobileHeader = document.querySelector('.lg\\:hidden');
+    const mobileHeaderHeight = mobileHeader ? mobileHeader.offsetHeight : 0;
+    
+    const scrollPosition = section.offsetTop - mobileHeaderHeight;
+    
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+    
+    // Close mobile menu if open
+    if (window.innerWidth < 1024) {
+        const navMenu = document.getElementById('nav-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        navMenu.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+    }
+}
+
+function scrollToAbout() {
+    const aboutSection = document.getElementById('about');
+    const mobileHeader = document.querySelector('.lg\\:hidden');
+    const mobileHeaderHeight = mobileHeader ? mobileHeader.offsetHeight : 0;
+    
+    const scrollPosition = aboutSection.offsetTop - mobileHeaderHeight;
+    
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+    
+    // Close mobile menu if open
+    if (window.innerWidth < 1024) {
+        const navMenu = document.getElementById('nav-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        navMenu.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+    }
+}
+
+// =========================
+// Scroll Animation Handlers
+// =========================
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observe elements with animation classes
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .service-card, .project-card, .loading-bar')
+        .forEach(el => observer.observe(el));
+});
+
+// =========================
+// Event Listeners
+// =========================
+document.addEventListener('DOMContentLoaded', init);
+
 // Add this function for home scrolling
 function scrollToHome() {
     const homeSection = document.getElementById('home');
@@ -37,73 +165,6 @@ function scrollToHome() {
         icon.classList.add('fa-bars');
         icon.classList.remove('fa-times');
     }
-}
-
-// Add this typing effect code
-class TypeWriter {
-    constructor(txtElement, words, wait = 3000) {
-        this.txtElement = txtElement;
-        this.words = words;
-        this.txt = '';
-        this.wordIndex = 0;
-        this.wait = parseInt(wait, 10);
-        this.type();
-        this.isDeleting = false;
-    }
-
-    type() {
-        // Current index of word
-        const current = this.wordIndex % this.words.length;
-        // Get full text of current word
-        const fullTxt = this.words[current];
-
-        // Check if deleting
-        if(this.isDeleting) {
-            // Remove char
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            // Add char
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        // Insert txt into element
-        this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
-
-        // Initial Type Speed
-        let typeSpeed = 100;
-
-        if(this.isDeleting) {
-            typeSpeed /= 2;
-        }
-
-        // If word is complete
-        if(!this.isDeleting && this.txt === fullTxt) {
-            // Make pause at end
-            typeSpeed = this.wait;
-            // Set delete to true
-            this.isDeleting = true;
-        } else if(this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            // Move to next word
-            this.wordIndex++;
-            // Pause before start typing
-            typeSpeed = 500;
-        }
-
-        setTimeout(() => this.type(), typeSpeed);
-    }
-}
-
-// Init On DOM Load
-document.addEventListener('DOMContentLoaded', init);
-
-// Init App
-function init() {
-    const txtElement = document.getElementById('typed-text');
-    const words = ['Web Developer', 'Frontend Developer', 'UI/UX Designer'];
-    const wait = 3000;
-    // Init TypeWriter
-    new TypeWriter(txtElement, words, wait);
 }
 
 // Add this function for smooth scrolling to about section
@@ -239,9 +300,13 @@ function updateAvailabilityStatus() {
     const statusText = statusElement.childNodes[0].textContent.trim();
     const dots = statusElement.querySelectorAll('.status-dot, .status-dot-ping');
     
-    if (statusText === 'Unavailable') {
+    if (statusText === 'Unavailable', 'Currently Unavailable') {
         dots.forEach(dot => {
             dot.style.backgroundColor = 'rgb(239 68 68)'; // red-500
+        });
+    } else if (statusText === 'Busy') {
+        dots.forEach(dot => {
+            dot.style.backgroundColor = 'rgb(250 204 21)'; // yellow-500
         });
     } else {
         dots.forEach(dot => {
@@ -340,6 +405,68 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Call once on load
     makeNavActive();
+});
+
+// =========================
+// Contact Form Handler
+// =========================
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formStatus = document.getElementById('form-status');
+    const submitText = submitBtn.querySelector('.submit-text');
+    const loadingSpinner = submitBtn.querySelector('.loading-spinner');
+    const successMessage = formStatus.querySelector('.success-message');
+    const errorMessage = formStatus.querySelector('.error-message');
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Show loading state
+        submitText.classList.add('hidden');
+        loadingSpinner.classList.remove('hidden');
+        submitBtn.disabled = true;
+        formStatus.classList.add('hidden');
+        successMessage.classList.add('hidden');
+        errorMessage.classList.add('hidden');
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form)
+            });
+
+            const data = await response.json();
+
+            if (response.status === 200) {
+                // Show success message
+                formStatus.classList.remove('hidden');
+                successMessage.classList.remove('hidden');
+                successMessage.classList.add('visible');
+                form.reset(); // Clear the form
+                
+                // Reset animation after delay
+                setTimeout(() => {
+                    successMessage.classList.remove('visible');
+                    successMessage.classList.add('hidden');
+                    formStatus.classList.add('hidden');
+                }, 4000); // Hide after 4 seconds
+            } else {
+                // Show error message
+                throw new Error(data.message || 'Something went wrong');
+            }
+        } catch (error) {
+            // Show error message
+            formStatus.classList.remove('hidden');
+            errorMessage.classList.remove('hidden');
+            console.error('Error:', error);
+        } finally {
+            // Reset button state
+            submitText.classList.remove('hidden');
+            loadingSpinner.classList.add('hidden');
+            submitBtn.disabled = false;
+        }
+    });
 });
 
 
