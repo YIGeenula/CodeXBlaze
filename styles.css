@@ -59,14 +59,25 @@ html {
 /* Navigation Media Queries */
 @media (max-width: 1024px) {
     #nav-menu {
+        position: fixed;
+        top: 60px; /* Adjust based on your header height */
+        right: 0;
         width: 280px;
+        background-color: var(--bg-secondary);
+        padding: 1rem;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
     }
+
     #nav-menu.active {
         transform: translateX(0);
     }
+
     .nav-item {
         width: 100%;
         text-align: left;
+        padding: 0.75rem 1rem;
     }
 }
 
@@ -191,6 +202,31 @@ html {
 }
 
 /* Navigation responsive styles */
+/* Add these styles for the mobile menu button */
+#mobile-menu-btn {
+    display: none; /* Hidden by default on desktop */
+}
+
+@media (max-width: 1024px) {
+    #mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    #mobile-menu-btn i {
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    /* When menu is active, rotate or scale the icon */
+    #mobile-menu-btn i.fa-times {
+        transform: rotate(180deg);
+    }
+}
+
 #nav-menu {
     width: 320px; /* Default width for larger screens */
 }
@@ -1060,50 +1096,3 @@ footer ul li {
     }
 }
 
-/* =========================
-   Custom Scrollbar Styles
-   ========================= */
-/* For Webkit browsers (Chrome, Safari) */
-::-webkit-scrollbar {
-    width: 10px;
-    background: #0a0a0a;
-}
-
-::-webkit-scrollbar-track {
-    background: #141313;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #04d9ff, #03c3e6);
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, #03c3e6, #04d9ff);
-}
-
-/* For Firefox */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: #04d9ff #141313;
-}
-
-/* For Edge and IE */
-body {
-    -ms-overflow-style: none;
-    scrollbar-width: thin;
-    scrollbar-color: #04d9ff #141313;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera on specific elements if needed */
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox on specific elements if needed */
-.hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
