@@ -1361,3 +1361,73 @@ footer ul li {
         padding-right: 0.5rem;
     }
 }
+
+/* ========================= Development Notice ========================= */
+/* Development Notice Banner */
+.dev-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(4, 217, 255, 0.1), rgba(4, 217, 255, 0.2));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(4, 217, 255, 0.2);
+    padding: 0.5rem 1rem;
+    z-index: 50;
+    animation: slideUp 0.5s ease-out;
+}
+
+.dev-notice-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 0.875rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.dev-notice-icon {
+    color: #04d9ff;
+    animation: pulse 2s infinite;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Adjust footer padding to account for notice */
+footer {
+    margin-bottom: 2.5rem;
+}
+
+/* Mobile adjustments for notice */
+@media (max-width: 640px) {
+    .dev-notice-content {
+        font-size: 0.75rem;
+        padding: 0.25rem;
+    }
+}
+
+/* ========================= Development Notice ========================= */
