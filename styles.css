@@ -1267,6 +1267,49 @@ footer ul li {
         justify-content: center;
         gap: 0.5rem;
     }
+
+    /* Fix section widths */
+    #home, #about, #services, #portfolio, #contact {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-x: hidden;
+    }
+
+    /* Adjust container width */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 0;
+    }
+
+    /* Ensure grid items don't overflow */
+    .grid {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Adjust cards to prevent overflow */
+    .service-card,
+    .project-card,
+    .bg-black\/20 {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Fix any horizontal scrolling issues */
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* Adjust padding for mobile header */
+    .lg\:ml-80 {
+        margin-left: 0;
+    }
 }
 
 /* Small mobile devices */
@@ -1305,5 +1348,16 @@ footer ul li {
     /* Reduce section padding */
     section {
         padding: 2rem 1rem;
+    }
+
+    /* Further reduce padding */
+    #home, #about, #services, #portfolio, #contact {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 }
