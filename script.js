@@ -107,6 +107,47 @@ document.addEventListener('DOMContentLoaded', function() {
             splashScreen.classList.add('hidden');
         }, 800); // Match this with the CSS transition duration
     }, 500); // Delay before starting animation
+
+    // Disable right click
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable keyboard shortcuts and key combinations
+    document.addEventListener('keydown', function(e) {
+        // Disable F12
+        if (e.keyCode === 123) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
+        if (e.ctrlKey && 
+            (e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67) || 
+            e.keyCode === 85)) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Disable Ctrl+S
+        if (e.ctrlKey && e.keyCode === 83) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // Disable dragging images
+    document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable text selection
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+        return false;
+    });
 });
 
 // =========================
@@ -560,5 +601,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.disabled = false;
             }
         });
+    }
+});
+
+// Disable DevTools through console
+setInterval(function() {
+    debugger;
+}, 100);
+
+// Additional protection against view-source
+window.addEventListener('devtoolschange', function(e) {
+    if (e.detail.open) {
+        window.location.reload();
     }
 });
