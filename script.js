@@ -87,6 +87,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Get splash screen elements
+    const splashScreen = document.querySelector('.splash-screen');
+    const body = document.body;
+
+    // Prevent scroll during splash screen
+    body.classList.add('loading');
+
+    // Start animation after a short delay
+    setTimeout(() => {
+        splashScreen.classList.add('animate');
+        
+        // Remove loading class to enable scrolling
+        body.classList.remove('loading');
+
+        // Hide splash screen after animation completes
+        setTimeout(() => {
+            splashScreen.classList.add('hidden');
+        }, 800); // Match this with the CSS transition duration
+    }, 500); // Delay before starting animation
 });
 
 // =========================
