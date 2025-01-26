@@ -1059,3 +1059,51 @@ footer ul li {
         justify-content: center;
     }
 }
+
+/* =========================
+   Custom Scrollbar Styles
+   ========================= */
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 10px;
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-track {
+    background: #141313;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #04d9ff, #03c3e6);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #03c3e6, #04d9ff);
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #04d9ff #141313;
+}
+
+/* For Edge and IE */
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: #04d9ff #141313;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera on specific elements if needed */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox on specific elements if needed */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
