@@ -470,7 +470,92 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// =========================
+// Security Features
+// =========================
 
+// Disable right-click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    
+});
 
+// Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+document.addEventListener('keydown', function(e) {
+    // Disable F12
+    if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+    }
+
+    // Disable Ctrl+Shift+I and Ctrl+Shift+J (Developer Tools)
+    if ((e.ctrlKey && e.shiftKey && e.key === 'I') || 
+        (e.ctrlKey && e.shiftKey && e.key === 'J')) {
+        e.preventDefault();
+        return false;
+    }
+
+    // Disable Ctrl+U (View Source)
+    if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// Disable dragging of images
+document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+});
+
+// Additional protection for developer tools
+setInterval(function() {
+    debugger;
+}, 100);
+
+// =========================
+// Security Features
+// =========================
+
+// Disable right-click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    
+});
+
+// Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+document.addEventListener('keydown', function(e) {
+    // Disable F12
+    if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+    }
+
+    // Disable Ctrl+Shift+I and Ctrl+Shift+J (Developer Tools)
+    if ((e.ctrlKey && e.shiftKey && e.key === 'I') || 
+        (e.ctrlKey && e.shiftKey && e.key === 'J')) {
+        e.preventDefault();
+        return false;
+    }
+
+    // Disable Ctrl+U (View Source)
+    if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// Disable dragging of images
+document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+});
+
+// Additional protection for developer tools
+setInterval(function() {
+    debugger;
+}, 100);
 
  
