@@ -23,6 +23,70 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.classList.remove('fa-times');
         }
     });
+
+    // Mobile Menu Handler
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileNavItems = document.querySelectorAll('.mobile-nav .nav-item');
+    const closeBtn = document.querySelector('.mobile-nav .close-btn');
+
+    if (hamburger && mobileNav) {
+        hamburger.addEventListener('click', function() {
+            // Toggle menu
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            
+            // Toggle body scroll
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Add close button click handler
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Handle mobile nav item clicks
+        mobileNavItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the target section id from href
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    // Close mobile menu
+                    hamburger.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = '';
+
+                    // Scroll to section with offset for mobile header
+                    const mobileHeader = document.querySelector('.lg\\:hidden');
+                    const headerHeight = mobileHeader ? mobileHeader.offsetHeight : 0;
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop - headerHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && 
+                !mobileNav.contains(e.target) && 
+                mobileNav.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });
 
 // =========================
@@ -419,52 +483,62 @@ document.addEventListener('DOMContentLoaded', function() {
     const successMessage = formStatus.querySelector('.success-message');
     const errorMessage = formStatus.querySelector('.error-message');
 
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-        // Show loading state
-        submitText.classList.add('hidden');
-        loadingSpinner.classList.remove('hidden');
-        submitBtn.disabled = true;
-        formStatus.classList.add('hidden');
-        successMessage.classList.add('hidden');
-        errorMessage.classList.add('hidden');
+            // Show loading state
+            submitText.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+            submitBtn.disabled = true;
+            formStatus.classList.add('hidden');
+            successMessage.classList.add('hidden');
+            errorMessage.classList.add('hidden');
 
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form)
-            });
+            try {
+                // Create FormData object
+                const formData = new FormData(form);
 
-            const data = await response.json();
+                // Use fetch with proper error handling
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            if (response.status === 200) {
+                // Check if response is ok
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
                 // Show success message
                 formStatus.classList.remove('hidden');
                 successMessage.classList.remove('hidden');
                 successMessage.classList.add('visible');
                 form.reset(); // Clear the form
-                
+
                 // Reset animation after delay
                 setTimeout(() => {
                     successMessage.classList.remove('visible');
                     successMessage.classList.add('hidden');
                     formStatus.classList.add('hidden');
-                }, 4000); // Hide after 4 seconds
-            } else {
+                }, 4000);
+
+            } catch (error) {
+                console.error('Error:', error);
                 // Show error message
-                throw new Error(data.message || 'Something went wrong');
+                formStatus.classList.remove('hidden');
+                errorMessage.classList.remove('hidden');
+            } finally {
+                // Reset button state
+                submitText.classList.remove('hidden');
+                loadingSpinner.classList.add('hidden');
+                submitBtn.disabled = false;
             }
-        } catch (error) {
-            // Show error message
-            formStatus.classList.remove('hidden');
-            errorMessage.classList.remove('hidden');
-            console.error('Error:', error);
-        } finally {
-            // Reset button state
-            submitText.classList.remove('hidden');
-            loadingSpinner.classList.add('hidden');
-            submitBtn.disabled = false;
-        }
-    });
+        });
+    }
 });

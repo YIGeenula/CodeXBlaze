@@ -40,14 +40,50 @@
 <body>
     <!-- Mobile Controls -->
     <div class="lg:hidden fixed top-0 w-full z-50">
-        <div class="bg-[#0C1521] w-full py-3 px-4 shadow-lg">
-            <div class="flex justify-between items-center">
-                <button id="mobile-menu-btn" class="text-white">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+        <div class="bg-[#0C1521] w-full py-3 px-4 shadow-lg flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">
+                <img src="images/Navbar-Logo-02.png" alt="Logo" class="h-8">
+            </a>
+            <div class="hamburger" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </div>
+
+    <!-- Update the mobile navigation menu -->
+    <nav class="mobile-nav lg:hidden">
+        <!-- Add close button -->
+        <div class="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <a href="#home" class="nav-item flex items-center space-x-4 p-3">
+            <i class="fas fa-home w-8 text-xl text-center"></i>
+            <span class="nav-text text-lg">Home</span>
+        </a>
+        
+        <a href="#about" class="nav-item flex items-center space-x-4 p-3">
+            <i class="fas fa-user w-8 text-xl text-center"></i>
+            <span class="nav-text text-lg">About</span>
+        </a>
+        
+        <a href="#services" class="nav-item flex items-center space-x-4 p-3">
+            <i class="fas fa-cogs w-8 text-xl text-center"></i>
+            <span class="nav-text text-lg">Services</span>
+        </a>
+        
+        <a href="#projects" class="nav-item flex items-center space-x-4 p-3">
+            <i class="fas fa-briefcase w-8 text-xl text-center"></i>
+            <span class="nav-text text-lg">Portfolio</span>
+        </a>
+        
+        <a href="#contact" class="nav-item flex items-center space-x-4 p-3">
+            <i class="fas fa-envelope w-8 text-xl text-center"></i>
+            <span class="nav-text text-lg">Contact</span>
+        </a>
+    </nav>
 
     <!-- Navigation Panel -->
     <nav id="nav-menu" class="fixed left-0 top-0 h-full w-80 bg-[#0a0a0a] text-white p-4 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40 flex flex-col">

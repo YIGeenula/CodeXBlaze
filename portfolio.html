@@ -69,20 +69,24 @@
 
     <!-- Mobile Controls -->
     <div class="lg:hidden fixed top-0 w-full z-50">
-        <div class="bg-[#0C1521] w-full py-3 px-4 shadow-lg">
-            <div class="flex justify-between items-center">
-                <button id="mobile-menu-btn" class="text-white">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
+        <div class="bg-[#0C1521] w-full py-3 px-4 shadow-lg flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold">
+                <img src="images/Navbar-Logo-02.png" alt="Logo" class="h-8">
+            </a>
+            <!-- Back Button -->
+            <a href="index.html" class="back-btn flex items-center text-white hover:text-[#04d9ff] transition-all duration-300">
+                <i class="fas fa-arrow-left text-xl mr-2"></i>
+                <span class="text-sm font-medium">Back to Home</span>
+            </a>
         </div>
     </div>
 
     <!-- Portfolio Content -->
     <div class="lg:ml-80 p-4 sm:p-6 md:p-8 min-h-screen bg-[#141313]">
-        <div class="container mx-auto max-w-6xl px-4 sm:px-6 pt-20 lg:pt-8">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6">
             <!-- Section Title -->
-            <div class="text-center mb-16 fade-in-up">
+            <div class="text-center mb-16 fade-in-up portfolio-title">
                 <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold">
                     <span class="text-white">My</span>
                     <span class="text-[#04d9ff]">Portfolio</span>
