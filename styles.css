@@ -1645,3 +1645,92 @@ img {
     user-drag: none;
     pointer-events: none;
 }
+
+/* Update About Section responsive styles */
+@media screen and (min-width: 1024px) and (max-height: 800px) {
+    /* Adjust About section spacing for laptops */
+    #about {
+        padding: 4rem 2rem;
+        min-height: auto; /* Remove fixed height constraint */
+        height: auto;
+    }
+
+    #about .container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    /* Make the grid more compact */
+    #about .grid {
+        gap: 1.5rem;
+    }
+
+    /* Reduce some spacing */
+    #about .text-center.mb-16 {
+        margin-bottom: 2rem;
+    }
+
+    /* Adjust card padding */
+    #about .bg-black\/20.p-6 {
+        padding: 1.25rem;
+    }
+
+    /* Make skill bars more compact */
+    #about .skill-item {
+        margin-bottom: 0.75rem;
+    }
+
+    /* Adjust personal details spacing */
+    #about .space-y-4 {
+        margin-top: 0.5rem;
+    }
+
+    /* Make buttons smaller */
+    #about button,
+    #about a.bg-\[\#04d9ff\] {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Add specific adjustments for very small laptop heights */
+@media screen and (min-width: 1024px) and (max-height: 670px) {
+    #about {
+        padding: 3rem 2rem;
+    }
+
+    #about .container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* Further reduce section title spacing */
+    #about .text-center.mb-16 {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Make grid even more compact */
+    #about .grid {
+        gap: 1rem;
+    }
+
+    /* Reduce card padding further */
+    #about .bg-black\/20.p-6 {
+        padding: 1rem;
+    }
+
+    /* Adjust text sizes */
+    #about h2 {
+        font-size: 2.5rem;
+    }
+
+    #about h3 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    #about p {
+        font-size: 0.875rem;
+        line-height: 1.4;
+    }
+}
