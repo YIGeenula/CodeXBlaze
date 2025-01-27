@@ -1060,63 +1060,68 @@ footer ul li {
     }
 }
 
-/* Add these laptop-specific media queries */
+/* =========================
+   Responsive Media Queries
+   ========================= */
+
+/* Large Laptops and Desktops (1536px and down) */
+@media (min-width: 1024px) and (max-width: 1536px) {
+    /* Hero section adjustments */
+    .xl\:scale-125 {
+        transform: scale(1) !important;
+    }
+
+    #hero-gradient .grid {
+        gap: 2rem !important;
+    }
+
+    #hero-gradient img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+/* Small Laptops (1280px and down) */
+@media (min-width: 1024px) and (max-width: 1280px) {
+    #hero-gradient img {
+        max-width: 80%;
+    }
+}
+
+/* Laptops and Small Screens */
 @media screen and (min-width: 1024px) and (max-height: 800px) {
-    /* Adjust main sections height for smaller laptops */
+    /* Section heights */
     #home, #about, #services, #portfolio, #contact {
         min-height: 100vh;
         height: auto;
         padding: 2rem;
     }
 
-    /* Adjust text sizes for laptop screens */
-    h1.text-4xl {
-        font-size: 2.5rem;
-    }
+    /* Text sizes */
+    h1.text-4xl { font-size: 2.5rem; }
+    h2.text-4xl { font-size: 2.25rem; }
+    .text-3xl { font-size: 1.75rem; }
+    .text-2xl { font-size: 1.25rem; }
+    .text-xl { font-size: 1.125rem; }
 
-    h2.text-4xl {
-        font-size: 2.25rem;
-    }
+    /* Profile image */
+    .w-96 { width: 20rem; }
+    .h-\[28rem\] { height: 24rem; }
 
-    .text-3xl {
-        font-size: 1.75rem;
-    }
-
-    .text-2xl {
-        font-size: 1.25rem;
-    }
-
-    .text-xl {
-        font-size: 1.125rem;
-    }
-
-    /* Adjust profile image size */
-    .w-96 {
-        width: 20rem;
-    }
-
-    .h-\[28rem\] {
-        height: 24rem;
-    }
-
-    /* Adjust spacing */
+    /* Spacing */
     .space-y-6 {
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
 
-    /* Adjust container padding */
     .container {
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
 
-    /* Adjust grid gaps */
-    .gap-8 {
-        gap: 1.5rem;
-    }
+    .gap-8 { gap: 1.5rem; }
 
-    /* Make scrollable sections more compact */
+    /* Scrollable sections */
     #about .container, 
     #services .container,
     #portfolio .container {
@@ -1124,97 +1129,68 @@ footer ul li {
         padding: 1rem;
     }
 
-    /* Adjust service cards */
-    .bg-black\/20.p-8 {
-        padding: 1.5rem;
-    }
-
-    /* Adjust form spacing */
-    .form-container {
-        padding: 1.5rem;
-    }
-
-    input, textarea {
-        padding: 0.5rem 1rem;
-    }
-
-    /* Adjust footer spacing */
-    footer {
-        padding: 1.5rem 0;
-    }
+    /* Cards and forms */
+    .bg-black\/20.p-8 { padding: 1.5rem; }
+    .form-container { padding: 1.5rem; }
+    input, textarea { padding: 0.5rem 1rem; }
+    footer { padding: 1.5rem 0; }
 }
 
-/* Add specific adjustments for very small laptop heights */
+/* Very Small Laptops */
 @media screen and (min-width: 1024px) and (max-height: 670px) {
-    /* Further reduce spacing */
+    /* Spacing */
     .space-y-6 {
         margin-top: 0.75rem;
         margin-bottom: 0.75rem;
     }
 
-    /* Adjust profile image */
-    .w-96 {
-        width: 18rem;
-    }
+    /* Profile image */
+    .w-96 { width: 18rem; }
+    .h-\[28rem\] { height: 20rem; }
 
-    .h-\[28rem\] {
-        height: 20rem;
-    }
+    /* Text sizes */
+    h1.text-4xl { font-size: 2.25rem; }
+    h2.text-4xl { font-size: 2rem; }
+    .text-3xl { font-size: 1.5rem; }
 
-    /* Make text even more compact */
-    h1.text-4xl {
-        font-size: 2.25rem;
-    }
-
-    h2.text-4xl {
-        font-size: 2rem;
-    }
-
-    .text-3xl {
-        font-size: 1.5rem;
-    }
-
-    /* Adjust section padding */
+    /* Section padding */
     #home, #about, #services, #portfolio, #contact {
         padding: 1.5rem;
     }
 
-    /* Reduce grid gaps further */
-    .gap-8 {
-        gap: 1rem;
-    }
-
-    /* Make cards more compact */
-    .bg-black\/20.p-8 {
-        padding: 1.25rem;
-    }
+    .gap-8 { gap: 1rem; }
+    .bg-black\/20.p-8 { padding: 1.25rem; }
 }
 
-/* Adjust navigation for laptops */
-@media screen and (min-width: 1024px) {
-    #nav-menu {
-        width: 16rem; /* Slightly narrower nav for laptops */
-    }
-
-    .lg\:ml-80 {
-        margin-left: 16rem; /* Adjust main content margin to match nav width */
-    }
-
-    /* Adjust nav items spacing */
-    .nav-item {
-        padding: 0.75rem 1rem;
-    }
-
-    /* Make sure content doesn't overflow */
-    .main-content {
-        overflow-x: hidden;
-    }
-}
-
-/* Mobile and tablet responsive adjustments */
+/* Tablets (1024px and down) */
 @media (max-width: 1024px) {
+    /* Navigation */
+    #nav-menu {
+        width: 280px;
+    }
+    
+    #nav-menu.active {
+        transform: translateX(0);
+    }
+
+    /* Hidden review section */
+    #hiddenReview {
+        position: static !important;
+        opacity: 0;
+        height: 0;
+        margin-top: 0;
+        overflow: hidden;
+    }
+    
+    #hiddenReview.show {
+        opacity: 1;
+        height: auto;
+        margin-top: 2rem;
+    }
+
+    /* Home section */
     #home .container {
-        padding-top: 4rem; /* Account for mobile header */
+        padding-top: 4rem;
     }
     
     #home .text-4xl.lg\:text-5xl {
@@ -1226,131 +1202,104 @@ footer ul li {
     }
 }
 
+/* Tablets and Large Phones (768px and down) */
 @media (max-width: 768px) {
-    #home .container {
-        padding: 4rem 1rem 1rem 1rem;
+    /* Navigation */
+    #nav-menu {
+        width: 260px;
+    }
+
+    /* Reviews container */
+    .reviews-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Brand items */
+    .brand-item {
+        min-width: 120px;
+        height: 60px;
+    }
+
+    /* Footer */
+    footer .grid {
+        gap: 2rem;
     }
     
-    #home .text-4xl.lg\:text-5xl {
-        font-size: 1.75rem;
-    }
-    
-    #home .text-2xl.lg\:text-3xl {
+    footer h3 {
         font-size: 1.25rem;
     }
 
+    /* Grid layout */
     .grid {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
-
-    .container {
-        padding: 1rem;
-    }
-
-    /* Adjust project cards */
-    .project-card img {
-        height: 180px;
-    }
-
-    /* Center align footer content */
-    footer .grid {
-        text-align: center;
-    }
-    
-    footer .flex {
-        justify-content: center;
-    }
-
-    /* Stack social links on mobile */
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-
-    /* Fix section widths */
-    #home, #about, #services, #portfolio, #contact {
-        width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        overflow-x: hidden;
-    }
-
-    /* Adjust container width */
-    .container {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        margin: 0;
-    }
-
-    /* Ensure grid items don't overflow */
-    .grid {
-        width: 100%;
-        margin: 0;
-    }
-
-    /* Adjust cards to prevent overflow */
-    .service-card,
-    .project-card,
-    .bg-black\/20 {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    /* Fix any horizontal scrolling issues */
-    body {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    /* Adjust padding for mobile header */
-    .lg\:ml-80 {
-        margin-left: 0;
-    }
 }
 
-/* Small mobile devices */
+/* Mobile Devices (640px and down) */
 @media (max-width: 640px) {
-    h1 {
-        font-size: 1.75rem;
+    /* Navigation */
+    #nav-menu {
+        width: 240px;
     }
-
-    .text-3xl {
-        font-size: 1.5rem;
+    
+    .nav-logo img {
+        width: 160px;
     }
-
-    p {
+    
+    .nav-item {
+        padding: 0.75rem;
+    }
+    
+    .nav-text {
         font-size: 1rem;
     }
 
-    /* Adjust button sizes */
+    /* Reviews */
+    .reviews-container {
+        margin: 0;
+        padding: 0 1rem;
+    }
+
+    .review-slide .group {
+        padding: 1.5rem;
+    }
+
+    /* Development notice */
+    .dev-notice-content {
+        font-size: 0.75rem;
+        padding: 0.25rem;
+    }
+
+    /* Text sizes */
+    h1 { font-size: 1.75rem; }
+    .text-3xl { font-size: 1.5rem; }
+    p { font-size: 1rem; }
+
+    /* Buttons */
     button, .btn {
         padding: 0.5rem 1rem;
         font-size: 0.875rem;
     }
 
-    /* Make filter buttons more compact */
+    /* Filter buttons */
     .filter-btn {
         font-size: 0.75rem;
         padding: 0.5rem 0.75rem;
         margin: 0.25rem;
     }
 
-    /* Adjust form elements */
+    /* Form elements */
     input, textarea {
         padding: 0.5rem;
         font-size: 0.875rem;
     }
 
-    /* Reduce section padding */
+    /* Section padding */
     section {
         padding: 2rem 1rem;
     }
 
-    /* Further reduce padding */
     #home, #about, #services, #portfolio, #contact {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
@@ -1626,24 +1575,6 @@ body.loading {
         width: 200px;
         height: 50px;
     }
-}
-
-/* Add these to your styles.css file */
-* {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-}
-
-img {
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
-    pointer-events: none;
 }
 
 /* Update About Section responsive styles */
