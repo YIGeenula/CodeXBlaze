@@ -3,127 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Professional Frontend Developer & UI/UX Designer with over 2 years of experience. Specializing in responsive web design, WordPress development, and modern web applications.">
-    <meta name="keywords" content="frontend developer, web developer, UI/UX designer, WordPress developer, Sri Lanka, web design, responsive design, CodeXBlaze, ygcodeblaze">
-    <meta name="author" content="Yasiru Isum Geenula">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://codexblaze.netlify.app/">
-    <meta property="og:title" content="CodeXBlaze">
-    <meta property="og:description" content="Professional Frontend Developer & UI/UX Designer with over 2 years of experience. Specializing in responsive web design, WordPress development, and modern web applications.">
-    <meta property="og:image" content="https://your-website-url.com/images/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://codexblaze.netlify.app/">
-    <meta property="twitter:title" content="Yasiru Isum Geenula - Frontend Developer & UI/UX Designer">
-    <meta property="twitter:description" content="Professional Frontend Developer & UI/UX Designer with over 2 years of experience. Specializing in responsive web design, WordPress development, and modern web applications.">
-    <meta property="twitter:image" content="https://your-website-url.com/images/og-image.jpg">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/Favicon/FavIcon32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/Favicon/FavIcon16x16.png">
-
-    <!-- Update your title tag -->
     <title>CodeXBlaze</title>
-
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="images/FavIcon.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Add this right after the <body> tag -->
-    <div class="splash-screen">
-        <div class="splash-half left"></div>
-        <div class="splash-half right"></div>
-        <div class="splash-logo"></div>
-    </div>
-
-    <!-- Mobile Controls -->
+<body class="bg-gray-100">
+    <!-- Update the mobile controls with background bar -->
     <div class="lg:hidden fixed top-0 w-full z-50">
-        <div class="bg-[#0C1521] w-full py-3 px-4 shadow-lg flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold">
-                <img src="images/Navbar-Logo-02.png" alt="Logo" class="h-8">
-            </a>
-            <div class="hamburger" id="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
+        <!-- Background bar -->
+        <div class="bg-[#0A0A0A] w-full py-3 px-4 shadow-lg">
+            <div class="flex justify-between items-center">
+                <!-- Left side - Menu button -->
+                <button id="mobile-menu-btn" class="text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- Update the mobile navigation menu -->
-    <nav class="mobile-nav lg:hidden">
-        <!-- Add close button -->
-        <div class="close-btn">
-            <i class="fas fa-times"></i>
-        </div>
-        
-        <a href="#home" class="nav-item flex items-center space-x-4 p-3">
-            <i class="fas fa-home w-8 text-xl text-center"></i>
-            <span class="nav-text text-lg">Home</span>
-        </a>
-        
-        <a href="#about" class="nav-item flex items-center space-x-4 p-3">
-            <i class="fas fa-user w-8 text-xl text-center"></i>
-            <span class="nav-text text-lg">About</span>
-        </a>
-        
-        <a href="#services" class="nav-item flex items-center space-x-4 p-3">
-            <i class="fas fa-cogs w-8 text-xl text-center"></i>
-            <span class="nav-text text-lg">Services</span>
-        </a>
-        
-        <a href="#projects" class="nav-item flex items-center space-x-4 p-3">
-            <i class="fas fa-briefcase w-8 text-xl text-center"></i>
-            <span class="nav-text text-lg">Portfolio</span>
-        </a>
-        
-        <a href="#contact" class="nav-item flex items-center space-x-4 p-3">
-            <i class="fas fa-envelope w-8 text-xl text-center"></i>
-            <span class="nav-text text-lg">Contact</span>
-        </a>
-    </nav>
-
-    <!-- Navigation Panel -->
-    <nav id="nav-menu" class="fixed left-0 top-0 h-full w-80 bg-[#0a0a0a] text-white p-4 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40 flex flex-col">
     <!-- Update the nav element -->
-        <!-- Navigation Items Container - Now includes logo -->
+    <nav id="nav-menu" class="fixed left-0 top-0 h-full w-80 bg-[#0a0a0a] text-white p-4 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40 flex flex-col">
+        <!-- Navigation Items Container -->
         <div class="space-y-6 flex flex-col items-center flex-1 justify-center -mt-20">
-            <!-- Logo moved inside -->
+            <!-- Logo -->
             <div class="mb-8">
-                <a href="index.html" class="text-4xl font-bold nav-logo">
-                    <img src="images/Navbar-Logo-02.png" alt="Navbar-logo">  
+                <a href="#home" onclick="scrollToHome()">
+                    <img src="images/Navbar-Logo-02.png" alt="CodeXBlaze Logo" class="w-48 h-auto">
                 </a>
             </div>
 
-            <a href="#home" onclick="scrollToSection('home'); return false;" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+            <!-- Navigation Items -->
+            <a href="#home" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
                 <i class="fas fa-home w-8 text-xl text-center"></i>
                 <span class="nav-text text-lg flex-1">Home</span>
             </a>
             
-            <a href="#about" onclick="scrollToSection('about'); return false;" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+            <a href="#about" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
                 <i class="fas fa-user w-8 text-xl text-center"></i>
                 <span class="nav-text text-lg flex-1">About</span>
             </a>
-            
-            <a href="#services" onclick="scrollToSection('services'); return false;" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+
+            <a href="#services" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
                 <i class="fas fa-cogs w-8 text-xl text-center"></i>
                 <span class="nav-text text-lg flex-1">Services</span>
             </a>
             
-            <a href="#projects" onclick="scrollToSection('projects'); return false;" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
+            <a href="#portfolio" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
                 <i class="fas fa-briefcase w-8 text-xl text-center"></i>
                 <span class="nav-text text-lg flex-1">Portfolio</span>
             </a>
-            
+
             <a href="#contact" class="nav-item flex items-center justify-center w-48 space-x-4 p-3 rounded-lg hover:bg-[#181818] transition-all duration-200">
                 <i class="fas fa-envelope w-8 text-xl text-center"></i>
                 <span class="nav-text text-lg flex-1">Contact</span>
@@ -131,739 +63,563 @@
         </div>
     </nav>
 
-    <script src="script.js"></script>
-
-    <!-- Update the hero section container -->
-    <div id="home" class="lg:ml-80 p-4 sm:p-6 md:p-8 pt-20 lg:pt-8 main-content min-h-screen flex items-center justify-center">
+    <!-- Main Content -->
+    <div id="home" class="lg:ml-64 p-8 pt-20 lg:pt-8 main-content min-h-screen flex items-center justify-center">
         <!-- Content Container -->
-        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between max-w-6xl relative px-4 sm:px-6">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between max-w-6xl relative">
             <!-- Introduction Section -->
-            <div class="space-y-4 sm:space-y-6 max-w-2xl text-center lg:text-left mt-16 lg:mt-0">
-                <h1 class="text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight">
-                    <div class="text-[var(--text-primary)]">Hello, my name is</div>
-                    <div>
-                        <span class="font-roboto text-[#04d9ff] text-3xl sm:text-4xl lg:text-6xl font-bold tracking-wide block mt-2">
-                            Yasiru Isum Geenula
-                        </span>
-                    </div>
+            <div class="space-y-6 max-w-2xl text-center lg:text-left px-4 mt-24 lg:mt-0">
+                <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+                    Hello, my name is 
+                    <span class="text-[#00e5ff] block mt-2">Yasiru Isum Geenula</span>
                 </h1>
                 
-                <div class="text-xl sm:text-2xl lg:text-3xl font-bold typed-container">
-                    I'm a <span id="typed-text" class="text-[#04d9ff]"></span>
+                <div class="text-2xl lg:text-3xl font-bold">
+                    I'm a <span id="typed-text" class="text-[#00e5ff]"></span>
                 </div>
                 
-                <p class="text-base sm:text-lg lg:text-xl">
+                <p class="text-gray-300 text-lg lg:text-xl">
                     I'm a skilled frontend web developer with over 1 years of experience. My expertise includes designing and developing responsive, user-centric websites and many more.
                 </p>
 
-                <button onclick="scrollToAbout()" class="bg-[#04d9ff] text-white px-5 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-full hover:bg-[#03c3e6] transition-all duration-300 text-base sm:text-lg">
+                <button onclick="scrollToAbout()" class="bg-[#00e5ff] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full hover:bg-[#00c8ff] transition-all duration-300 text-lg">
                     More About Me
                 </button>
             </div>
 
-            <!-- Profile Image -->
-            <div class="relative mt-8 lg:mt-0 profile-image-container">
-                <img src="images/ProPic.jpg" alt="Profile" class="w-60 sm:w-80 lg:w-96 h-80 sm:h-96 lg:h-[28rem] object-cover rounded-lg" loading="lazy">
-                <div class="border-corner border-corner-top absolute -top-4 -right-4 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 border-t-4 border-r-4 border-[#04d9ff]"></div>
-                <div class="border-corner border-corner-bottom absolute -bottom-4 -left-4 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 border-b-4 border-l-4 border-[#04d9ff]"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <div id="about" class="lg:ml-80 p-4 sm:p-6 md:p-8 min-h-screen flex items-center justify-center about-section">
-        <div class="container mx-auto max-w-6xl px-4 sm:px-6">
-            <!-- Section Title -->
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold">
-                    <span class="text-white">About</span>
-                    <span class="text-[#04d9ff]">Me</span>
-                </h2>
-                <div class="w-32 h-1 bg-[#04d9ff] mx-auto mt-4 loading-bar"></div>
-            </div>
-
-            <!-- About Content -->
-            <div class="max-w-5xl mx-auto">
-                <!-- Introduction -->
-                <div class="text-center mb-16 fade-in-up delay-1">
-                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">
-                        <span class="text-white">Frontend Developer</span> & 
-                        <span class="text-[#04d9ff]">UI/UX Designer</span>
-                    </h3>
-                    
-                    <p class="text-[var(--text-secondary)] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-                        I'm a passionate frontend developer with over 1 years of experience crafting beautiful and functional web experiences. My approach combines clean code with creative design solutions to build engaging user interfaces.
-                    </p>
-                </div>
-
-                <!-- Skills & Info Grid -->
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Skills Section -->
-                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-[#04d9ff]/10 fade-in-left delay-2">
-                        <h4 class="text-xl font-semibold mb-6 text-[#04d9ff]">Technical Skills</h4>
-                        <div class="space-y-6">
-                            <div class="skill-item" data-index="0">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium text-sm font-semibold flex items-center gap-2">
-                                        <i class="fab fa-html5 text-[#04d9ff]"></i>
-                                        HTML/CSS
-                                    </span>
-                                    <span class="text-[#04d9ff] text-sm font-semibold">95%</span>
-                                </div>
-                                <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
-                                    <div class="h-full w-[95%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full loading-bar"></div>
-                                </div>
-                            </div>
-
-                            <div class="skill-item" data-index="1">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium text-sm font-semibold flex items-center gap-2">
-                                        <i class="fab fa-js text-[#04d9ff]"></i>
-                                        JavaScript
-                                    </span>
-                                    <span class="text-[#04d9ff] text-sm font-semibold">90%</span>
-                                </div>
-                                <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
-                                    <div class="h-full w-[90%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full loading-bar"></div>
-                                </div>
-                            </div>
-
-                            <div class="skill-item" data-index="2">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium text-sm font-semibold flex items-center gap-2">
-                                        <i class="fab fa-wordpress text-[#04d9ff]"></i>
-                                        WordPress
-                                    </span>
-                                    <span class="text-[#04d9ff] text-sm font-semibold">95%</span>
-                                </div>
-                                <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
-                                    <div class="h-full w-[95%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full loading-bar"></div>
-                                </div>
-                            </div>
-
-                            <div class="skill-item" data-index="3">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium text-sm font-semibold flex items-center gap-2">
-                                        <i class="fas fa-pencil-ruler text-[#04d9ff]"></i>
-                                        UI/UX Design
-                                    </span>
-                                    <span class="text-[#04d9ff] text-sm font-semibold">90%</span>
-                                </div>
-                                <div class="h-1 bg-gray-700/50 rounded-full overflow-hidden">
-                                    <div class="h-full w-[90%] bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] rounded-full loading-bar"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Personal Info -->
-                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-[#04d9ff]/10 fade-in-right delay-3">
-                        <h4 class="text-xl font-semibold mb-6 text-[#04d9ff]">Personal Details</h4>
-                        <div class="space-y-4">
-                            <!-- Personal details grid -->
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="space-y-4">
-                                    <div>
-                                        <p class="text-[#04d9ff] text-sm font-semibold">Name</p>
-                                        <p class="font-medium">YI Geenula</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-[#04d9ff] text-sm font-semibold">Age</p>
-                                        <p class="font-medium">22</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-[#04d9ff] text-sm font-semibold">Location</p>
-                                        <p class="font-medium">Sri Lanka</p>
-                                    </div>
-                                </div>
-                                <div class="space-y-4">
-                                    <div>
-                                        <p class="text-[#04d9ff] text-sm font-semibold">Experience</p>
-                                        <p class="font-medium">1+ Years</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-[#04d9ff] text-sm font-semibold">Freelance</p>
-                                        <p class="font-medium flex items-center availability-status">
-                                            Currently Unavailable
-                                            <span class="ml-2 inline-flex relative">
-                                                <span class="w-2 h-2 rounded-full status-dot"></span>
-                                                <span class="w-2 h-2 rounded-full absolute inset-0 status-dot-ping"></span>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p class="text-[#04d9ff] text-sm font-semibold">Languages</p>
-                                        <p class="font-medium">English, Sinhala</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Button container with responsive classes -->
-                            <div class="flex flex-col sm:flex-row gap-4 mt-6">
-                                <a href="images/CV.pdf" 
-                                   download="Yasiru_Isum_CV.pdf"
-                                   class="bg-[#04d9ff] text-white px-5 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 
-                                          rounded-full hover:bg-[#03c3e6] transition-all duration-300 
-                                          text-base sm:text-lg inline-flex items-center gap-2">
-                                    <span>Download CV</span>
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <button onclick="openProfilePopup()" class="w-full sm:flex-1 py-3 px-6 rounded-xl border-2 border-[#04d9ff] text-[#04d9ff]
-                                    font-semibold hover:bg-[#04d9ff] hover:text-white transition-all duration-300 
-                                    transform hover:-translate-y-1">
-                                    Hire Me
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Profile Card Popup -->
-    <div id="profilePopup" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50">
-        <!-- Background with gradient -->
-        <div class="absolute inset-0 bg-gradient-to-br from-[#04d9ff]/20 to-[#0C1521]/40 backdrop-blur-md"></div>
-        
-        <!-- Card Container -->
-        <div class="relative bg-[#0a0a0a] rounded-3xl p-8 max-w-md w-full mx-4 fade-in-up shadow-2xl border border-[#04d9ff]/30 z-10 hover:border-[#04d9ff] transition-all duration-500 animate-border">
-            <!-- White Card Content -->
-            <div class="relative -mt-20">
-                <!-- Close Button -->
-                <button onclick="closeProfilePopup()" class="absolute top-24 right-4 text-[#04d9ff] hover:text-white transition-colors z-20">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
+            <!-- Profile Image - Visible on all devices -->
+            <div class="relative mt-8 lg:mt-0">
+                <img src="images/ProPic.jpg" alt="Profile" class="w-96 h-[28rem] object-cover rounded-lg border-2 border-[#00e5ff]" loading="lazy">
                 
-                <!-- Profile Content -->
-                <div class="text-center">
-                    <!-- Profile Image -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- About Me Section -->
+    <div id="about" class="lg:ml-64 p-8 main-content min-h-screen">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Section Title -->
+            <div class="mb-12 text-center">
+                <h2 class="text-5xl font-bold">
+                    About <span class="text-[#00e5ff]">Me</span>
+                </h2>
+                <div class="w-24 h-1 bg-[#00e5ff] mt-4 mx-auto"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold">
+                    Frontend Developer & <span class="text-[#00e5ff]">UI/UX Designer</span>
+                </h3>
+            </div>
+
+            <!-- Description -->
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <p class="text-gray-300 text-lg">
+                    I'm a passionate frontend developer with over 1 years of experience crafting beautiful 
+                    and functional web experiences. My approach combines clean code with creative 
+                    design solutions to build engaging user interfaces.
+                </p>
+            </div>
+
+            <!-- Skills and Details Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-0 sm:mx-0">
+                <!-- Technical Skills -->
+                <div class="bg-[#0E0E0E] p-8 rounded-none lg:rounded-2xl">
+                    <h4 class="text-2xl font-bold text-[#04D9FF] mb-6">Technical Skills</h4>
+                    
+                    <!-- HTML/CSS -->
                     <div class="mb-6">
-                        <img src="images/Pcard-img.png" alt="Profile" 
-                            class="w-48 h-48 object-cover rounded-full mx-auto shadow-xl 
-                            border-4 border-[#04d9ff]/50 hover:border-[#04d9ff] transition-colors">
+                        <div class="flex items-center space-x-4 mb-2">
+                            <div class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full">
+                                <i class="fas fa-code text-[#04D9FF]"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-white">HTML/CSS</span>
+                                    <span class="text-[#04D9FF]">95%</span>
+                                </div>
+                                <div class="w-full bg-[#0A0A0A] rounded-full h-2">
+                                    <div class="bg-[#04D9FF] h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- JavaScript -->
+                    <div class="mb-6">
+                        <div class="flex items-center space-x-4 mb-2">
+                            <div class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full">
+                                <i class="fab fa-js-square text-[#04D9FF]"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-white">JavaScript</span>
+                                    <span class="text-[#04D9FF]">90%</span>
+                                </div>
+                                <div class="w-full bg-[#0A0A0A] rounded-full h-2">
+                                    <div class="bg-[#04D9FF] h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WordPress -->
+                    <div class="mb-6">
+                        <div class="flex items-center space-x-4 mb-2">
+                            <div class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full">
+                                <i class="fab fa-wordpress text-[#04D9FF]"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-white">WordPress</span>
+                                    <span class="text-[#04D9FF]">95%</span>
+                                </div>
+                                <div class="w-full bg-[#0A0A0A] rounded-full h-2">
+                                    <div class="bg-[#04D9FF] h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UI/UX Design -->
+                    <div class="mb-6">
+                        <div class="flex items-center space-x-4 mb-2">
+                            <div class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full">
+                                <i class="fas fa-pencil-ruler text-[#04D9FF]"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-white">UI/UX Design</span>
+                                    <span class="text-[#04D9FF]">90%</span>
+                                </div>
+                                <div class="w-full bg-[#0A0A0A] rounded-full h-2">
+                                    <div class="bg-[#04D9FF] h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Details -->
+                <div class="bg-[#0E0E0E] p-8 rounded-none lg:rounded-2xl">
+                    <h4 class="text-2xl font-bold text-[#04D9FF] mb-6">Personal Details</h4>
                     
-                    <!-- Name -->
-                    <h3 class="text-3xl font-bold mb-2 text-[#04d9ff]">Yasiru Isum Geenula</h3>
-                    
-                    <!-- Description -->
-                    <p class="text-white/90 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
-                        "Hi, I'm Geenula, a passionate web developer specializing in frontend development and UI/UX design. I create visually stunning and user-friendly websites that blend creativity with functionality!".
-                        You can contact me by clicking the social links below.
-                    </p>
-                    
-                    <!-- Social Links -->
-                    <div class="flex justify-center gap-4 mb-8">
-                        <a href="https://wa.me/94712696251" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
-                            <img src="images/Whatsapp-Logo.png"  alt="Whatsapp" class="w-8 h-8">
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Left Column -->
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="text-[#04D9FF] mb-1">Name</h5>
+                                <p class="text-white">YI Geenula</p>
+                            </div>
+                            <div>
+                                <h5 class="text-[#04D9FF] mb-1">Age</h5>
+                                <p class="text-white">22</p>
+                            </div>
+                            <div>
+                                <h5 class="text-[#04D9FF] mb-1">Location</h5>
+                                <p class="text-white">Sri Lanka</p>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="text-[#04D9FF] mb-1">Experience</h5>
+                                <p class="text-white">1+ Years</p>
+                            </div>
+                            <div>
+                                <h5 class="text-[#04D9FF] mb-1">Freelance</h5>
+                                <p class="text-white flex items-center">
+                                    Currently Unavailable
+                                    <span class="w-2 h-2 bg-red-500 rounded-full ml-2"></span>
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="text-[#04D9FF] mb-1">Languages</h5>
+                                <p class="text-white">English, Sinhala</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex gap-4 mt-8">
+                        <a href="YI-CV.pdf" download class="bg-[#04D9FF] text-white px-6 py-3 rounded-lg hover:bg-[#04D9FF]/90 transition-all duration-300 text-center flex-1">
+                            Download CV <i class="fas fa-download ml-2"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/yigeenula/" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
-                            <img src="images/Linkedin-Logo.png" alt="Facebook" class="w-8 h-8">
-                        </a>
-                        <a href="https://www.fiverr.com/yigeenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
-                            <img src="images/Fiverr-Logo.png" alt="Fiverr" class="w-8 h-8">
-                        </a>
-                        <a href="https://www.behance.net/yigeenula" target="_blank" class="w-12 h-12 rounded-full bg-[#181818] flex items-center justify-center transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110 shadow-lg">
-                            <img src="images/Behance-Logo.png" alt="Behance" class="w-8 h-8">
+                        <a href="#contact" class="border-2 border-[#04D9FF] text-white px-6 py-3 rounded-lg hover:bg-[#04D9FF] transition-all duration-300 text-center flex-1">
+                            Hire Me
                         </a>
                     </div>
-                    
-                    <!-- Contact Me Button -->
-                    <button onclick="window.location.href='mailto:yigeenuuss425@gmail.com'" 
-                        class="px-8 py-3 rounded-xl bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] 
-                        text-white font-semibold hover:shadow-lg hover:shadow-[#04d9ff]/20 
-                        transition-all duration-300 transform hover:-translate-y-1 
-                        flex items-center justify-center gap-2 mx-auto">
-                        <i class="fas fa-envelope"></i>
-                        Contact Me
-                    </button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Services Section -->
-    <div id="services" class="lg:ml-80 p-4 sm:p-6 md:p-8 min-h-screen flex items-center justify-center">
-        <div class="container mx-auto max-w-6xl px-4 sm:px-6">
+    <div id="services" class="lg:ml-64 p-8 main-content min-h-screen">
+        <div class="container mx-auto max-w-6xl">
             <!-- Section Title -->
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold">
-                    <span class="text-white">My</span>
-                    <span class="text-[#04d9ff]">Services</span>
+            <div class="mb-12 text-center">
+                <h2 class="text-5xl font-bold">
+                    My <span class="text-[#04D9FF]">Services</span>
                 </h2>
-                <div class="w-32 h-1 bg-[#04d9ff] mx-auto mt-4 loading-bar"></div>
-                <p class="text-[var(--text-secondary)] mt-6 text-lg max-w-2xl mx-auto">
+                <div class="w-24 h-1 bg-[#04D9FF] mt-4 mx-auto"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="text-center mb-16">
+                <p class="text-gray-300 text-lg max-w-3xl mx-auto">
                     Providing high-quality projects tailored to your needs
                 </p>
             </div>
 
             <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center max-w-3xl mx-auto">
-                <!-- Frontend Development Card -->
-                <div class="service-card bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-[#04d9ff]/10 
-                    group hover:border-[#04d9ff]/30 transition-all duration-300
-                    relative overflow-hidden w-full max-w-md">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#04d9ff]/5 rounded-bl-full -z-10"></div>
-                    <div class="text-[#04d9ff] mb-6 text-4xl service-icon">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Frontend Development -->
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                    <div class="text-[#04D9FF] text-4xl mb-6">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4 group-hover:text-[#04d9ff] transition-colors">Frontend Development</h3>
-                    <p class="text-[var(--text-secondary)] mb-6">
-                        Creating engaging user interfaces with modern frameworks and libraries for optimal user experience.
+                    <h3 class="text-2xl font-bold mb-4">Frontend Development</h3>
+                    <p class="text-gray-300 mb-6">
+                        Creating engaging user interfaces with modern frameworks and 
+                        libraries for optimal user experience.
                     </p>
-                    <ul class="text-[var(--text-secondary)] space-y-3">
-                        <li class="flex items-center space-x-2">
-                            <i class="fas fa-check text-[#04d9ff]"></i>
-                            <span>Modern Frameworks</span>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
+                            Modern Frameworks
                         </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fas fa-check text-[#04d9ff]"></i>
-                            <span>Interactive UI/UX</span>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
+                            Interactive UI/UX
                         </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fas fa-check text-[#04d9ff]"></i>
-                            <span>Animation Effects</span>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
+                            Animation Effects
                         </li>
                     </ul>
                 </div>
 
-                <!-- WordPress Development Card -->
-                <div class="service-card bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-[#04d9ff]/10 
-                    group hover:border-[#04d9ff]/30 transition-all duration-300
-                    relative overflow-hidden w-full max-w-md">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#04d9ff]/5 rounded-bl-full -z-10"></div>
-                    <div class="text-[#04d9ff] mb-6 text-4xl service-icon">
+                <!-- WordPress Development -->
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                    <div class="text-[#04D9FF] text-4xl mb-6">
                         <i class="fab fa-wordpress"></i>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4 group-hover:text-[#04d9ff] transition-colors">WordPress Development</h3>
-                    <p class="text-[var(--text-secondary)] mb-6">
-                        Custom WordPress solutions including theme development, plugin customization, and site optimization.
+                    <h3 class="text-2xl font-bold mb-4">WordPress Development</h3>
+                    <p class="text-gray-300 mb-6">
+                        Custom WordPress solutions including theme development, plugin 
+                        customization, and site optimization.
                     </p>
-                    <ul class="text-[var(--text-secondary)] space-y-3">
-                        <li class="flex items-center space-x-2">
-                            <i class="fas fa-check text-[#04d9ff]"></i>
-                            <span>Custom Themes</span>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
+                            Custom Themes
                         </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fas fa-check text-[#04d9ff]"></i>
-                            <span>E-commerce Integration</span>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
+                            E-commerce Integration
                         </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fas fa-check text-[#04d9ff]"></i>
-                            <span>Speed Optimization</span>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-[#04D9FF] mr-3"></i>
+                            Speed Optimization
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Projects Section -->
-    <div id="projects" class="lg:ml-80 p-4 sm:p-6 md:p-8 min-h-screen flex items-center justify-center bg-[#141313]">
-        <div class="container mx-auto max-w-6xl px-4 sm:px-6">
+    
+    <!-- Portfolio Section -->
+    <div id="portfolio" class="lg:ml-64 p-8 main-content min-h-screen">
+        <div class="container mx-auto max-w-6xl">
             <!-- Section Title -->
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold">
-                    <span class="text-white">My</span>
-                    <span class="text-[#04d9ff]">Projects</span>
+            <div class="mb-12 text-center">
+                <h2 class="text-5xl font-bold">
+                    My <span class="text-[#00e5ff]">Projects</span>
                 </h2>
-                <div class="w-32 h-1 bg-[#04d9ff] mx-auto mt-4 loading-bar"></div>
-                <p class="text-[var(--text-secondary)] mt-6 text-lg max-w-2xl mx-auto">
+                <div class="w-24 h-1 bg-[#00e5ff] mt-4 mx-auto"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="text-center mb-16">
+                <p class="text-gray-300 text-lg max-w-3xl mx-auto">
                     Showcasing my creative work and technical expertise
                 </p>
             </div>
 
             <!-- Recent Projects Section -->
             <div class="mb-16">
-                <h3 class="text-2xl sm:text-3xl font-bold mb-8 fade-in-up delay-1">
-                    <span class="text-white">Recent</span>
-                    <span class="text-[#04d9ff]">Projects</span>
+                <h3 class="text-3xl font-bold mb-8">
+                    Recent <span class="text-[#00e5ff]">Projects</span>
                 </h3>
 
                 <!-- Projects Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="project-card bg-black/20 backdrop-blur-sm rounded-2xl border border-[#04d9ff]/10 
-                        group hover:border-[#04d9ff]/30 transition-all duration-300 overflow-hidden fade-in-up delay-1">
+                    <!-- TeckyBuilds Project -->
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group">
                         <div class="relative overflow-hidden">
-                            <!-- Project Image -->
-                            <img src="images/Project-imgs/proj-1.png" alt="Project 1" 
-                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                            <!-- Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 
-                                flex items-end justify-between p-4">
-                                <div>
-                                    <h4 class="text-white font-semibold">E-Commerce Website</h4>
-                                    <p class="text-[#04d9ff] text-sm">Frontend Development</p>
-                                </div>
-                                <a href="https://teckybuilds.netlify.app/" target="_blank" class="text-white bg-[#04d9ff] w-10 h-10 flex items-center justify-center rounded-full transform -translate-y-10 group-hover:translate-y-0 transition-transform duration-300 hover:bg-[#03c3e6]">
-                                    <i class="fas fa-external-link-alt text-sm"></i>
-                                </a>
-                            </div>
+                            <img src="images/Project-imgs/proj-1.png" alt="TeckyBuilds" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <!-- Project Info -->
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 group-hover:text-[#04d9ff] transition-colors">TeckyBuilds</h3>
-                            <p class="text-[var(--text-secondary)] text-sm mb-4">
-                                Modern e-commerce website <i>(Homepage Only)</i> for PC components featuring a custom PC builder, product catalog, and service booking system. Includes responsive design.
+                            <h4 class="text-xl font-bold mb-2">TeckyBuilds</h4>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Modern e-commerce website <span class="text-[#00e5ff]">(Homepage Only)</span> for PC components 
+                                featuring a custom PC builder, product catalog, and service booking system. 
+                                Includes responsive design.
                             </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-[#04d9ff]/10 text-[#04d9ff] px-3 py-1 rounded-full">HTML</span>
-                                <span class="text-xs bg-[#04d9ff]/10 text-[#04d9ff] px-3 py-1 rounded-full">CSS</span>
-                                <span class="text-xs bg-[#04d9ff]/10 text-[#04d9ff] px-3 py-1 rounded-full">JavaScript</span>
+                            <div class="flex gap-2">
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">HTML</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">CSS</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">JavaScript</span>
                             </div>
-                            
-                            <a href="https://teckybuilds.netlify.app/" target="_blank" 
-                                class="lg:hidden w-full mt-4 py-2 px-4 rounded-lg bg-[#04d9ff]/10 
-                                text-[#04d9ff] text-sm font-semibold flex items-center justify-center gap-2 
-                                hover:bg-[#04d9ff] hover:text-white transition-all duration-300">
-                                Visit Website
-                                <i class="fas fa-external-link-alt text-sm"></i>
-                            </a>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
-                    <div class="project-card bg-black/20 backdrop-blur-sm rounded-2xl border border-[#04d9ff]/10 
-                        group hover:border-[#04d9ff]/30 transition-all duration-300 overflow-hidden fade-in-up delay-2">
+                    <!-- Glamour Haven Project -->
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group">
                         <div class="relative overflow-hidden">
-                            <!-- Project Image -->
-                            <img src="images/Project-imgs/proj-2.png" alt="Project 1" 
-                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                            <!-- Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 
-                                flex items-end justify-between p-4">
-                                <div>
-                                    <h4 class="text-white font-semibold">Service Website</h4>
-                                    <p class="text-[#04d9ff] text-sm">Frontend Development</p>
-                                </div>
-                                <a href="https://glamour-haven.netlify.app/" target="_blank" class="text-white bg-[#04d9ff] w-10 h-10 flex items-center justify-center rounded-full transform -translate-y-10 group-hover:translate-y-0 transition-transform duration-300 hover:bg-[#03c3e6]">
-                                    <i class="fas fa-external-link-alt text-sm"></i>
-                                </a>
-                            </div>
+                            <img src="images/Project-imgs/proj-2.png" alt="Glamour Haven" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <!-- Project Info -->
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 group-hover:text-[#04d9ff] transition-colors">Glamour Haven</h3>
-                            <p class="text-[var(--text-secondary)] text-sm mb-4">
-                                Elegant salon website with online booking system, service catalog, and gallery showcase. Features testimonials, pricing tables, and integrated contact forms for appointments.
+                            <h4 class="text-xl font-bold mb-2">Glamour Haven</h4>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Elegant salon website with online booking system, service catalog, and gallery 
+                                showcase. Features testimonials, pricing tables, and integrated contact forms for 
+                                appointments.
                             </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-[#04d9ff]/10 text-[#04d9ff] px-3 py-1 rounded-full">HTML</span>
-                                <span class="text-xs bg-[#04d9ff]/10 text-[#04d9ff] px-3 py-1 rounded-full">CSS</span>
-                                <span class="text-xs bg-[#04d9ff]/10 text-[#04d9ff] px-3 py-1 rounded-full">JavaScript</span>
+                            <div class="flex gap-2">
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">HTML</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">CSS</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">JavaScript</span>
                             </div>
-                            
-                            <a href="https://glamour-haven.netlify.app/" target="_blank" 
-                                class="lg:hidden w-full mt-4 py-2 px-4 rounded-lg bg-[#04d9ff]/10 
-                                text-[#04d9ff] text-sm font-semibold flex items-center justify-center gap-2 
-                                hover:bg-[#04d9ff] hover:text-white transition-all duration-300">
-                                Visit Website
-                                <i class="fas fa-external-link-alt text-sm"></i>
-                            </a>
                         </div>
                     </div>
 
-                    <!-- Project 3 -->
-                    <div class="project-card bg-black/20 backdrop-blur-sm rounded-2xl border border-[#04d9ff]/10 
-                        group hover:border-[#04d9ff]/30 transition-all duration-300 overflow-hidden fade-in-up delay-3">
+                    <!-- GW Portfolio Project -->
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group">
                         <div class="relative overflow-hidden">
-                            <!-- Project Image -->
-                            <img src="images/Project-imgs/proj-3.png" alt="Project 1" 
-                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                            <!-- Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 
-                                flex items-end justify-between p-4">
-                                <div>
-                                    <h4 class="text-white font-semibold">Portfolio Website</h4>
-                                    <p class="text-[#04d9ff] text-sm">Frontend Development</p>
-                                </div>
-                                <a href="https://gesitha.netlify.app/" target="_blank" class="text-white bg-[#04d9ff] w-10 h-10 flex items-center justify-center rounded-full transform -translate-y-10 group-hover:translate-y-0 transition-transform duration-300 hover:bg-[#03c3e6]">
-                                    <i class="fas fa-external-link-alt text-sm"></i>
-                                </a>
-                            </div>
+                            <img src="images/Project-imgs/proj-3.png" alt="GW Portfolio" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <!-- Project Info -->
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 group-hover:text-[#04d9ff] transition-colors">GW Portfolio</h3>
-                            <p class="text-[var(--text-secondary)] text-sm mb-4">
-                                Professional portfolio website for a graphic designer featuring animated sections, project showcases, and a contact form. Includes skill progress bars and downloadable CV functionality.
+                            <h4 class="text-xl font-bold mb-2">GW Portfolio</h4>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Professional portfolio website for a graphic designer featuring animated 
+                                sections, project showcases, and a contact form. Includes skill progress bars 
+                                and downloadable CV functionality.
                             </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-[#04d9ff]/10 text-[#04d9ff] px-3 py-1 rounded-full">HTML</span>
-                                <span class="text-xs bg-[#04d9ff]/10 text-[#04d9ff] px-3 py-1 rounded-full">CSS</span>
-                                <span class="text-xs bg-[#04d9ff]/10 text-[#04d9ff] px-3 py-1 rounded-full">JavaScript</span>
+                            <div class="flex gap-2">
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">HTML</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">CSS</span>
+                                <span class="bg-[#111111] text-[#00e5ff] text-xs px-3 py-1 rounded-full">JavaScript</span>
                             </div>
-                            
-                            <a href="https://gesitha.netlify.app/" target="_blank" 
-                                class="lg:hidden w-full mt-4 py-2 px-4 rounded-lg bg-[#04d9ff]/10 
-                                text-[#04d9ff] text-sm font-semibold flex items-center justify-center gap-2 
-                                hover:bg-[#04d9ff] hover:text-white transition-all duration-300">
-                                Visit Website
-                                <i class="fas fa-external-link-alt text-sm"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- View All Projects Button -->
-            <div class="text-center mt-12 fade-in-up delay-4">
-                <a href="portfolio.html" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] 
-                    text-white font-semibold hover:shadow-lg hover:shadow-[#04d9ff]/20 transition-all duration-300 
-                    transform hover:-translate-y-1">
+            <div class="text-center">
+                <a href="projects.html" class="inline-flex items-center bg-[#00e5ff] text-white px-8 py-3 rounded-full hover:bg-[#00c8ff] transition-all duration-300">
                     View All Projects
-                    <i class="fas fa-arrow-right"></i>
+                    <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
         </div>
     </div>
-
+    
     <!-- Contact Section -->
-    <div id="contact" class="lg:ml-80 p-4 sm:p-6 md:p-8 min-h-screen flex items-center justify-center">
-        <div class="container mx-auto max-w-6xl px-4 sm:px-6">
+    <div id="contact" class="lg:ml-64 p-8 main-content min-h-screen bg-[#0A0A0A]">
+        <div class="container mx-auto max-w-6xl px-0 sm:px-8">
             <!-- Section Title -->
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold">
-                    <span class="text-white">Contact</span>
-                    <span class="text-[#04d9ff]">Me</span>
+            <div class="mb-12 text-center px-4">
+                <h2 class="text-6xl font-bold">
+                    Contact <span class="text-[#04D9FF]">Me</span>
                 </h2>
-                <div class="w-32 h-1 bg-[#04d9ff] mx-auto mt-4 loading-bar"></div>
-                <p class="text-[var(--text-secondary)] mt-6 text-lg max-w-2xl mx-auto">
-                    Let's work together on your next project
-                </p>
+                <div class="mt-4">
+                    <p class="text-gray-300">Let's work together on your next project</p>
+                </div>
             </div>
 
             <!-- Contact Content -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                <!-- Contact Info -->
-                <div class="space-y-8 fade-in-left">
-                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-[#04d9ff]/10">
-                        <h3 class="text-2xl font-semibold mb-6 text-white">Contact Information</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full bg-[#04d9ff]/10 flex items-center justify-center">
-                                    <i class="fas fa-envelope text-[#04d9ff] text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[#04d9ff] text-sm">Email</p>
-                                    <p class="text-white">yigeenuuss425@gmail.com</p>
-                                </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-0 sm:mx-0">
+                <!-- Contact Information -->
+                <div class="bg-[#0E0E0E] p-8 rounded-none lg:rounded-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-8">Contact Information</h3>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-6">
+                        <!-- Email -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full">
+                                <i class="fas fa-envelope text-[#04D9FF]"></i>
                             </div>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full bg-[#04d9ff]/10 flex items-center justify-center">
-                                    <i class="fas fa-phone text-[#04d9ff] text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[#04d9ff] text-sm">Phone</p>
-                                    <p class="text-white">+94 71 269 6251</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full bg-[#04d9ff]/10 flex items-center justify-center">
-                                    <i class="fas fa-map-marker-alt text-[#04d9ff] text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[#04d9ff] text-sm">Location</p>
-                                    <p class="text-white">Kalutara, Sri Lanka</p>
-                                </div>
+                            <div>
+                                <h4 class="text-[#04D9FF] text-sm">Email</h4>
+                                <p class="text-white">yigeenuuss425@gmail.com</p>
                             </div>
                         </div>
 
-                        <!-- Social Links -->
-                        <div class="mt-8">
-                            <h4 class="text-lg font-semibold mb-4 text-white">Follow Me</h4>
-                            <div class="flex space-x-4">
-                                <a href="https://wa.me/94712696251" target="_blank" 
-                                    class="w-10 h-10 rounded-full bg-[#181818] flex items-center justify-center 
-                                    transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110">
-                                    <img src="images/Whatsapp-Logo.png" alt="Whatsapp" class="w-6 h-6">
-                                </a>
-                                <a href="https://www.linkedin.com/in/yigeenula/" target="_blank" 
-                                    class="w-10 h-10 rounded-full bg-[#181818] flex items-center justify-center 
-                                    transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110">
-                                    <img src="images/Linkedin-Logo.png" alt="Facebook" class="w-6 h-6">
-                                </a>
-                                <a href="https://www.fiverr.com/yigeenula" target="_blank" 
-                                    class="w-10 h-10 rounded-full bg-[#181818] flex items-center justify-center 
-                                    transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110">
-                                    <img src="images/Fiverr-Logo.png" alt="Fiverr" class="w-6 h-6">
-                                </a>
-                                <a href="https://www.behance.net/yigeenula" target="_blank" 
-                                    class="w-10 h-10 rounded-full bg-[#181818] flex items-center justify-center 
-                                    transition-all duration-300 hover:bg-[#04d9ff]/20 hover:scale-110">
-                                    <img src="images/Behance-Logo.png" alt="Behance" class="w-6 h-6">
-                                </a>
+                        <!-- Phone -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full">
+                                <i class="fas fa-phone text-[#04D9FF]"></i>
                             </div>
+                            <div>
+                                <h4 class="text-[#04D9FF] text-sm">Phone</h4>
+                                <p class="text-white">+94 71 269 6251</p>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full">
+                                <i class="fas fa-map-marker-alt text-[#04D9FF]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-[#04D9FF] text-sm">Location</h4>
+                                <p class="text-white">Kalutara, Sri Lanka</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Follow Me -->
+                    <div class="mt-12">
+                        <h4 class="text-xl font-bold text-white mb-6">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-whatsapp text-[#04D9FF] group-hover:text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-linkedin-in text-[#04D9FF] group-hover:text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-github text-[#04D9FF] group-hover:text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-behance text-[#04D9FF] group-hover:text-white"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="fade-in-right">
-                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" 
-                        class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-[#04d9ff]/10">
-                        <!-- Add Web3Forms access key -->
-                        <input type="hidden" name="access_key" value="3c898db1-fb0e-4557-a8f7-1620a8d2f2e8">
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                <div class="bg-[#0E0E0E] p-8 rounded-none lg:rounded-2xl">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-[#04d9ff] text-sm mb-2" for="name">Name</label>
-                                <input type="text" id="name" name="name" required
-                                    class="w-full px-4 py-3 rounded-lg bg-[#181818] border border-[#04d9ff]/20 
-                                    text-white focus:border-[#04d9ff] focus:outline-none transition-colors">
+                                <label class="text-[#04D9FF] text-sm block mb-2">Name</label>
+                                <input type="text" class="w-full bg-[#0A0A0A] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04D9FF] border border-[#04D9FF]/20">
                             </div>
                             <div>
-                                <label class="block text-[#04d9ff] text-sm mb-2" for="email">Email</label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full px-4 py-3 rounded-lg bg-[#181818] border border-[#04d9ff]/20 
-                                    text-white focus:border-[#04d9ff] focus:outline-none transition-colors">
+                                <label class="text-[#04D9FF] text-sm block mb-2">Email</label>
+                                <input type="email" class="w-full bg-[#0A0A0A] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04D9FF] border border-[#04D9FF]/20">
                             </div>
                         </div>
-                        <div class="mb-6">
-                            <label class="block text-[#04d9ff] text-sm mb-2" for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required
-                                class="w-full px-4 py-3 rounded-lg bg-[#181818] border border-[#04d9ff]/20 
-                                text-white focus:border-[#04d9ff] focus:outline-none transition-colors">
+
+                        <div>
+                            <label class="text-[#04D9FF] text-sm block mb-2">Subject</label>
+                            <input type="text" class="w-full bg-[#0A0A0A] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04D9FF] border border-[#04D9FF]/20">
                         </div>
-                        <div class="mb-6">
-                            <label class="block text-[#04d9ff] text-sm mb-2" for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" required
-                                class="w-full px-4 py-3 rounded-lg bg-[#181818] border border-[#04d9ff]/20 
-                                text-white focus:border-[#04d9ff] focus:outline-none transition-colors 
-                                resize-none"></textarea>
+
+                        <div>
+                            <label class="text-[#04D9FF] text-sm block mb-2">Message</label>
+                            <textarea rows="6" class="w-full bg-[#0A0A0A] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04D9FF] border border-[#04D9FF]/20 resize-none"></textarea>
                         </div>
-                        <!-- Add a loading spinner and success/error messages -->
-                        <div id="form-status" class="mb-4 text-center hidden">
-                            <div class="success-message hidden">
-                                <div class="mail-animation">
-                                    <div class="mail-container">
-                                        <div class="mail">
-                                            <div class="mail-body"></div>
-                                            <div class="mail-top"></div>
-                                        </div>
-                                        <div class="checkmark">
-                                            <svg viewBox="0 0 100 100">
-                                                <path class="checkmark-path" d="M20,55 L40,75 L80,25"></path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="text-[#04d9ff] mt-4 font-medium">Message sent successfully!</p>
-                            </div>
-                            <p class="error-message text-red-500 hidden">Something went wrong. Please try again.</p>
-                        </div>
-                        <button type="submit" id="submit-btn"
-                            class="w-full py-4 rounded-xl bg-gradient-to-r from-[#04d9ff] to-[#03c3e6] 
-                            text-white font-semibold hover:shadow-lg hover:shadow-[#04d9ff]/20 
-                            transition-all duration-300 transform hover:-translate-y-1">
-                            <span class="submit-text">Send Message</span>
-                            <span class="loading-spinner hidden">
-                                <i class="fas fa-spinner fa-spin"></i> Sending...
-                            </span>
+
+                        <button type="submit" class="w-full bg-[#04D9FF] text-white py-4 rounded-lg font-semibold hover:bg-[#04D9FF]/90 transition-all duration-300">
+                            Send Message
                         </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <!-- Footer Section -->
-    <footer class="lg:ml-80 bg-[#141313] border-t border-[#04d9ff]/10">
-        <div class="container mx-auto px-4 py-8">
-            <!-- Update grid with center alignment -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <!-- Column 1 - About -->
+    <footer class="lg:ml-64 bg-[#0A0A0A] text-white py-12">
+        <div class="container mx-auto max-w-6xl px-8">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- CodeXBlaze Column -->
                 <div class="space-y-4">
-                    <h3 class="text-xl font-bold text-white">CodeXBlaze</h3>
-                    <p class="text-[var(--text-secondary)] text-sm">
-                        Professional Frontend Developer specializing in brand identity, web development, and digital media.
+                    <h3 class="text-2xl font-bold text-white">CodeXBlaze</h3>
+                    <p class="text-gray-400 text-sm">
+                        Professional Frontend Developer specializing in brand identity, web 
+                        development, and digital media.
                     </p>
-                    <div class="flex space-x-4 justify-center">
-                        <a href="https://www.facebook.com/geenula" target="_blank" class="text-[#04d9ff] hover:text-white transition-colors">
-                            <i class="fab fa-facebook"></i>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                            <i class="fab fa-facebook-f text-[#04D9FF] group-hover:text-white"></i>
                         </a>
-                        <a href="https://www.behance.net/yigeenula" target="_blank" class="text-[#04d9ff] hover:text-white transition-colors">
-                            <i class="fab fa-behance"></i>
+                        <a href="#" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                            <i class="fab fa-behance text-[#04D9FF] group-hover:text-white"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/yigeenula/" target="_blank" class="text-[#04d9ff] hover:text-white transition-colors">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="#" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                            <i class="fab fa-linkedin-in text-[#04D9FF] group-hover:text-white"></i>
                         </a>
-                        <a href="https://wa.me/94712696251" target="_blank" class="text-[#04d9ff] hover:text-white transition-colors">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="#" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                            <i class="fab fa-whatsapp text-[#04D9FF] group-hover:text-white"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Column 2 - Quick Links -->
+                <!-- Quick Links Column -->
                 <div class="space-y-4">
-                    <h3 class="text-xl font-bold text-white">Quick Links</h3>
-                    <ul class="space-y-2 text-[var(--text-secondary)]">
+                    <h3 class="text-2xl font-bold text-white">Quick Links</h3>
+                    <ul class="space-y-3">
                         <li>
-                            <a href="#home" class="hover:text-[#04d9ff] transition-colors">Home</a>
+                            <a href="#home" class="text-gray-400 hover:text-[#04D9FF] transition-all duration-300">Home</a>
                         </li>
                         <li>
-                            <a href="#about" class="hover:text-[#04d9ff] transition-colors">About</a>
+                            <a href="#about" class="text-gray-400 hover:text-[#04D9FF] transition-all duration-300">About</a>
                         </li>
                         <li>
-                            <a href="#services" class="hover:text-[#04d9ff] transition-colors">Services</a>
+                            <a href="#services" class="text-gray-400 hover:text-[#04D9FF] transition-all duration-300">Services</a>
                         </li>
                         <li>
-                            <a href="portfolio.html" class="hover:text-[#04d9ff] transition-colors">Portfolio</a>
+                            <a href="#portfolio" class="text-gray-400 hover:text-[#04D9FF] transition-all duration-300">Portfolio</a>
                         </li>
                         <li>
-                            <a href="#contact" class="hover:text-[#04d9ff] transition-colors">Contact</a>
+                            <a href="#contact" class="text-gray-400 hover:text-[#04D9FF] transition-all duration-300">Contact</a>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Column 3 - Contact Info -->
+                <!-- Contact Info Column -->
                 <div class="space-y-4">
-                    <h3 class="text-xl font-bold text-white">Contact Info</h3>
-                    <ul class="space-y-2 text-[var(--text-secondary)]">
-                        <li class="flex items-center space-x-2 justify-center">
-                            <i class="fas fa-map-marker-alt text-[#04d9ff]"></i>
+                    <h3 class="text-2xl font-bold text-white">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <i class="fas fa-map-marker-alt text-[#04D9FF]"></i>
                             <span>Kalutara, Sri Lanka</span>
                         </li>
-                        <li class="flex items-center space-x-2 justify-center">
-                            <i class="fas fa-phone text-[#04d9ff]"></i>
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <i class="fas fa-phone text-[#04D9FF]"></i>
                             <span>+94 71 269 6251</span>
                         </li>
-                        <li class="flex items-center space-x-2 justify-center">
-                            <i class="fas fa-envelope text-[#04d9ff]"></i>
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <i class="fas fa-envelope text-[#04D9FF]"></i>
                             <span>yigeenuuss425@gmail.com</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Copyright Section -->
-            <div class="mt-8 pt-8 border-t border-[#04d9ff]/10 text-center">
-                <p class="text-[var(--text-secondary)] text-sm">
-                    <span><i class="fa-regular fa-copyright"></i></span> 2025 CodeXBlaze. All rights reserved.
-                </p>
-                <p class="text-[var(--text-secondary)] text-sm mt-2">
+            <!-- Copyright Bar -->
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400">© 2025 CodeXBlaze. All rights reserved.</p>
+                <p class="text-sm mt-2 text-gray-400">
                     Designed & Developed by 
-                    <a href="#" class="text-[#04d9ff] hover:text-white transition-colors">
-                        Yasiru Isum Geenula
-                    </a>
-                    |
-                    <a href="#" class="text-[#04d9ff] hover:text-white transition-colors">
-                        CodeXBlaze
+                    <a href="#" class="text-[#04D9FF] hover:text-white transition-all duration-300">
+                        Yasiru Isum Geenula | CodeXBlaze
                     </a>
                 </p>
             </div>
         </div>
     </footer>
-
-    <!-- ========================= Development Notice ========================= -->
-    <!-- Development Notice -->
-    <div class="dev-notice">
-        <div class="dev-notice-content">
-            <i class="fas fa-wrench dev-notice-icon"></i>
-            <span>This website is currently in active development. Some features may be under optimization.</span>
-        </div>
-    </div>
-    <!-- ========================= Development Notice ========================= -->
+    
+    <script src="script.js"></script>
 </body>
 </html> 
