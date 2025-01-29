@@ -109,3 +109,29 @@ document.addEventListener('DOMContentLoaded', function() {
     new TypeWriter(txtElement, words, wait);
 });
  
+// Availablity Status Dot
+function updateAvailabilityStatus() {
+    const statusElement = document.querySelector('.availability-status');
+    const statusText = statusElement.childNodes[0].textContent.trim();
+    
+    // Clear existing status classes
+    statusElement.classList.remove(
+        'status-available',
+        'status-unavailable',
+        'status-busy'
+    );
+    
+    // Set new status class
+    if (statusText === 'Unavailable' || statusText === 'Currently Unavailable') {
+        statusElement.classList.add('status-unavailable');
+    } else if (statusText === 'Busy') {
+        statusElement.classList.add('status-busy');
+    } else {
+        statusElement.classList.add('status-available');
+    }
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    updateAvailabilityStatus();
+});
