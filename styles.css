@@ -139,21 +139,21 @@ footer .fas {
         flex-direction: column;
     }
 
-    /* Contact section */
-    #contact .container {
+    #contact .grid-cols-1.lg\:grid-cols-2 {
+        gap: 2rem;
+    }
+    
+    #contact .bg-\[\#0a0a0a\] {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 25px;
+    }
+    
+    #contact .container.px-0.sm\:px-8 {
         padding-left: 0;
         padding-right: 0;
-    }
-
-    #contact .grid {
-        gap: 2px;
-    }
-
-    #contact .bg-\[\#0E0E0E\] {
-        border-radius: 0;
-        margin-left: -8px;
-        margin-right: -8px;
-        width: calc(100% + 16px);
     }
 
     /* Footer adjustments */
@@ -552,6 +552,28 @@ button.bg-orange-500 {
     background-color: var(--bg-primary);
 }
 
+/* Skill Progress bar */
+/* Add progress bar animation */
+.bg-\[\#04D9FF\].h-2 {
+    animation: loadProgress 1.5s ease-out forwards;
+    transform-origin: left;
+}
+
+@keyframes loadProgress {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* Optional: Add staggered animation delays */
+.bg-\[\#04D9FF\].h-2:nth-child(1) { animation-delay: 0.2s; }
+.bg-\[\#04D9FF\].h-2:nth-child(2) { animation-delay: 0.4s; }
+.bg-\[\#04D9FF\].h-2:nth-child(3) { animation-delay: 0.6s; }
+.bg-\[\#04D9FF\].h-2:nth-child(4) { animation-delay: 0.8s; }
+
 /* Add blinking light animation */
 @keyframes ping {
     75%, 100% {
@@ -742,22 +764,6 @@ button[type="submit"]:hover {
     box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #contact .text-5xl {
-        font-size: 2.5rem;
-    }
-    
-    #contact .grid {
-        gap: 2rem;
-    }
-    
-    .bg-\[\#0a0a0a\] {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
-
 /* Animated border styles 
 .form-container {
     position: relative;
@@ -872,7 +878,6 @@ footer .fas {
     }
 } 
 
-/* Add this to your existing CSS */
 .txt {
     border-right: 0.2rem solid #04D9FF;
     animation: blink 0.7s infinite;
@@ -943,7 +948,7 @@ footer .fas {
     /* Make scrollable sections more compact */
     #about .container, 
     #services .container,
-    #portfolio .container {
+    #portfolio .container{
         max-height: calc(100vh - 3rem);
         padding: 1rem;
     }
@@ -1098,7 +1103,7 @@ footer .fas {
         max-height: none;
         overflow-y: visible;
     }
-} 
+}  
 
 /* Portfolio section adjustments to reduce size */
 #portfolio .container {
@@ -1180,6 +1185,30 @@ footer .fas {
         height: 180px; /* Even smaller for mobile */
     }
 } 
+@media (min-width: 1024px) {
+    /* Smooth transition only on desktop */
+    .lg\:opacity-0 {
+        transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Keep button interactive when visible */
+    .lg\:group:hover .lg\:group-hover\:opacity-100 {
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Slightly increase button size for mobile */
+    .absolute.top-3.right-3 {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+    
+    /* Make icon more visible */
+    .fa-arrow-up-right-from-square {
+        font-size: 1.1rem;
+    }
+}
 
 /* Home section adjustments to reduce size */
 #home .container {
@@ -1582,6 +1611,7 @@ button.bg-\[\#00e5ff\]:hover {
     }
 }
 
+
 /* Skills icons animation 
 .fas, .fab {
     transition: transform 0.3s ease;
@@ -1595,6 +1625,18 @@ button.bg-\[\#00e5ff\]:hover {
 /* Portfolio section styles */
 #portfolio {
     background-color: var(--bg-secondary);
+}
+
+@media (min-width: 768px) {
+    /* Smooth button scaling */
+    .hover\:scale-110 {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Maintain icon centering during scale */
+    .fa-arrow-up-right-from-square {
+        transform: translateZ(0);
+    }
 }
 
 /* Project card styles 
@@ -1638,39 +1680,35 @@ button.bg-\[\#00e5ff\]:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    #portfolio .text-5xl {
-        font-size: 2.5rem;
-    }
-    
-    #portfolio .grid {
-        gap: 1.5rem;
-    }
-    
-    .bg-\[\#0a0a0a\].rounded-2xl {
-        max-width: 400px;
-        margin: 0 auto;
+    #portfolio .text-xl {
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.4;
     }
 
-    #portfolio .container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-} 
-
-/* Contact section mobile styles */
-@media (max-width: 768px) {
-    #contact .container {
-        padding-left: 0;
-        padding-right: 0;
+    /* Fix project descriptions */
+    #portfolio .text-sm {
+        font-size: 0.875rem; /* 14px */
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
     }
 
-    #contact .bg-\[\#0E0E0E\] {
-        border-radius: 25px;
+    /* Adjust technology tags */
+    #portfolio .text-xs {
+        font-size: 0.75rem; /* 12px */
+        padding: 0.25rem 0.5rem;
     }
-    
-    /* Keep form inputs with some padding */
-    #contact form {
-        padding: 0;
+
+    /* Ensure text containers have proper spacing */
+    #portfolio .p-6 {
+        padding: 1rem;
+    }
+
+    /* Prevent text overflow */
+    #portfolio .rounded-2xl {
+        word-wrap: break-word;
+    }
+    .group:hover .opacity-0 {
+        opacity: 100 !important;
     }
 } 
 
@@ -1686,3 +1724,52 @@ button.bg-\[\#00e5ff\]:hover {
 
     }
 } 
+
+/* Contact Form Successfull Message */
+/* Progress bar animation */
+.progress-bar {
+    width: 100%;
+    animation: progress 4.8s linear forwards;
+    transform-origin: left;
+}
+
+@keyframes progress {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+/* Success message animation */
+#success-message.show {
+    animation: slideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+#success-message.hidden {
+    animation: slideOut 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+

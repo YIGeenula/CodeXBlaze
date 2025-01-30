@@ -135,3 +135,62 @@ function updateAvailabilityStatus() {
 document.addEventListener('DOMContentLoaded', function() {
     updateAvailabilityStatus();
 });
+
+// Contact Form Submission
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('#contact form');
+    const successMessage = document.getElementById('success-message');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    const successSound = new Audio('sounds/success-notification.mp3'); // You'll need to add this file
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        // Loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+            <span class="flex items-center justify-center">
+                <svg class="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Sending...
+            </span>
+        `;
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Play success sound
+            try {
+                successSound.play();
+            } catch (err) {
+                console.log('Error playing sound:', err);
+            }
+
+            // Show success message
+            successMessage.classList.remove('hidden');
+            successMessage.classList.add('show');
+            
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+                successMessage.classList.add('hidden');
+            }, 4800);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Send Message';
+            form.reset();
+        });
+    });
+});
+
