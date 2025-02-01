@@ -224,35 +224,6 @@ button.bg-orange-500:hover {
     box-shadow: 0 4px 12px rgba(4, 217, 255, 0.3);
 }
 
-/* Responsive adjustments 
-@media (max-width: 1280px) {
-    .container {
-        padding: 0 2rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 3rem;
-        padding-top: 2rem;
-    }
-
-    body {
-        overflow-x: hidden;
-    }
-
-    #nav-menu.active {
-        transform: translateX(0);
-    }
-
-    .nav-item {
-        width: 100%;
-        text-align: left;
-    }
-}
-
 /* Adjust text sizes for mobile */
 @media (max-width: 640px) {
     h1 {
@@ -392,153 +363,11 @@ p {
     from { width: 0; }
     to { width: var(--progress); }
 }
-/*
-.bg-orange-500.h-2 {
-    animation: fillProgress 1.5s ease-out forwards;
-}
-*/
-/* Responsive adjustments for about section 
-@media (max-width: 768px) {
-    .grid-cols-1 {
-        gap: 2rem;
-    }
-    
-    .flex.gap-4 {
-        flex-direction: column;
-    }
-    
-    button {
-        width: 100%;
-    }
-} 
-*/
-/* Update text colors 
-h1, h2, h3, .text-white {
-    color: var(--text-primary) !important;
-}
-
-.text-gray-300 {
-    color: var(--text-secondary) !important;
-}
-*/
-/* Update borders 
-.border-gray-700 {
-    border-color: var(--border-color) !important;
-}
-*/
-/* Update progress bars 
-.bg-gray-700 {
-    background-color: var(--progress-bg) !important;
-}
-*/
-/* Keep orange elements consistent 
-.text-orange-500, 
-.bg-orange-500,
-.border-orange-500 {
-    color: #04D9FF !important;
-}
-*/
-/* Keep white text on orange buttons 
-button.bg-orange-500 {
-    background-color: #04D9FF !important;
-    color: white !important;
-}
-*/
-/* Update hover states 
-.hover\:text-orange-500:hover {
-    color: #04D9FF !important;
-}
-
-.hover\:bg-orange-600:hover {
-    background-color: #03c2e6 !important;
-}
-*/
-
-/* Update progress bar background 
-.bg-orange-500.h-2 {
-    background-color: #04D9FF !important;
-} 
-*/
-
-/* Service card styles 
-.bg-\[\#0a0a0a\] {
-    transition: all 0.3s ease;
-    background-color: #0a0a0a;
-}
-*/
-
-/* Service icons 
-.bg-\[\#0a0a0a\] .text-4xl i {
-    display: inline-block !important;
-    color: #04D9FF !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    position: relative !important;
-    z-index: 2 !important;
-}
-*/
-
-/* Service card hover effects 
-.bg-\[\#0a0a0a\].group:hover {
-    box-shadow: 0 10px 20px rgba(233, 9, 9, 0.1);
-}
-*/
 
 /* Service section background */
 #services {
     background-color: var(--bg-primary);
 }
-
-/* Service card text colors 
-[data-theme="light"] .bg-\[\#1a1a1a\] {
-    background-color: white;
-}
-*/
-
-/* Ensure icons stay visible on hover 
-.bg-\[\#0a0a0a\].group:hover .text-4xl i {
-    display: inline-block !important;
-    color: #04D9FF !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-*/
-
-/* Remove any transform effects 
-.bg-\[\#0a0a0a\] .text-4xl,
-.bg-\[\#0a0a0a\]:hover .text-4xl {
-    transform: none !important;
-}
-
-/* Remove any group hover effects 
-.group:hover .text-4xl {
-    transform: none !important;
-}
-*/
-
-/* Service section specific styles 
-#services .text-white {
-    color: var(--text-primary) !important;
-}
-*/
-
-/* Ensure orange elements stay consistent in both modes 
-.text-orange-500,
-.hover\:text-orange-500:hover {
-    color: #04D9FF !important;
-}
-*/
-
-/* Mobile controls bar styles 
-.fixed.top-0.w-full {
-    transition: background-color 0.3s ease;
-}
-*/
-/* Add subtle shadow in light mode 
-[data-theme="light"] .fixed.top-0.w-full .bg-\[\#0A0A0A\] {
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-}*/
 
 /* Adjust main content padding for mobile bar */
 @media (max-width: 1024px) {
@@ -684,35 +513,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Portfolio styles 
-.group:hover img {
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
-}
-
-.group img {
-    transition: transform 0.5s ease;
-}
-*/
-
-/* Portfolio section background
-#portfolio {
-    background-color: var(--bg-primary);
-}
-*/
-
-/* Portfolio card hover effects 
-.group .absolute.inset-0 {
-    transform: none;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.group:hover .absolute.inset-0 {
-    opacity: 1;
-}
-*/
 /* Keep only the image zoom effect */
 .group:hover img {
     transform: scale(1.05);
@@ -727,12 +527,6 @@ html {
 #contact {
     background-color: var(--bg-primary);
 }
-
-/* Contact card styles 
-.bg-\[\#0a0a0a\] {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-*/
 
 /* Form input styles */
 #contact input,
@@ -764,65 +558,6 @@ button[type="submit"]:hover {
     box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
 }
 
-/* Animated border styles 
-.form-container {
-    position: relative;
-    background: #1a1a1a;
-    z-index: 1;
-}
-
-@keyframes borderFlow {
-    0%, 100% {
-        transform: translateY(-100%);
-    }
-    50% {
-        transform: translateY(100%);
-    }
-}
-
-@keyframes borderFlowReverse {
-    0%, 100% {
-        transform: translateY(100%);
-    }
-    50% {
-        transform: translateY(-100%);
-    }
-}
-
-@keyframes borderFlowHorizontal {
-    0%, 100% {
-        transform: translateX(-100%);
-    }
-    50% {
-        transform: translateX(100%);
-    }
-}
-
-@keyframes borderFlowHorizontalReverse {
-    0%, 100% {
-        transform: translateX(100%);
-    }
-    50% {
-        transform: translateX(-100%);
-    }
-}
-
-.animate-border-flow {
-    animation: borderFlow 3s ease-in-out infinite;
-}
-
-.animate-border-flow-reverse {
-    animation: borderFlowReverse 3s ease-in-out infinite;
-}
-
-.animate-border-flow-horizontal {
-    animation: borderFlowHorizontal 3s ease-in-out infinite;
-}
-
-.animate-border-flow-horizontal-reverse {
-    animation: borderFlowHorizontalReverse 3s ease-in-out infinite;
-}
-*/
 /* Footer styles */
 footer {
     background-color: #0A0A0A;
@@ -1116,11 +851,6 @@ footer .fas {
     margin-bottom: 1.5rem;
 }
 
-/* Make portfolio grid more compact 
-#portfolio .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
-    gap: 1rem;
-}
-*/
 /* Adjust portfolio card sizes */
 #portfolio .group img {
     height: 200px; /* Reduce image height */
@@ -1284,6 +1014,7 @@ footer .fas {
         display: flex;
         align-items: center;
     }
+    
 }
 
 /* Responsive adjustments */
@@ -1294,6 +1025,9 @@ footer .fas {
     
     #home .text-4xl.lg\:text-5xl {
         font-size: 2rem;
+    }
+    #home .flex {
+        justify-content: center;
     }
 }
 
@@ -1311,162 +1045,11 @@ footer .fas {
     }
 } 
 
-/* Modern splash screen styles 
-#splash-screen {
-    opacity: 1;
-    visibility: visible;
-    backdrop-filter: blur(8px);
-}
-
-#splash-screen.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-*/
-/* Pulse animations
-@keyframes pulse-slow {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.7;
-    }
-}
-*/
-/*
-.animate-pulse-slow {
-    animation: pulse-slow 3s ease-in-out infinite;
-}
-
-.animate-pulse-slow-delay {
-    animation: pulse-slow 3s ease-in-out infinite;
-    animation-delay: 1.5s;
-}
-*/
-/* Loading progress animation 
-.loading-progress {
-    width: 0%;
-    animation: loading 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes loading {
-    0% {
-        width: 0%;
-        transform: translateX(-100%);
-    }
-    50% {
-        width: 100%;
-        transform: translateX(0);
-    }
-    100% {
-        width: 100%;
-        transform: translateX(100%);
-    }
-}
-*/
-/* Loading state styles
-body.loading {
-    overflow: hidden;
-}
-
-body.loading .main-content {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.main-content {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
- */
-/* Loading dots bounce animation
-.animate-bounce {
-    animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-4px);
-    }
-} 
- */
-/* Fiverr icon styles 
-.fiverr-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1em;
-    height: 1em;
-    font-size: 1.25em;
-}
-
-.fiverr-icon svg {
-    width: 1em;
-    height: 1em;
-}
-
-/* Hover styles 
-.hover\:bg-orange-500:hover .fiverr-icon {
-    color: #fff;
-} 
-*/
-/* Update splash screen text sizes 
-#splash-screen h1.text-6xl {
-    font-size: 2.5rem; /* Reduced from 3.75rem (text-6xl) 
-}
-*/
-/* Add responsive adjustments for smaller screens
-@media (max-width: 768px) {
-    #splash-screen h1.text-6xl {
-        font-size: 2rem;
-    }
-}
- */
-/* Adjust loading text size 
-#splash-screen .loading-text {
-    font-size: 0.75rem; /* Reduced from 0.875rem (text-sm) 
-    letter-spacing: 0.05em;
-}
-*/
-/* Adjust loading dots size 
-#splash-screen .loading-text .w-1.h-1 {
-    width: 3px;
-    height: 3px;
-} 
-*/
 /* Portfolio page specific styles */
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
 }
-
-/* Portfolio page background 
-[data-theme="light"] body {
-    background-color: var(--bg-primary);
-}
-*/
-/* Portfolio filter buttons light mode 
-[data-theme="light"] .filter-btn {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-}
-
-[data-theme="light"] .filter-btn:hover {
-    background-color: #04D9FF;
-    color: white;
-}
-
-[data-theme="light"] .filter-btn.active {
-    background-color: #04D9FF;
-    color: white;
-}
-*/
 
 /* Adjust button size on mobile */
 @media (max-width: 768px) {
@@ -1495,32 +1078,10 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Light mode navigation bar 
-[data-theme="light"] .fixed.top-0.left-0.right-0 {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-*/
-
 /* Adjust container padding for fixed header */
 .container {
     padding-top: calc(4rem + 1rem); /* 4rem for navbar height + 1rem extra space */
 }
-
-/* Keep theme toggle white in light mode 
-[data-theme="light"] #theme-toggle {
-    color: #1a1a1a;
-}
-
-[data-theme="light"] #theme-toggle:hover {
-    color: #04D9FF;
-} 
-*/
-/* Update button hover effect 
-button.bg-\[\#00e5ff\]:hover {
-    box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
-}
-*/
 
 /* Profile image styles */
 .relative img {
@@ -1542,15 +1103,6 @@ button.bg-\[\#00e5ff\]:hover {
     animation: borderPulse 2s ease-in-out infinite;
 }
 
-/* Text animation for name 
-.text-\[\#00e5ff\] {
-    background: linear-gradient(45deg, #00e5ff, #00c8ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-}
-*/
 /* Responsive text sizing */
 @media (max-width: 768px) {
     .text-4xl.lg\:text-5xl {
@@ -1567,35 +1119,6 @@ button.bg-\[\#00e5ff\]:hover {
     background-color: var(--bg-secondary);
 }
 
-/* Progress bar animations 
-.bg-\[\#00e5ff\].h-2 {
-    animation: fillProgress 1.5s ease-out forwards;
-}
-
-@keyframes fillProgress {
-    from { width: 0; }
-    to { width: var(--progress); }
-}
-*/
-/* Card hover effects 
-.bg-\[\#0a0a0a\] {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bg-\[\#0a0a0a\]:hover {
-    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.1);
-}
-*/
-/* Button hover effects 
-.bg-\[\#00e5ff\]:hover {
-    box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
-}
-
-.border-\[\#00e5ff\]:hover {
-    background-color: var(--accent-color);
-    box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
-}
-*/
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #about .grid {
@@ -1611,17 +1134,6 @@ button.bg-\[\#00e5ff\]:hover {
     }
 }
 
-
-/* Skills icons animation 
-.fas, .fab {
-    transition: transform 0.3s ease;
-}
-
-.bg-\[\#0a0a0a\]:hover .fas,
-.bg-\[\#0a0a0a\]:hover .fab {
-    transform: scale(1.2);
-}
-*/
 /* Portfolio section styles */
 #portfolio {
     background-color: var(--bg-secondary);
@@ -1638,45 +1150,6 @@ button.bg-\[\#00e5ff\]:hover {
         transform: translateZ(0);
     }
 }
-
-/* Project card styles 
-.bg-\[\#0a0a0a\].rounded-2xl {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bg-\[\#0a0a0a\].rounded-2xl:hover {
-    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.1);
-}
-*/
-/* Image hover effect 
-.group:hover .group-hover\:scale-110 {
-    transform: scale(1.1);
-}
-*/
-/* Technology tags 
-.bg-\[\#111111\] {
-    transition: all 0.3s ease;
-}
-
-.bg-\[\#111111\]:hover {
-    background-color: var(--accent-color);
-    color: white;
-}
-*/
-
-/* View All Projects button hover effect 
-.bg-\[\#00e5ff\].inline-flex:hover {
-    transform: translateX(5px);
-}
-
-.bg-\[\#00e5ff\].inline-flex:hover i {
-    transform: translateX(5px);
-}
-
-.bg-\[\#00e5ff\].inline-flex i {
-    transition: transform 0.3s ease;
-}
-*/
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -1743,17 +1216,19 @@ button.bg-\[\#00e5ff\]:hover {
 }
 
 /* Success message animation */
-#success-message.show {
-    animation: slideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-}
-
-#success-message.hidden {
-    animation: slideOut 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+/* Success Message Notification Styles */
+#success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 9999;
+    animation: slideIn 0.5s ease-out;
 }
 
 @keyframes slideIn {
     from {
-        transform: translateX(120%);
+        transform: translateX(100%);
         opacity: 0;
     }
     to {
@@ -1762,14 +1237,121 @@ button.bg-\[\#00e5ff\]:hover {
     }
 }
 
-@keyframes slideOut {
+.progress-bar {
+    animation: progress 3s linear;
+}
+
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+.animate-checkmark {
+    animation: checkmark 0.5s ease-in-out;
+}
+
+@keyframes checkmark {
     from {
-        transform: translateX(0);
-        opacity: 1;
+        transform: scale(0);
+        opacity: 0;
     }
     to {
-        transform: translateX(120%);
-        opacity: 0;
+        transform: scale(1);
+        opacity: 1;
     }
 }
 
+/* Responsive adjustments for success message */
+@media (max-width: 768px) {
+    #success-message {
+        width: calc(100% - 40px);
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #success-message {
+        width: calc(100% - 32px);
+        right: 16px;
+        left: 16px;
+        bottom: 16px;
+    }
+}
+/* Popup Animations */
+#hirePopup {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#hirePopup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#hirePopup .bg-\[\#0a0a0a\] {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#hirePopup.active .bg-\[\#0a0a0a\] {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Social icons hover effect in popup */
+#hirePopup .social-icons a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#hirePopup .social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-animate.fade-left {
+    transform: translateX(-50px);
+}
+
+.scroll-animate.fade-right {
+    transform: translateX(50px);
+}
+
+.scroll-animate.fade-up {
+    transform: translateY(50px);
+}
+
+.scroll-animate.fade-down {
+    transform: translateY(-50px);
+}
+
+.scroll-animate.fade-in {
+    transform: translateY(0);
+}
+
+.scroll-animate.scale {
+    transform: scale(0.9);
+}
+
+/* Active state for scroll animations */
+.scroll-animate.active {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Delay classes for staggered animations */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }

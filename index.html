@@ -68,7 +68,7 @@
         <!-- Content Container -->
         <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between max-w-6xl relative">
             <!-- Introduction Section -->
-            <div class="space-y-6 max-w-2xl text-center lg:text-left px-4 mt-24 lg:mt-0">
+            <div class="space-y-6 max-w-2xl text-center lg:text-left px-4 mt-24 lg:mt-0 scroll-animate fade-right">
                 <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
                     Hello, my name is 
                     <span class="text-[#00e5ff] block mt-2">Yasiru Isum Geenula</span>
@@ -81,16 +81,27 @@
                 <p class="text-gray-300 text-lg lg:text-xl">
                     I'm a skilled frontend web developer with over 1 years of experience. My expertise includes designing and developing responsive, user-centric websites and many more.
                 </p>
-
-                <button onclick="scrollToAbout()" class="bg-[#00e5ff] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full hover:bg-[#00c8ff] transition-all duration-300 text-lg">
-                    More About Me
-                </button>
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="flex space-x-4">
+                        <a href="http://facebook.com/geenula/" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                            <i class="fab fa-facebook-f text-[#04D9FF] group-hover:text-white"></i>
+                        </a>
+                        <a href="https://www.behance.net/yigeenula" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                            <i class="fab fa-behance text-[#04D9FF] group-hover:text-white"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yigeenula" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                            <i class="fab fa-linkedin-in text-[#04D9FF] group-hover:text-white"></i>
+                        </a>
+                        <a href="https://web.whatsapp.com/+94712696251" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                            <i class="fab fa-whatsapp text-[#04D9FF] group-hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>  
             </div>
 
             <!-- Profile Image - Visible on all devices -->
-            <div class="relative mt-8 lg:mt-0">
-                <img src="images/ProPic.jpg" alt="Profile" class="w-96 h-[28rem] object-cover rounded-lg border-2 border-[#00e5ff]" loading="lazy">
-                
+            <div class="relative mt-8 lg:mt-0 scroll-animate fade-left">
+                <img src="images/ProPic.jpg" alt="Profile" class="w-96 h-[28rem] object-cover rounded-lg border-2 border-[#00e5ff]" loading="lazy">     
             </div>
         </div>
     </div>
@@ -125,7 +136,7 @@
             <!-- Skills and Details Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-0 sm:mx-0">
                 <!-- Technical Skills -->
-                <div class="bg-[#0E0E0E] p-8 rounded-none lg:rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                <div class="bg-[#0E0E0E] p-8 rounded-none lg:rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300 scroll-animate fade-up">
                     <h4 class="text-2xl font-bold text-[#04D9FF] mb-6">Technical Skills</h4>
                     
                     <!-- HTML/CSS -->
@@ -202,7 +213,7 @@
                 </div>
 
                 <!-- Personal Details -->
-                <div class="bg-[#0E0E0E] p-8 rounded-none lg:rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                <div class="bg-[#0E0E0E] p-8 rounded-none lg:rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300 scroll-animate fade-up delay-200">
                     <h4 class="text-2xl font-bold text-[#04D9FF] mb-6">Personal Details</h4>
                     
                     <div class="grid grid-cols-2 gap-6">
@@ -247,13 +258,51 @@
 
                     <!-- Buttons -->
                     <div class="flex gap-4 mt-8">
-                        <a href="YI-CV.pdf" download class="bg-[#04D9FF] text-white px-6 py-3 rounded-lg hover:bg-[#04D9FF]/90 transition-all duration-300 text-center flex-1">
+                        <a href="images/CV.pdf" download class="bg-[#04D9FF] text-white px-6 py-3 rounded-lg hover:bg-[#04D9FF]/90 transition-all duration-300 text-center flex-1">
                             Download CV <i class="fas fa-download ml-2"></i>
                         </a>
-                        <a href="#contact" class="border-2 border-[#04D9FF] text-white px-6 py-3 rounded-lg hover:bg-[#04D9FF] transition-all duration-300 text-center flex-1">
-                            Hire Me
-                        </a>
+                        <button onclick="showHirePopup()" class="border-2 border-[#04D9FF] text-white px-6 py-3 rounded-lg hover:bg-[#04D9FF] transition-all duration-300 text-center flex-1">
+                            Hire Me <i class="fas fa-user-plus ml-2"></i>
+                        </button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hire Me Popup -->
+    <div id="hirePopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-[#0a0a0a] rounded-2xl p-8 max-w-md w-full mx-4 relative border border-[#04D9FF]">
+            <!-- Close Button -->
+            <button onclick="closeHirePopup()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <!-- Profile Image -->
+            <div class="flex justify-center mb-6">
+                <img src="images/Pcard-img.png" alt="Profile" class="w-32 h-32 rounded-full object-cover border-2 border-[#04D9FF]">
+            </div>
+            
+            <!-- Content -->
+            <div class="text-center text-white">
+                <h3 class="text-2xl font-bold mb-2">Yasiru Isum Geenula</h3>
+                <p class="text-[#04D9FF] font-semibold mb-4">Frontend Developer</p>
+                <p class="text-gray-300 mb-6">Passionate frontend developer with expertise in creating responsive and user-friendly web applications. Let's work together to bring your vision to life!</p>
+                
+                <!-- Social Icons -->
+                <div class="social-icons flex justify-center space-x-4">
+                    <a href="http://facebook.com/geenula/" target="_blank" class="text-gray-400 hover:text-[#04D9FF]">
+                        <i class="fab fa-facebook-f text-2xl"></i>
+                    </a>
+                    <a href="https://www.behance.net/yigeenula" target="_blank" class="text-gray-400 hover:text-[#04D9FF]">
+                        <i class="fab fa-behance text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yigeenula" target="_blank" class="text-gray-400 hover:text-[#04D9FF]">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <a href="https://web.whatsapp.com/+94712696251" target="_blank" class="text-gray-400 hover:text-[#04D9FF]">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -280,7 +329,7 @@
             <!-- Services Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Frontend Development -->
-                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300 scroll-animate fade-right">
                     <div class="text-[#04D9FF] text-4xl mb-6">
                         <i class="fas fa-laptop-code"></i>
                     </div>
@@ -306,7 +355,7 @@
                 </div>
 
                 <!-- WordPress Development -->
-                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300 scroll-animate fade-left delay-100">
                     <div class="text-[#04D9FF] text-4xl mb-6">
                         <i class="fab fa-wordpress"></i>
                     </div>
@@ -361,7 +410,7 @@
                 <!-- Projects Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- TeckyBuilds Project -->
-                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300 scroll-animate fade-up">
                         <div class="relative overflow-hidden">
                             <img src="images/Project-imgs/proj-1.png" alt="TeckyBuilds" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                             <!-- Updated Button -->
@@ -388,7 +437,7 @@
                     </div>
 
                     <!-- Glamour Haven Project -->
-                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300 scroll-animate fade-up delay-100">
                         <div class="relative overflow-hidden">
                             <img src="images/Project-imgs/proj-2.png" alt="Glamour Haven" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                             <!-- Updated Button -->
@@ -415,7 +464,7 @@
                     </div>
 
                     <!-- GW Portfolio Project -->
-                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300 scroll-animate fade-up delay-200">
                         <div class="relative overflow-hidden">
                             <img src="images/Project-imgs/proj-3.png" alt="GW Portfolio" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                             <!-- Updated Button -->
@@ -469,7 +518,7 @@
             <!-- Contact Content -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-0 sm:mx-0">
                 <!-- Contact Information -->
-                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300 scroll-animate fade-right">
                     <h3 class="text-2xl font-bold text-white mb-8">Contact Information</h3>
 
                     <!-- Contact Details -->
@@ -512,24 +561,24 @@
                     <div class="mt-12">
                         <h4 class="text-xl font-bold text-white mb-6">Follow Me</h4>
                         <div class="flex space-x-4">
-                            <a href="https://web.whatsapp.com/+94712696251" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
-                                <i class="fab fa-whatsapp text-[#04D9FF] group-hover:text-white"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/yigeenula/" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
-                                <i class="fab fa-linkedin-in text-[#04D9FF] group-hover:text-white"></i>
-                            </a>
-                            <a href="https://github.com/YIGeenula" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
-                                <i class="fab fa-github text-[#04D9FF] group-hover:text-white"></i>
+                            <a href="http://facebook.com/geenula/" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-facebook-f text-[#04D9FF] group-hover:text-white"></i>
                             </a>
                             <a href="https://www.behance.net/yigeenula" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
                                 <i class="fab fa-behance text-[#04D9FF] group-hover:text-white"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/yigeenula" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-linkedin-in text-[#04D9FF] group-hover:text-white"></i>
+                            </a>
+                            <a href="https://web.whatsapp.com/+94712696251" target="_blank" class="w-10 h-10 bg-[#04D9FF]/10 flex items-center justify-center rounded-full hover:bg-[#04D9FF] transition-all duration-300 group">
+                                <i class="fab fa-whatsapp text-[#04D9FF] group-hover:text-white"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300">
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl group hover:border-[#04D9FF] border border-transparent transition-all duration-300 scroll-animate fade-left">
                     <form class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
                         <!-- Web3Forms Hidden Inputs -->
                         <input type="hidden" name="access_key" value="3c898db1-fb0e-4557-a8f7-1620a8d2f2e8">
@@ -559,25 +608,24 @@
 
                         <button type="submit" class="w-full bg-[#04D9FF] text-white py-4 rounded-lg font-semibold hover:bg-[#04D9FF]/90 transition-all duration-300">
                             Send Message
-                        </button>
-                        <!-- Update the success message container in your contact form -->
-                        <div id="success-message" class="hidden fixed top-5 right-5 w-72 p-4 bg-[#0A0A0A] border-l-4 border-[#04D9FF] rounded-lg shadow-xl">
-                            <div class="flex items-center">
-                                <!-- Animated checkmark -->
-                                <svg class="animate-checkmark h-8 w-8 text-[#04D9FF] flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" class="checkmark-path"/>
-                                </svg>
-                                <div class="ml-3">
-                                    <p class="text-white font-semibold">Success!</p>
-                                    <p class="text-gray-300 text-sm mt-1">Message sent successfully</p>
-                                </div>
-                            </div>
-                            <!-- Progress bar -->
-                            <div class="absolute bottom-0 left-0 h-1 bg-[#04D9FF]/20 w-full">
-                                <div class="progress-bar h-full bg-[#04D9FF]"></div>
-                            </div>
-                        </div>
+                        </button> 
                     </form>
+                </div>
+                <div id="success-message" class="hidden fixed top-5 right-5 w-72 p-4 bg-[#0A0A0A] border-l-4 border-[#04D9FF] rounded-lg shadow-xl">
+                    <div class="flex items-center">
+                        <!-- Animated checkmark -->
+                        <svg class="animate-checkmark h-8 w-8 text-[#04D9FF] flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" class="checkmark-path"/>
+                        </svg>
+                        <div class="ml-3">
+                            <p class="text-white font-semibold">Success!</p>
+                            <p class="text-gray-300 text-sm mt-1">Message sent successfully</p>
+                        </div>
+                    </div>
+                    <!-- Progress bar -->
+                    <div class="absolute bottom-0 left-0 h-1 bg-[#04D9FF]/20 w-full">
+                        <div class="progress-bar h-full bg-[#04D9FF]"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -655,7 +703,7 @@
 
             <!-- Copyright Bar -->
             <div class="mt-12 pt-8 border-t border-gray-800 text-center">
-                <p class="text-gray-300">© 2025 CodeXBlaze. All rights reserved.</p>
+                <p class="text-gray-300"> 2025 CodeXBlaze. All rights reserved.</p>
                 <p class="text-sm mt-2 text-gray-300">
                     Designed & Developed by 
                     <a href="https://www.linkedin.com/in/yigeenula" class="text-[#04D9FF] hover:text-white transition-all duration-300">
@@ -665,7 +713,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

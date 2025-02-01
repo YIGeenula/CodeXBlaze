@@ -136,6 +136,36 @@ document.addEventListener('DOMContentLoaded', function() {
     updateAvailabilityStatus();
 });
 
+// Hire Me Popup Functions
+function showHirePopup() {
+    const popup = document.getElementById('hirePopup');
+    popup.style.display = 'flex';
+    // Trigger reflow
+    popup.offsetHeight;
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeHirePopup() {
+    const popup = document.getElementById('hirePopup');
+    popup.classList.remove('active');
+    // Wait for transition to finish before hiding
+    setTimeout(() => {
+        popup.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 300); // Match this with the CSS transition duration
+}
+
+// Close popup when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('hirePopup');
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            closeHirePopup();
+        }
+    });
+});
+
 // Contact Form Submission
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('#contact form');
@@ -194,3 +224,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Scroll Animations
+function initScrollAnimations() {
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, options);
+
+    // Observe all elements with scroll-animate class
+    document.querySelectorAll('.scroll-animate').forEach(element => {
+        observer.observe(element);
+    });
+}
+
+// Initialize scroll animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initScrollAnimations();
+});
