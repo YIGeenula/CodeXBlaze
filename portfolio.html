@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,16 @@
     <link rel="icon" type="image/x-icon" href="images/FavIcon.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="bg-[#212121]">
     <!-- Navigation Bar -->
     <div class="fixed top-0 left-0 right-0 bg-[#1a1a1a] h-16 flex items-center justify-between px-4 z-50 shadow-lg">
         <!-- Back to Home Button -->
-        <a href="index.html" class="!text-#00E5FF bg-[#00E5FF] transition-colors px-4 py-2 rounded-lg flex items-center">
+        <a href="index.html"
+            class="!text-#00E5FF bg-[#00E5FF] transition-colors px-4 py-2 rounded-lg flex items-center">
             <i class="fas fa-arrow-left mr-2"></i>
             Back to Home
-        </a> 
+        </a>
     </div>
 
     <!-- Portfolio Gallery Section -->
@@ -30,28 +33,62 @@
 
         <!-- Filter Buttons -->
         <div class="flex flex-wrap justify-center gap-4 mb-12">
-            <button class="filter-btn active bg-[#00E5FF] text-white px-6 py-2 rounded-full transition-all duration-300" data-category="all">
+            <button class="filter-btn active bg-[#00E5FF] text-white px-6 py-2 rounded-full transition-all duration-300"
+                data-category="all">
                 All
             </button>
-            <button class="filter-btn bg-[#1a1a1a] text-white px-6 py-2 rounded-full hover:bg-[#00E5FF] transition-all duration-300" data-category="frontend">
+            <button
+                class="filter-btn bg-[#1a1a1a] text-white px-6 py-2 rounded-full hover:bg-[#00E5FF] transition-all duration-300"
+                data-category="frontend">
                 Frontend
             </button>
-            <button class="filter-btn bg-[#1a1a1a] text-white px-6 py-2 rounded-full hover:bg-[#00E5FF] transition-all duration-300" data-category="wordpress">
+            <button
+                class="filter-btn bg-[#1a1a1a] text-white px-6 py-2 rounded-full hover:bg-[#00E5FF] transition-all duration-300"
+                data-category="wordpress">
                 WordPress
             </button>
-            <button class="filter-btn bg-[#1a1a1a] text-white px-6 py-2 rounded-full hover:bg-[#00E5FF] transition-all duration-300" data-category="figma">
+            <button
+                class="filter-btn bg-[#1a1a1a] text-white px-6 py-2 rounded-full hover:bg-[#00E5FF] transition-all duration-300"
+                data-category="figma">
                 Figma
             </button>
         </div>
 
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- GTA6 Release Project -->
-            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300" data-category="frontend">
+
+            <!-- My Nihongo Path Project -->
+            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300"
+                data-category="frontend">
                 <div class="relative overflow-hidden">
-                    <img src="images/Project-imgs/proj-5.jpg" alt="GTA6 Release" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <a href="https://gta6release.netlify.app/" target="_blank" 
-                        class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
+                    <img src="images/Project-imgs/proj-6.png" alt="My Nihongo Path"
+                        class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="https://mynihongopath.online/" target="_blank" class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
+                            opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
+                            transition-all duration-300 hover:scale-110">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-white text-lg"></i>
+                    </a>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">My Nihongo Path</h3>
+                    <p class="text-gray-400 mb-4">My Nihongo Path is a comprehensive Japanese learning platform designed
+                        to help students master Hiragana, Katakana, and Kanji through interactive lessons and practice
+                        tools.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">HTML</span>
+                        <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">CSS</span>
+                        <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GTA6 Release Project -->
+            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300"
+                data-category="frontend">
+                <div class="relative overflow-hidden">
+                    <img src="images/Project-imgs/proj-5.jpg" alt="GTA6 Release"
+                        class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="https://gta6release.netlify.app/" target="_blank" class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
                             opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
                             transition-all duration-300 hover:scale-110">
                         <i class="fa-solid fa-arrow-up-right-from-square text-white text-lg"></i>
@@ -59,7 +96,8 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white mb-2">GTA6 Release</h3>
-                    <p class="text-gray-400 mb-4">GTA 6 release countdown website with a live timer, latest news updates, trailer embeds, and featured leaks. 
+                    <p class="text-gray-400 mb-4">GTA 6 release countdown website with a live timer, latest news
+                        updates, trailer embeds, and featured leaks.
                         Includes fan theories, interactive comment sections, and social sharing for hype-building.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">HTML</span>
@@ -68,13 +106,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- TeckyBuilds Project -->
-            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300" data-category="frontend">
+            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300"
+                data-category="frontend">
                 <div class="relative overflow-hidden">
-                    <img src="images/Project-imgs/proj-1.png" alt="TeckyBuilds Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <a href="https://teckybuilds.netlify.app/" target="_blank" 
-                        class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
+                    <img src="images/Project-imgs/proj-1.png" alt="TeckyBuilds Project"
+                        class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="https://teckybuilds.netlify.app/" target="_blank" class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
                             opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
                             transition-all duration-300 hover:scale-110">
                         <i class="fa-solid fa-arrow-up-right-from-square text-white text-lg"></i>
@@ -82,7 +121,8 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white mb-2">TeckyBuilds Project</h3>
-                    <p class="text-gray-400 mb-4">Modern e-commerce website (Homepage Only) for PC components featuring a custom PC builder, product catalog, 
+                    <p class="text-gray-400 mb-4">Modern e-commerce website (Homepage Only) for PC components featuring
+                        a custom PC builder, product catalog,
                         and service booking system. Includes responsive design.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">HTML</span>
@@ -93,11 +133,12 @@
             </div>
 
             <!-- GW Portfolio Project -->
-            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300" data-category="frontend">
+            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300"
+                data-category="frontend">
                 <div class="relative overflow-hidden">
-                    <img src="images/Project-imgs/proj-3.png" alt="GW Portfolio" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <a href="https://gesitha.netlify.app/" target="_blank" 
-                        class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
+                    <img src="images/Project-imgs/proj-3.png" alt="GW Portfolio"
+                        class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="https://gesitha.netlify.app/" target="_blank" class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
                             opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
                             transition-all duration-300 hover:scale-110">
                         <i class="fa-solid fa-arrow-up-right-from-square text-white text-lg"></i>
@@ -105,8 +146,10 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white mb-2">GW Portfolio</h3>
-                    <p class="text-gray-400 mb-4">Professional portfolio website for a graphic designer featuring animated sections, 
-                        project showcases, and a contact form. Includes skill progress bars and downloadable CV functionality.</p>
+                    <p class="text-gray-400 mb-4">Professional portfolio website for a graphic designer featuring
+                        animated sections,
+                        project showcases, and a contact form. Includes skill progress bars and downloadable CV
+                        functionality.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">HTML</span>
                         <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">CSS</span>
@@ -116,11 +159,12 @@
             </div>
 
             <!-- Glamour Haven Project -->
-            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300" data-category="frontend">
+            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300"
+                data-category="frontend">
                 <div class="relative overflow-hidden">
-                    <img src="images/Project-imgs/proj-2.png" alt="Glamour Haven" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <a href="https://glamour-haven.netlify.app/" target="_blank" 
-                        class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
+                    <img src="images/Project-imgs/proj-2.png" alt="Glamour Haven"
+                        class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="https://glamour-haven.netlify.app/" target="_blank" class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
                             opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
                             transition-all duration-300 hover:scale-110">
                         <i class="fa-solid fa-arrow-up-right-from-square text-white text-lg"></i>
@@ -128,8 +172,9 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white mb-2">Glamour Haven</h3>
-                    <p class="text-gray-400 mb-4">Elegant salon website with online booking system, service catalog, and gallery showcase.
-                         Features testimonials, pricing tables, and integrated contact forms for appointments.</p>
+                    <p class="text-gray-400 mb-4">Elegant salon website with online booking system, service catalog, and
+                        gallery showcase.
+                        Features testimonials, pricing tables, and integrated contact forms for appointments.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">HTML</span>
                         <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">CSS</span>
@@ -139,11 +184,12 @@
             </div>
 
             <!-- WordPress Project -->
-            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300" data-category="wordpress">
+            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300"
+                data-category="wordpress">
                 <div class="relative overflow-hidden">
-                    <img src="images/Project-imgs/proj-4.png" alt="QNC E INSTITUTE" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <a href="https://edu.qnceinstitute.com/" target="_blank" 
-                        class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
+                    <img src="images/Project-imgs/proj-4.png" alt="QNC E INSTITUTE"
+                        class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="https://edu.qnceinstitute.com/" target="_blank" class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
                             opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
                             transition-all duration-300 hover:scale-110">
                         <i class="fa-solid fa-arrow-up-right-from-square text-white text-lg"></i>
@@ -152,7 +198,7 @@
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white mb-2">QNC E INSTITUTE</h3>
                     <p class="text-gray-400 mb-4">QNC E Institute is an innovative online platform
-                         dedicated to providing students with access to mathematics lecture videos.</p>
+                        dedicated to providing students with access to mathematics lecture videos.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">WordPress</span>
                     </div>
@@ -160,11 +206,13 @@
             </div>
 
             <!-- Figma Project 01 -->
-            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300" data-category="figma">
+            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300"
+                data-category="figma">
                 <div class="relative overflow-hidden">
-                    <img src="images/Project-imgs/ui-proj-01.jpg" alt="Messaging App" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <a href="https://www.figma.com/file/XhHQbjLXKEIGqvjNw87IlP/Chat-App?type=design&node-id=0%3A1&mode=design&t=NDdYVf61A7Qnsrup-1" target="_blank" 
-                        class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
+                    <img src="images/Project-imgs/ui-proj-01.jpg" alt="Messaging App"
+                        class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="https://www.figma.com/file/XhHQbjLXKEIGqvjNw87IlP/Chat-App?type=design&node-id=0%3A1&mode=design&t=NDdYVf61A7Qnsrup-1"
+                        target="_blank" class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
                             opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
                             transition-all duration-300 hover:scale-110">
                         <i class="fa-solid fa-arrow-up-right-from-square text-white text-lg"></i>
@@ -172,7 +220,8 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white mb-2">Messaging App</h3>
-                    <p class="text-gray-400 mb-4">A modern messaging app simplifies communication, offering helpful features for both individuals and businesses, 
+                    <p class="text-gray-400 mb-4">A modern messaging app simplifies communication, offering helpful
+                        features for both individuals and businesses,
                         enabling quick information sharing and smoother collaboration.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">Figma</span>
@@ -181,11 +230,13 @@
             </div>
 
             <!-- Figma Project 02 -->
-            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300" data-category="figma">
+            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300"
+                data-category="figma">
                 <div class="relative overflow-hidden">
-                    <img src="images/Project-imgs/ui-proj-02.jpg" alt="Gaming Client" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <a href="https://www.figma.com/file/MpGYe0n2q7QHUSLoJAiFM9/Game-Client?type=design&node-id=0%3A1&mode=design&t=FwTU1SVZpXCMCF6a-1" target="_blank" 
-                        class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
+                    <img src="images/Project-imgs/ui-proj-02.jpg" alt="Gaming Client"
+                        class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="https://www.figma.com/file/MpGYe0n2q7QHUSLoJAiFM9/Game-Client?type=design&node-id=0%3A1&mode=design&t=FwTU1SVZpXCMCF6a-1"
+                        target="_blank" class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
                             opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
                             transition-all duration-300 hover:scale-110">
                         <i class="fa-solid fa-arrow-up-right-from-square text-white text-lg"></i>
@@ -193,7 +244,7 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white mb-2">Gaming Client</h3>
-                    <p class="text-gray-400 mb-4">A gaming platform provides easy access to many fun experiences, 
+                    <p class="text-gray-400 mb-4">A gaming platform provides easy access to many fun experiences,
                         giving players lots of options and ensuring everyone has a great time playing games.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">Figma</span>
@@ -202,11 +253,13 @@
             </div>
 
             <!-- Figma Project 03 -->
-            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300" data-category="figma">
+            <div class="portfolio-item bg-[#0a0a0a] rounded-2xl overflow-hidden group hover:border-[#04D9FF] border border-transparent transition-all duration-300"
+                data-category="figma">
                 <div class="relative overflow-hidden">
-                    <img src="images/Project-imgs/ui-proj-03.jpg" alt="Booking Website" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <a href="https://www.figma.com/file/MpGYe0n2q7QHUSLoJAiFM9/Game-Client?type=design&node-id=0%3A1&mode=design&t=FwTU1SVZpXCMCF6a-1" target="_blank" 
-                        class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
+                    <img src="images/Project-imgs/ui-proj-03.jpg" alt="Booking Website"
+                        class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="https://www.figma.com/file/MpGYe0n2q7QHUSLoJAiFM9/Game-Client?type=design&node-id=0%3A1&mode=design&t=FwTU1SVZpXCMCF6a-1"
+                        target="_blank" class="absolute top-3 right-3 z-10 w-10 h-10 bg-[#04D9FF]/90 rounded-full flex items-center justify-center 
                             opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
                             transition-all duration-300 hover:scale-110">
                         <i class="fa-solid fa-arrow-up-right-from-square text-white text-lg"></i>
@@ -214,7 +267,7 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white mb-2">Booking Website</h3>
-                    <p class="text-gray-400 mb-4">A user-friendly booking website lets you easily reserve what you need, 
+                    <p class="text-gray-400 mb-4">A user-friendly booking website lets you easily reserve what you need,
                         whether it's a hotel room, a table at a restaurant, or tickets for an event.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-[#04D9FF]/10 text-[#04D9FF] px-3 py-1 rounded-full text-sm">Figma</span>
@@ -241,7 +294,7 @@
                     btn.classList.remove('active', 'bg-[#00E5FF]');
                     btn.classList.add('bg-[#1a1a1a]');
                 });
-                
+
                 // Add active class to clicked button
                 button.classList.add('active', 'bg-[#00E5FF]');
                 button.classList.remove('bg-[#1a1a1a]');
@@ -259,4 +312,5 @@
         });
     </script>
 </body>
+
 </html>
